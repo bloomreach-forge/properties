@@ -1,0 +1,14 @@
+<'rep'='internal'>
+<'jcr'='http://www.jcp.org/jcr/1.0'>
+<'nt'='http://www.jcp.org/jcr/nt/1.0'>
+<'mix'='http://www.jcp.org/jcr/mix/1.0'>
+<'hippostd'='http://www.hippoecm.org/hippostd/nt/1.3'>
+<'hippo'='http://www.hippoecm.org/nt/1.3'>
+<'properties'='http://www.hippoecm.org/properties/nt/1.0'>
+
+[properties:property]
+  - properties:name (string) 
+  - properties:value (string) 
+
+[properties:properties] > hippo:document, hippostd:publishable, hippostd:publishableSummary
++ properties:property (properties:property) multiple
