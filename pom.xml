@@ -38,9 +38,9 @@
     </developers>
 	
     <scm>
-        <connection>scm:svn:http://forge.onehippo.org/svn/properties/properties/trunk</connection>
-        <developerConnection>scm:svn:http://forge.onehippo.org/svn/properties/properties/trunk</developerConnection>
-        <url>http://forge.onehippo.org/svn/properties/properties/trunk</url>
+        <connection>scm:svn:http://forge.hippo-ecm.org/svn/properties/properties/tags/properties-1.01.00</connection>
+        <developerConnection>scm:svn:http://forge.hippo-ecm.org/svn/properties/properties/tags/properties-1.01.00</developerConnection>
+        <url>http://forge.hippo-ecm.org/svn/properties/properties/tags/properties-1.01.00</url>
     </scm>
 
     <dependencyManagement>
