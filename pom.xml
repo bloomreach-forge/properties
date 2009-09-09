@@ -22,11 +22,11 @@
     <groupId>org.onehippo.forge</groupId>
 
     <artifactId>properties-root</artifactId>
-    <version>1.01.00-SNAPSHOT</version>
+    <version>1.01.00</version>
     <packaging>pom</packaging>
 
     <properties>
-        <hst.version>2.03.11</hst.version>
+        <hst.version>2.03.13</hst.version>
     </properties>
 
     <developers>
