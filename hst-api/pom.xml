@@ -20,13 +20,14 @@
   <parent>
     <groupId>org.onehippo.forge</groupId>
     <artifactId>properties-root</artifactId>
-    <version>1.02.00</version>
+    <version>properties-root-1.02.01-SNAPSHOT</version>
   </parent>
 
   <name>Hippo Forge Properties HST API</name>
   <description>Hippo Forge Properties HST API</description>
   <groupId>org.onehippo.forge</groupId>
   <artifactId>properties-hst-api</artifactId>
+  <version>1.02.01-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <dependencies>

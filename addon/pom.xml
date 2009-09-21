@@ -18,12 +18,13 @@
  <parent>
     <groupId>org.onehippo.forge</groupId>
     <artifactId>properties-root</artifactId>
-    <version>1.02.00</version>
+    <version>properties-root-1.02.01-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.onehippo.forge</groupId>
   <artifactId>properties-addons</artifactId>
+  <version>1.02.01-SNAPSHOT</version>
   <name>CMS Properties Addons</name>
 
   <packaging>pom</packaging>
