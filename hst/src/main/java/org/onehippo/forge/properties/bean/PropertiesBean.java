@@ -89,8 +89,14 @@ public class PropertiesBean implements Map<String, String> {
 	    return this.properties.entrySet();
     }
 
-	public String get(String key) {
-	    return this.properties.get(key);
+	public String get(Object key) {
+		
+		if (!(key instanceof String)) {
+			throw new IllegalArgumentException("Argument key is not a String but "
+					+ ((key == null) ? "null" : key.getClass().getName()));
+		}
+		
+	    return this.properties.get((String) key);
     }
 
 	public boolean isEmpty() {
@@ -120,10 +126,4 @@ public class PropertiesBean implements Map<String, String> {
 	public Collection<String> values() {
 	    return this.properties.values();
     }
-
-	public String get(Object key) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
