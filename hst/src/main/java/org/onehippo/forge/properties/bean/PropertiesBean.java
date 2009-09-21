@@ -41,10 +41,13 @@ import org.onehippo.forge.properties.annotated.Property;
  * Because it is a map, access in jsp can be done using direct expression 
  * language notation like "properties['label.header']"
  */
-public class PropertiesBean implements Map {
+public class PropertiesBean implements Map<String, String> {
 
     private final Map<String,String> properties = new HashMap<String,String>();
 
+    /**
+     * Create a new bean with a properties document.
+     */
     public PropertiesBean(final Properties properties) {
 
     	Iterator<Property> props = properties.getPropertyObjects().iterator();
@@ -52,6 +55,22 @@ public class PropertiesBean implements Map {
     		Property prop = props.next();
     		this.properties.put(prop.getName(), prop.getValue());
     	}
+    }
+
+    /**
+     * Create a new bean with multiple properties documents.
+     * Note that this may lead to properties being overwritten.
+     */
+    public PropertiesBean(final Collection<Properties> propertiesCol) {
+
+    	Iterator<Properties> it = propertiesCol.iterator();
+    	while (it.hasNext()) {
+	    	Iterator<Property> props = it.next().getPropertyObjects().iterator();
+	    	while (props.hasNext()) {
+	    		Property prop = props.next();
+	    		this.properties.put(prop.getName(), prop.getValue());
+	    	}
+    	}	
     }
 
 	public void clear() {
@@ -66,11 +85,11 @@ public class PropertiesBean implements Map {
 	    return this.properties.containsValue(value);
     }
 
-	public Set entrySet() {
+	public Set<Entry<String, String>> entrySet() {
 	    return this.properties.entrySet();
     }
 
-	public Object get(Object key) {
+	public String get(String key) {
 	    return this.properties.get(key);
     }
 
@@ -78,19 +97,19 @@ public class PropertiesBean implements Map {
 	    return this.properties.isEmpty();
     }
 
-	public Set keySet() {
+	public Set<String> keySet() {
 	    return this.properties.keySet();
     }
 
-	public Object put(Object arg0, Object arg1) {
+	public String put(String arg0, String arg1) {
 	    throw new UnsupportedOperationException("PropertiesBean is a readonly object");
     }
 
-	public void putAll(Map arg0) {
+	public void putAll(Map<? extends String, ? extends String> arg0) {
 	    throw new UnsupportedOperationException("PropertiesBean is a readonly object");
     }
 
-	public Object remove(Object arg0) {
+	public String remove(Object arg0) {
 	    throw new UnsupportedOperationException("PropertiesBean is a readonly object");
     }
 
@@ -98,7 +117,13 @@ public class PropertiesBean implements Map {
 	    return this.properties.size();
     }
 
-	public Collection values() {
+	public Collection<String> values() {
 	    return this.properties.values();
     }
+
+	public String get(Object key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
