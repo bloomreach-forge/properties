@@ -20,13 +20,13 @@
   <parent>
     <groupId>org.onehippo.forge</groupId>
     <artifactId>properties-root</artifactId>
-    <version>1.01.01-SNAPSHOT</version>
+    <version>1.02.00</version>
   </parent>
 
-  <name>Hippo Forge Properties HST Beans</name>
-  <description>Hippo Forge Properties HST Beans</description>
+  <name>Hippo Forge Properties HST Client</name>
+  <description>Hippo Forge Properties HST Client</description>
   <groupId>org.onehippo.forge</groupId>
-  <artifactId>properties-hst-beans</artifactId>
+  <artifactId>properties-hst-client</artifactId>
   <packaging>jar</packaging>
 
   <dependencies>
@@ -37,6 +37,12 @@
     <dependency>
       <groupId>org.onehippo.ecm.hst</groupId>
       <artifactId>hst-content-beans</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.onehippo.forge</groupId>
+      <artifactId>properties-hst-api</artifactId>
+      <version>${pom.version}</version>
     </dependency>
   </dependencies>
 

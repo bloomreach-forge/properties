@@ -4,8 +4,11 @@ addon/pom.xml svneol=native#text/plain
 addon/repository/pom.xml svneol=native#text/plain
 addon/repository/src/main/resources/namespace.xml -text
 addon/repository/src/main/resources/properties.cnd -text
+hst-api/pom.xml -text
+hst-api/src/main/java/org/onehippo/forge/properties/api/PropertiesManager.java svneol=native#text/plain
 hst/pom.xml svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/annotated/Properties.java svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/annotated/Property.java svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/bean/PropertiesBean.java svneol=native#text/plain
+hst/src/main/java/org/onehippo/forge/properties/impl/PropertiesManagerImpl.java svneol=native#text/plain
 /pom.xml -text
