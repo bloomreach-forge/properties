@@ -1,8 +1,10 @@
 /.classpath
 /.project
 addon/repository/target
+addon/target
 hst/.classpath
 hst/.project
 hst/.settings
 hst/target
 /release.properties
+/target
