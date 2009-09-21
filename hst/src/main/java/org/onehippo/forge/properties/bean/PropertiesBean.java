@@ -23,20 +23,32 @@ import java.util.Set;
 
 import org.onehippo.forge.properties.annotated.Properties;
 import org.onehippo.forge.properties.annotated.Property;
-
+    
 /**
  * Bean representing a properties document that holds a map of name/value pairs.
  * 
  * In an HST Component, a bean like this can be created with a Properties object  
  * as argument and subsequently set on the request for access in jsp.  
  * 
- * Example:
+ * Example 1:
  *    // get a document named "properties" at same level as current bean
  *    HippoBean properties = this.getContentBean(request).getParentBean().getBean("properties"); 
  *    
  *    if (properties instanceof Properties) {
  *        request.setAttribute("properties", new PropertiesBean(properties));
  *    }   
+ * 
+ * There is also a Spring intstantiated PropertiesManager present with which 
+ * beans can be gotten from content:   
+ *    
+ * Example 2:
+ *    ComponentManager componentManager = (ComponentManager) this.getDefaultClientComponentManager();
+ *    this.propertiesManager = componentManager.getComponent(PropertiesManager.class.getName());
+ *    
+ *    Map properties = this.propertiesManager.getProperties(
+ *                                      this.getContentBean(request)
+ *                                      this.getSiteContentBaseBean(request));
+ *        
  *
  * Because it is a map, access in jsp can be done using direct expression 
  * language notation like "properties['label.header']"
@@ -50,80 +62,84 @@ public class PropertiesBean implements Map<String, String> {
      */
     public PropertiesBean(final Properties properties) {
 
-    	Iterator<Property> props = properties.getPropertyObjects().iterator();
-    	while (props.hasNext()) {
-    		Property prop = props.next();
-    		this.properties.put(prop.getName(), prop.getValue());
-    	}
+        Iterator<Property> props = properties.getPropertyObjects().iterator();
+        while (props.hasNext()) {
+            Property prop = props.next();
+            this.properties.put(prop.getName(), prop.getValue());
+        }
     }
 
     /**
-     * Create a new bean with multiple properties documents.
-     * Note that this may lead to properties being overwritten.
+     * Create a new bean with multiple properties documents. 
+     * 
+     * Note that properties are not overwritten, so in case of duplicates the 
+     * first entered remains!
      */
     public PropertiesBean(final Collection<Properties> propertiesCol) {
 
-    	Iterator<Properties> it = propertiesCol.iterator();
-    	while (it.hasNext()) {
-	    	Iterator<Property> props = it.next().getPropertyObjects().iterator();
-	    	while (props.hasNext()) {
-	    		Property prop = props.next();
-	    		this.properties.put(prop.getName(), prop.getValue());
-	    	}
-    	}	
+        Iterator<Properties> it = propertiesCol.iterator();
+        while (it.hasNext()) {
+            Iterator<Property> props = it.next().getPropertyObjects().iterator();
+            while (props.hasNext()) {
+                Property prop = props.next();
+                if (!this.properties.containsKey(prop.getName())) {
+                   this.properties.put(prop.getName(), prop.getValue());
+                }
+            }
+        }
     }
 
-	public void clear() {
-		this.properties.clear();
+    public void clear() {
+        this.properties.clear();
     }
 
-	public boolean containsKey(Object key) {
-	    return this.properties.containsKey(key);
+    public boolean containsKey(Object key) {
+        return this.properties.containsKey(key);
     }
 
-	public boolean containsValue(Object value) {
-	    return this.properties.containsValue(value);
+    public boolean containsValue(Object value) {
+        return this.properties.containsValue(value);
     }
 
-	public Set<Entry<String, String>> entrySet() {
-	    return this.properties.entrySet();
+    public Set<Entry<String, String>> entrySet() {
+        return this.properties.entrySet();
     }
 
-	public String get(Object key) {
-		
-		if (!(key instanceof String)) {
-			throw new IllegalArgumentException("Argument key is not a String but "
-					+ ((key == null) ? "null" : key.getClass().getName()));
-		}
-		
-	    return this.properties.get((String) key);
+    public String get(Object key) {
+        
+        if (!(key instanceof String)) {
+            throw new IllegalArgumentException("Argument key is not a String but "
+                    + ((key == null) ? "null" : key.getClass().getName()));
+        }
+
+        return this.properties.get((String) key);
     }
 
-	public boolean isEmpty() {
-	    return this.properties.isEmpty();
+    public boolean isEmpty() {
+        return this.properties.isEmpty();
     }
 
-	public Set<String> keySet() {
-	    return this.properties.keySet();
+    public Set<String> keySet() {
+        return this.properties.keySet();
     }
 
-	public String put(String arg0, String arg1) {
-	    throw new UnsupportedOperationException("PropertiesBean is a readonly object");
+    public String put(String arg0, String arg1) {
+        throw new UnsupportedOperationException("PropertiesBean is a readonly object");
     }
 
-	public void putAll(Map<? extends String, ? extends String> arg0) {
-	    throw new UnsupportedOperationException("PropertiesBean is a readonly object");
+    public void putAll(Map<? extends String, ? extends String> arg0) {
+        throw new UnsupportedOperationException("PropertiesBean is a readonly object");
     }
 
-	public String remove(Object arg0) {
-	    throw new UnsupportedOperationException("PropertiesBean is a readonly object");
+    public String remove(Object arg0) {
+        throw new UnsupportedOperationException("PropertiesBean is a readonly object");
     }
 
-	public int size() {
-	    return this.properties.size();
+    public int size() {
+        return this.properties.size();
     }
 
-	public Collection<String> values() {
-	    return this.properties.values();
+    public Collection<String> values() {
+        return this.properties.values();
     }
 }

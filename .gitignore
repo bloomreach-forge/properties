@@ -4,6 +4,10 @@ addon/repository/.classpath
 addon/repository/.settings
 addon/repository/target
 addon/target
+hst-api/.classpath
+hst-api/.project
+hst-api/.settings
+hst-api/target
 hst/.classpath
 hst/.project
 hst/.settings
