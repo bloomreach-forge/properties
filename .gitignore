@@ -1,5 +1,6 @@
 /.classpath
 /.project
+/.settings
 addon/repository/.classpath
 addon/repository/.settings
 addon/repository/target

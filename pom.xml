@@ -22,7 +22,7 @@
     <groupId>org.onehippo.forge</groupId>
 
     <artifactId>properties-root</artifactId>
-    <version>properties-root-1.02.01-SNAPSHOT</version>
+    <version>1.02.01-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
