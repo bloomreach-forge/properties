@@ -69,7 +69,7 @@ public class PropertiesManagerImpl implements PropertiesManager {
 
 			// loop from current bean's level upwards
 			HippoBean currentBean = contentBean;
-			while (currentBean != null) {
+			while (currentBean != null && !currentBean.getPath().endsWith("hst:content")) {
 		
 				List<Properties> docs = getDocuments(currentBean, names);
 				documents.addAll(docs);
