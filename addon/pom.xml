@@ -24,7 +24,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.onehippo.forge</groupId>
   <artifactId>properties-addons</artifactId>
-  <name>CMS Properties Addons</name>
+  <name>Hippo Forge Properties Addons</name>
 
   <packaging>pom</packaging>
 
