@@ -1,0 +1,141 @@
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Hippo Forge - Usage of Properties Component</title>
+    <link media="screen" href="http://static.hippo.nl/hippo-master-screen.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/themes/hippo/hippo.css" type="text/css" />
+  </head>
+  <body>
+    <h2>Properties Component</h2>
+    <p><b>The Properties Component allows you to create simple CMS documents having a flat 
+        list of name/value pairs. It also provides easy locating and using these document them 
+        in your HST site frontend.</b></p>
+    <p>&nbsp;</p>    
+    <h2>Version table</h2>
+    <p>The following table shows what versions of CMS / HST the properties component is 
+        verified to work against:</p>
+    <table border="1">
+      <tr>
+        <th>Version</th>
+        <th>CMS</th>
+        <th>HST</th>
+      </tr>
+      <tr>
+        <td>1.01.xx, 1.02.xx</td>
+        <td>2.06.xx</td>
+        <td>2.03.14+</td>
+      </tr>
+      <tr>
+        <td>2.01.xx</td>
+        <td>2.09.xx</td>
+        <td>2.04.00</td>
+      </tr>
+    </table>
+    
+    <h2>Usage in CMS</h2>
+    <p>To incorporate the properties document type in your CMS, add the following 
+       dependency:</p> 
+    <div class="source">
+	    <pre>
+	      &lt;dependencies&gt; 
+	        &lt;dependency&gt; 
+	            &lt;groupId&gt;org.onehippo.forge&lt;/groupId&gt;
+	            &lt;artifactId&gt;properties-addon-repository&lt;/artifactId&gt;
+	            &lt;version&gt;[version]&lt;/version&gt;
+	            &lt;type&gt;jar&lt;/type&gt;
+	        &lt;/dependency&gt; 
+	      &lt;/dependencies&gt;
+	    </pre>
+    </div>
+    <p>After starting your CMS, you will have the possibility to choose document type
+        'Properties' when creating a new document.     
+    <h2>Usage in HST site</h2>
+    <p>To incorporate properties helper classes in your CMS, add the following 
+       dependencies:</p> 
+    <div class="source">
+	    <pre>
+	      &lt;dependencies&gt; 
+	        &lt;dependency&gt;
+	            &lt;groupId&gt;org.onehippo.forge&lt;/groupId&gt;
+	            &lt;artifactId&gt;properties-hst-api&lt;/artifactId&gt;
+	            &lt;version&gt;[version]&lt;/version&gt;
+	        &lt;/dependency&gt;
+	        &lt;dependency&gt;
+	            &lt;groupId&gt;org.onehippo.forge&lt;/groupId&gt;
+	            &lt;artifactId&gt;properties-hst-client&lt;/artifactId&gt;
+	            &lt;version&gt;[version]&lt;/version&gt;
+	        &lt;/dependency&gt;
+	      &lt;/dependencies&gt;
+	    </pre>
+    </div>
+    <h3>Properties Manager</h3>
+    <p>The properties component contains a manager object that provides an API by 
+        which to retrieve properties documents from repository. To create such a 
+        manager using HST's Spring configuration, create an entry in the site's file 
+        <code>resources/META-INF/client-assembly/base.xml</code> that should exist:</p>
+    <div class="source">
+        <pre>
+          &lt;bean id="org.onehippo.forge.properties.api.PropertiesManager" class="org.onehippo.forge.properties.impl.PropertiesManagerImpl"&gt;
+            &lt;property name="defaultDocumentLocation" value="/construction/labels"/&gt;
+            &lt;property name="defaultDocumentName" value="labels"/&gt;
+          &lt;/bean>
+        </pre>
+    </div>
+    <p>Above configuration will by default search for properties documents in the 
+        <code>construction/labels</code> folder by the name of <code>labels</code>, but the API
+        provides ways to do more. See <code>PropertiesManager.java</code> in the hst-api module.</p>        
+    <h3>Usage in HST components</h3>
+    <p>HST components should read documents and prepare data for JSPs. This can be done 
+        manually in Java code or using the Properties Manager.</p>
+    <p><b>Manual code</b><br/>
+        This is an example of how a properties document containing labels is read from
+        a configured path relative to current document. This is typically something that
+        you can do in your project's base component.
+    </p>      
+    <div class="source">
+      <pre>
+        String labelsPath = this.getParameter("labelsPath", request);
+        Properties labels = (Properties) this.getContentBean(request).getBean(labelsPath);
+        request.setAttribute("labels", new PropertiesBean(labels));
+       </pre>
+    </div>
+    <p>Note that the <code>PropertiesBean</code> created in preparation for the view 
+        layer is actually a Map for easy access.</p>   
+    <p><b>Use of Properties Manager</b><br/>
+        This is an example of how properties documents are read using the manager. 
+        The manager will look for properties with configured name or the default 
+        name from current document's level and then upwards, and then at the default location.
+        If multiple documents are found they are merged into one map.
+    </p>      
+    <div class="source">
+      <pre>
+         // get the manager   
+         PropertiesManager propertiesManager = componentManager.getComponent(PropertiesManager.class.getName());
+         
+         // retrieve labels documents
+         Map&lt;String, String&gt; labels;
+         &lt;String&gt; labelsName = this.getParameter("labelsName", request);
+         if (labelsName != null) {
+            labels = this.propertiesManager.getProperties(new String[]{labelsName}, 
+                    this.getContentBean(request), this.getSiteContentBaseBean(request));
+         } 
+         else {
+            labels = this.propertiesManager.getProperties(document, this.getSiteContentBaseBean(request));
+         }
+
+         request.setAttribute("labels", labels);
+       </pre>
+    </div>
+    <h3>Reading properties in JSP files</h3>
+    <p>Because the bean set at the request is a Map, it can be read easily using expression
+        language. This is an example of reading labels:</p>
+    <div class="source">
+      <pre>
+        &lt;div id="header"&gt;
+            &lt;span&gt;${labels['header.title']}&lt;/span&gt;
+            &lt;span&gt;${labels['header.subtitle']}&lt;/span&gt;
+        &lt;/div&gt;
+       </pre>
+    </div>
+  </body>
+</html>
