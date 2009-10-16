@@ -409,6 +409,11 @@
         <sv:property sv:name="hipposysedit:uri" sv:type="String">
           <sv:value>http://www.onehippo.org/properties/nt/2.0</sv:value>
         </sv:property>
+        <sv:property sv:name="hipposysedit:supertype" sv:type="String">
+          <sv:value>hippo:document</sv:value>
+          <sv:value>hippostd:publishable</sv:value>
+          <sv:value>hippostd:publishableSummary</sv:value>
+        </sv:property>
         <sv:node sv:name="hipposysedit:field">
           <sv:property sv:name="jcr:primaryType" sv:type="Name">
             <sv:value>hipposysedit:field</sv:value>
