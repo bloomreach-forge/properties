@@ -6,11 +6,12 @@
     <groupId>org.onehippo.forge</groupId>
 
     <artifactId>properties-root</artifactId>
-    <version>1.02.02-SNAPSHOT</version>
+    <version>2.01.00</version>
     <packaging>pom</packaging>
 
     <properties>
-        <hst.version>2.03.13</hst.version>
+      <hst.version>2.04.00</hst.version>
+      <hippoecm.version>2.09.00</hippoecm.version>
     </properties>
 
     <developers>
@@ -22,9 +23,9 @@
     </developers>
 	
     <scm>
-        <connection>scm:svn:http://forge.onehippo.org/svn/properties/properties/trunk</connection>
-        <developerConnection>scm:svn:http://forge.onehippo.org/svn/properties/properties/trunk</developerConnection>
-        <url>http://forge.onehippo.org/svn/properties/properties/trunk</url>
+        <connection>scm:svn:http://forge.onehippo.org/svn/properties/properties/tags/properties-2.01.00</connection>
+        <developerConnection>scm:svn:http://forge.onehippo.org/svn/properties/properties/tags/properties-2.01.00</developerConnection>
+        <url>http://forge.onehippo.org/svn/properties/properties/tags/properties-2.01.00</url>
     </scm>
 
     <dependencyManagement>
@@ -118,6 +119,7 @@
         <module>addon</module>
         <module>hst-api</module>
         <module>hst</module>
+        <module>cms</module>
     </modules>
   
     <distributionManagement>
