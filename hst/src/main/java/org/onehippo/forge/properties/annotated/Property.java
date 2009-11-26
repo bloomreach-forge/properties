@@ -16,7 +16,7 @@
 package org.onehippo.forge.properties.annotated;
 
 import org.hippoecm.hst.content.beans.Node;
-import org.hippoecm.hst.content.beans.standard.HippoDocument;
+import org.hippoecm.hst.content.beans.standard.HippoItem;
 
 /**
  * [properties:property] 
@@ -24,7 +24,7 @@ import org.hippoecm.hst.content.beans.standard.HippoDocument;
  *   - properties:value (string)
  */
 @Node(jcrType = "properties:property")
-public class Property extends HippoDocument {
+public class Property extends HippoItem {
 
     public String getName() {
         return this.getProperty("properties:name");
