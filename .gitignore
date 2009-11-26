@@ -5,6 +5,8 @@ addon/repository/.classpath
 addon/repository/.settings
 addon/repository/target
 addon/target
+cms/.classpath
+cms/.settings
 cms/derby.log
 cms/target
 hst-api/.classpath
