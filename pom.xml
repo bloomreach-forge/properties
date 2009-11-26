@@ -1,133 +1,145 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <name>Hippo Forge Properties Project</name>
-    <description>Hippo Forge Properties Project</description>
-    <groupId>org.onehippo.forge</groupId>
+  <name>Hippo Forge Properties Project</name>
+  <description>Hippo Forge Properties Project</description>
+  <groupId>org.onehippo.forge</groupId>
 
-    <artifactId>properties-root</artifactId>
-    <version>2.01.01-SNAPSHOT</version>
-    <packaging>pom</packaging>
+  <artifactId>properties</artifactId>
+  <version>2.01.01-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-    <properties>
-      <hst.version>2.04.00</hst.version>
-      <hippoecm.version>2.09.00</hippoecm.version>
-    </properties>
+  <properties>
+    <hst.version>2.04.00</hst.version>
+    <hippoecm.version>[2.09.00,2.09.04]</hippoecm.version>
+  </properties>
 
-    <developers>
-        <developer>
-            <name>Jeroen Hoffman</name>
-            <id>jhoffman</id>
-            <email>j.hoffman@onehippo.com</email>
-        </developer>
-    </developers>
-	
-    <scm>
-        <connection>scm:svn:http://forge.onehippo.org/svn/properties/properties/trunk</connection>
-        <developerConnection>scm:svn:http://forge.onehippo.org/svn/properties/properties/trunk</developerConnection>
-        <url>http://forge.onehippo.org/svn/properties/properties/trunk</url>
-    </scm>
+  <developers>
+    <developer>
+      <name>Jeroen Hoffman</name>
+      <id>jhoffman</id>
+      <email>j.hoffman@onehippo.com</email>
+    </developer>
+  </developers>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.onehippo.ecm.hst</groupId>
-                <artifactId>hst-api</artifactId>
-                <version>${hst.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>org.onehippo.ecm.hst</groupId>
-                <artifactId>hst-content-beans</artifactId>
-                <version>${hst.version}</version>
-                <type>jar</type>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+  <scm>
+    <connection>scm:svn:http://forge.onehippo.org/svn/properties/properties/trunk</connection>
+    <developerConnection>scm:svn:http://forge.onehippo.org/svn/properties/properties/trunk</developerConnection>
+    <url>http://forge.onehippo.org/svn/properties/properties/trunk</url>
+  </scm>
+
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>properties-maven-repo</id>
+      <url>svn:http://forge.onehippo.org/svn/properties/maven2/</url>
+    </repository>
+  </distributionManagement>
   
-    <repositories>
-        <repository>
-            <id>hippo</id>
-            <name>Hippo maven 2 repository.</name>
-            <url>http://repository.hippocms.org/maven2/</url>
-            <snapshots />
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <layout>default</layout>
-        </repository>
-        <repository>
-            <id>hippo.legacy</id>
-            <name>Hippo Maven 1 repository.</name>
-            <url>http://repository.hippocms.org/maven/</url>
-            <snapshots />
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <layout>legacy</layout>
-        </repository>
-    </repositories>
-  
-    <pluginRepositories>
-        <pluginRepository>
-            <id>hippo</id>
-            <name>Hippo Maven 2 Repository</name>
-            <url>http://repository.hippocms.org/maven2</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>codehaus</id>
-            <url>http://repository.codehaus.org/</url>
-            <layout>default</layout>
-            <snapshots>
-            </snapshots>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
-    
-    <build>
-        <defaultGoal>package</defaultGoal>
-        <extensions>
-            <extension>
-                <groupId>org.jvnet.wagon-svn</groupId>
-                <artifactId>wagon-svn</artifactId>
-                <version>1.9</version>
-            </extension>
-        </extensions>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-archetype-plugin</artifactId>
-                    <version>2.0-alpha-4</version>
-                </plugin>
-                <plugin>
-                    <inherited>true</inherited>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>1.5</source>
-                        <target>1.5</target>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+  <issueManagement>
+    <system>Hippo Forge</system>
+    <url>http://forge.onehippo.org/tracker/?group_id=45</url>
+  </issueManagement>
 
-    <modules>
-        <module>addon</module>
-        <module>hst-api</module>
-        <module>hst</module>
-        <module>cms</module>
-    </modules>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
   
-    <distributionManagement>
-        <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>properties-maven-repo</id>
-            <url>svn:http://forge.hippo-ecm.org/svn/properties/maven2/</url>
-        </repository>
-    </distributionManagement>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.onehippo.ecm.hst</groupId>
+        <artifactId>hst-api</artifactId>
+        <version>${hst.version}</version>
+        <type>jar</type>
+      </dependency>
+      <dependency>
+        <groupId>org.onehippo.ecm.hst</groupId>
+        <artifactId>hst-content-beans</artifactId>
+        <version>${hst.version}</version>
+        <type>jar</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <repositories>
+    <repository>
+      <id>hippo</id>
+      <name>Hippo maven 2 repository.</name>
+      <url>http://repository.hippocms.org/maven2/</url>
+      <snapshots/>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <layout>default</layout>
+    </repository>
+    <repository>
+      <id>hippo.legacy</id>
+      <name>Hippo Maven 1 repository.</name>
+      <url>http://repository.hippocms.org/maven/</url>
+      <snapshots/>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <layout>legacy</layout>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>hippo</id>
+      <name>Hippo Maven 2 Repository</name>
+      <url>http://repository.hippocms.org/maven2</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>codehaus</id>
+      <url>http://repository.codehaus.org/</url>
+      <layout>default</layout>
+      <snapshots> </snapshots>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <build>
+    <defaultGoal>package</defaultGoal>
+    <extensions>
+      <extension>
+        <groupId>org.jvnet.wagon-svn</groupId>
+        <artifactId>wagon-svn</artifactId>
+        <version>1.9</version>
+      </extension>
+    </extensions>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-archetype-plugin</artifactId>
+          <version>2.0-alpha-4</version>
+        </plugin>
+        <plugin>
+          <inherited>true</inherited>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>1.5</source>
+            <target>1.5</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <modules>
+    <module>addon</module>
+    <module>hst-api</module>
+    <module>hst</module>
+    <module>cms</module>
+  </modules>
 
 </project>
