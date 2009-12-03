@@ -16,9 +16,6 @@
 -->
 <sv:node 
   xmlns:sv="http://www.jcp.org/jcr/sv/1.0" 
-  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-  xmlns:jcr="http://www.jcp.org/jcr/1.0" 
-  xmlns:hippo="http://www.onehippo.org/jcr/hippo/nt/2.0" 
   sv:name="hippo:initialize">
 
   <sv:property sv:name="jcr:primaryType" sv:type="Name">
