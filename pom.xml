@@ -12,7 +12,7 @@
 
   <properties>
     <hst.version>2.04.00</hst.version>
-    <hippoecm.version>[2.09.00,2.10.00]</hippoecm.version>
+    <hippoecm.version>2.10.00</hippoecm.version>
   </properties>
 
   <developers>
