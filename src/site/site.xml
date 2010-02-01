@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Hippo Forge Properties Plugin">
+  
+  <publishDate format="d MMMM yyyy"/>
+  
+  <bannerLeft>
+    <name>Hippo Forge Properties Plugin</name>
+  </bannerLeft>
+  
+  <body>
+  
+    <menu name="Home">
+      <item name="Home" href="index.html" />    
+      <item name="Screenshots" href="screenshots.html" />    
+      <item name="Release Notes" href="release-notes.html" />
+    </menu>
+        
+   	<menu name="Usage">
+   	  <item name="Installation" href="install.html" />
+   	  <item name="HST Site code" href="sitecode.html" />
+   	  <item name="Build from source" href="build-from-source.html" />
+   	</menu>
+   	
+    <menu ref="reports"/>
+    
+  </body>
+  
+</project>

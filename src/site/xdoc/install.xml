@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<document>
+  <properties>
+    <title>How to install properties plugin</title>
+    <subtitle>Document on how to install the properties plugin</subtitle>
+  </properties>
+  <body>
+    <section name="How to install the properties plugin">
+      <subsection name="Prerequisites">
+        <p>
+          These instruction assumes that you have an HST project based on the HST archetype, i.e.
+          a Maven multiproject consisting of at least three submodules: cms, site and content.
+        </p>
+      </subsection>
+      <subsection name="Maven 2 repository">
+        <p>Add this repository to your root pom.xml:</p>
+        <source><![CDATA[
+  <repository>
+    <id>hippo.forge.properties</id>
+    <name>Hippo Forge Properties</name>
+    <url>http://forge.onehippo.org/svn/properties/maven2/</url>
+  </repository>]]></source>
+      </subsection>  
+        
+      <subsection name="Installation in CMS/Repository">
+        <ol>
+          <li>
+            <p>Add this dependencies to the pom.xml of your <i>cms</i> module:</p>
+            <source><![CDATA[
+  <dependency>
+    <groupId>org.onehippo.forge.selectionplugins</groupId>
+    <artifactId>properties-addon-repository</artifactId>
+    <version>2.02.00</version>
+  </dependency>]]></source>
+          </li>
+          <li>
+            <p>
+              Rebuild your project. After startup, you should have the availability
+              of a Properties document type.
+            </p>
+          </li>
+        </ol>
+      </subsection>
+      <subsection name="Installation in HST site">
+        <ol>
+          <li>
+            <p>Add these dependencies the pom.xml of your <i>site</i> module:</p>
+            <source><![CDATA[
+  <dependency>
+    <groupId>org.onehippo.forge</groupId>
+    <artifactId>properties-hst-api</artifactId>
+    <version>2.02.00</version>
+  </dependency>
+  
+  <dependency>
+    <groupId>org.onehippo.forge</groupId>
+    <artifactId>properties-hst-client</artifactId>
+    <version>2.02.00</version>
+  </dependency>]]></source>
+          </li>
+          <li>
+            <p>In the web.xml, make sure HstContainerServlet has uncommented init-params
+              clientComponentManagerClass and clientComponentManagerConfigurations.</p>
+          </li>
+          <li>
+            <p>The properties component contains a manager object that provides an API by 
+              which to retrieve properties documents from repository. To create such a manager, 
+              add this part to the Spring configuration file site/src/main/resources/META-INF/client-assembly/base.xml:</p>
+            <source><![CDATA[
+  <bean id="org.onehippo.forge.properties.api.PropertiesManager" 
+        class="org.onehippo.forge.properties.impl.PropertiesManagerImpl">
+    <property name="defaultDocumentLocation" value="/construction/labels"/>
+    <property name="defaultDocumentName" value="common"/>
+  </bean>]]></source>
+            <p>NB You can also provide your own custom manager. 
+              Above configuration will by default search for properties documents in the 
+              /construction/labels folder by the name of common, but the API provides ways to do 
+              more. See PropertiesManager.java in the hst-api module.</p>  
+          </li>
+          <li>
+            <p>Add these beans in the HST file site/src/main/webapp/WEB-INF/beans-annotated-classes.xml</p>
+            <source><![CDATA[
+  <hst-content-beans>
+    <annotated-class>
+      org.onehippo.forge.properties.annotated.Property
+    </annotated-class>
+    <annotated-class>
+      org.onehippo.forge.properties.annotated.Properties
+    </annotated-class>
+  </hst-content-beans>]]></source>
+          </li>
+        </ol>  
+        <p>For usage in <a href="sitecode.html">Java/JSP code, see here</a></p>
+      </subsection>  
+    </section>
+  </body>
+</document>

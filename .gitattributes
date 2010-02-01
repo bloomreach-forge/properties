@@ -6,7 +6,6 @@ addon/repository/.settings/org.eclipse.jdt.core.prefs -text svneol=unset#text/pl
 addon/repository/pom.xml svneol=native#text/plain
 addon/repository/src/main/resources/namespace.xml -text
 addon/repository/src/main/resources/properties.cnd -text
-documentation/usage.html svneol=native#text/plain
 hst-api/pom.xml -text
 hst-api/src/main/java/org/onehippo/forge/properties/api/PropertiesManager.java svneol=native#text/plain
 hst/pom.xml svneol=native#text/plain
@@ -15,3 +14,13 @@ hst/src/main/java/org/onehippo/forge/properties/annotated/Property.java svneol=n
 hst/src/main/java/org/onehippo/forge/properties/bean/PropertiesBean.java svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/impl/PropertiesManagerImpl.java svneol=native#text/plain
 /pom.xml -text
+src/site/resources/images/cms.jpg -text svneol=unset#image/jpeg
+src/site/resources/images/site.jpg -text svneol=unset#image/jpeg
+src/site/resources/images/thm_cms.jpg -text svneol=unset#image/jpeg
+src/site/site.xml svneol=native#text/plain
+src/site/xdoc/build-from-source.xml -text
+src/site/xdoc/index.xml -text
+src/site/xdoc/install.xml -text
+src/site/xdoc/release-notes.xml svneol=native#text/plain
+src/site/xdoc/screenshots.xml -text
+src/site/xdoc/sitecode.xml -text

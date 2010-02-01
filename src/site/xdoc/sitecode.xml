@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<document>
+  <properties>
+    <title>How to install properties plugin</title>
+    <subtitle>Document on how to install the properties plugin</subtitle>
+  </properties>
+  <body>
+    <section name="Usage in a HST site">
+      <p>
+        HST components should read documents and prepare data for JSPs. This can be done 
+        manually in Java code or using the Properties Manager.
+      </p>
+      <subsection name="Use the PropertiesManager in a HST component">
+        <p>
+          This is an example of how properties documents are read using the manager. 
+          The manager will look for properties with configured name or the default name from 
+          current document's level and then upwards, and then at the default location. 
+          If multiple documents are found they are merged into one map. 
+        </p>
+        <source><![CDATA[
+  // get the manager  
+  ComponentManager componentManager = (ComponentManager) this.getDefaultClientComponentManager();
+  PropertiesManager propertiesManager = componentManager.getComponent(PropertiesManager.class.getName());
+         
+  // retrieve labels documents
+  Map<String, String> labels;
+  <String> labelsName = this.getParameter("labelsName", request);
+  if (labelsName != null) {
+      labels = this.propertiesManager.getProperties(new String[]{labelsName}, 
+          this.getContentBean(request), this.getSiteContentBaseBean(request));
+  } 
+  else {
+      labels = this.propertiesManager.getProperties(this.getContentBean(request), 
+          this.getSiteContentBaseBean(request));
+  }
+
+  request.setAttribute("labels", labels);]]></source>
+      </subsection>
+      <subsection name="Manual retrieval of properties in a HST component">
+        <p>
+          This is an example of how a properties document containing labels is read 
+          from a configured path relative to current document. This is typically 
+          something that you can do in your project's base component. 
+        </p>
+        <source><![CDATA[
+  String labelsPath = this.getParameter("labelsPath", request);
+  Properties labels = (Properties) this.getContentBean(request).getBean(labelsPath);
+  request.setAttribute("labels", new PropertiesBean(labels));]]></source>
+      </subsection>
+      <subsection name="Reading properties in JSP files">
+        <p>
+          Because the bean set at the request is a Map, it can be read easily using expression 
+          language. This is an example of reading labels:
+        </p>
+        <source><![CDATA[
+  <div id="header">
+      <span>${labels['header.title']}</span>
+      <span>${labels['header.subtitle']}</span>
+  </div>]]></source>
+      </subsection>
+    </section>
+  </body>
+</document>
