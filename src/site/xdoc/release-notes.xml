@@ -9,8 +9,23 @@
       <subsection name="2.02.00">
         <ul>
           <li>
-            Properties
+            Runs on ECM 2.10.00 and up.
           </li>
+        </ul>
+      </subsection>
+      <subsection name="2.01.00">
+        <ul>
+          <li>
+            Runs on ECM 2.09.00.
+          </li>
+        </ul>
+      </subsection>
+      <subsection name="1.0x.xx">
+        <ul>
+          <li>
+            Properties Component allowing to create simple CMS documents 
+            having a flat list of name/value pairs</li>
+          <li>Easy locating and using the properties documents in a HST site frontend.</li>
         </ul>
       </subsection>
     </section>
