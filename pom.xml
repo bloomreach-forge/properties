@@ -138,7 +138,6 @@
     <module>addon</module>
     <module>hst-api</module>
     <module>hst</module>
-    <module>cms</module>
   </modules>
 
 </project>
