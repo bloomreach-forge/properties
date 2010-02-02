@@ -67,4 +67,12 @@ public interface PropertiesManager  {
      * @param siteContentBaseBean the bean gotten from component.getSiteContentBaseBean
      */
     Map<String, String> getProperties(final String[] names, final HippoBean contentBean, final HippoBean siteContentBaseBean);
+    
+    
+//    void invalidate(final String path);
+    
+    /**
+     * Invalidate all caching going on
+     */
+//    void invalidateAll();
 }

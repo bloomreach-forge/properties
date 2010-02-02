@@ -152,7 +152,6 @@
 
   <modules>
     <module>addon</module>
-    <module>hst-api</module>
     <module>hst</module>
   </modules>
 
