@@ -38,12 +38,6 @@
       <groupId>org.onehippo.ecm.hst</groupId>
       <artifactId>hst-content-beans</artifactId>
     </dependency>
-
-    <dependency>
-      <groupId>org.onehippo.forge</groupId>
-      <artifactId>properties-hst-api</artifactId>
-      <version>${pom.version}</version>
-    </dependency>
   </dependencies>
 
   <build>
