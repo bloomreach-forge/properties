@@ -30,7 +30,7 @@
   <dependency>
     <groupId>org.onehippo.forge.selectionplugins</groupId>
     <artifactId>properties-addon-repository</artifactId>
-    <version>2.02.00</version>
+    <version>2.03.00</version>
   </dependency>]]></source>
           </li>
           <li>
@@ -44,17 +44,20 @@
       <subsection name="Installation in HST site">
         <ol>
           <li>
-            <p>Add these dependencies the pom.xml of your <i>site</i> module:</p>
+            <p>Add this dependencies the pom.xml of your <i>site</i> module:</p>
+            <source><![CDATA[
+  <dependency>
+    <groupId>org.onehippo.forge</groupId>
+    <artifactId>properties-hst-client</artifactId>
+    <version>2.03.00</version>
+  </dependency>]]></source>
+          </li>
+          <li>
+            <p>When using version <b>2.02.00 or lower</b>, also include the artifact properties-hst-api</p>
             <source><![CDATA[
   <dependency>
     <groupId>org.onehippo.forge</groupId>
     <artifactId>properties-hst-api</artifactId>
-    <version>2.02.00</version>
-  </dependency>
-  
-  <dependency>
-    <groupId>org.onehippo.forge</groupId>
-    <artifactId>properties-hst-client</artifactId>
     <version>2.02.00</version>
   </dependency>]]></source>
           </li>
@@ -71,8 +74,11 @@
         class="org.onehippo.forge.properties.impl.PropertiesManagerImpl">
     <property name="defaultDocumentLocation" value="/construction/labels"/>
     <property name="defaultDocumentName" value="common"/>
-  </bean>]]></source>
-            <p>NB You can also provide your own custom manager. 
+    </bean>]]></source>
+            <p>You may want to set up caching by using <b>org.onehippo.forge.properties.impl.CachingPropertiesManagerImpl</b>.
+              Please see the properties-demo project on how to set up the accompanying <b>PropertiesEventListener</b> 
+              that invalidates that cache.</p>
+            <p>NB: You can also provide your own custom manager. 
               Above configuration will by default search for properties documents in the 
               /construction/labels folder by the name of common, but the API provides ways to do 
               more. See PropertiesManager.java in the hst-api module.</p>  

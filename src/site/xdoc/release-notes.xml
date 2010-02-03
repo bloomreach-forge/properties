@@ -9,8 +9,16 @@
       <subsection name="2.03.00">
         <ul>
           <li>
-            Added a CachingPropertiesManager plus a PropertiesEventListener for 
+            Introduction of a CachingPropertiesManager plus a PropertiesEventListener for 
             invalidation of the cache, both to be set up in the site's Spring configuration.
+          </li>
+          <li>
+            The artifacts 'properties-hst-api' and 'properties-hst-client' are merged, 
+            leaving only 'properties-hst-client'.
+          </li>
+          <li>
+            Rename of the former PropertiesBean to PropertiesMap, plus introduction of 
+            a new PropertiesBean that can be used to cache properties documents.
           </li>
         </ul>
       </subsection>
