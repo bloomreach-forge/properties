@@ -6,6 +6,14 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="2.03.00">
+        <ul>
+          <li>
+            Added a CachingPropertiesManager plus a PropertiesEventListener for 
+            invalidation of the cache, both to be set up in the site's Spring configuration.
+          </li>
+        </ul>
+      </subsection>
       <subsection name="2.02.00">
         <ul>
           <li>
