@@ -9,6 +9,7 @@ import org.hippoecm.hst.content.beans.standard.HippoBean;
 import org.onehippo.forge.properties.annotated.Properties;
 import org.onehippo.forge.properties.api.PropertiesManager;
 import org.onehippo.forge.properties.bean.PropertiesBean;
+import org.onehippo.forge.properties.bean.PropertiesMap;
 
 public class PropertiesManagerImpl implements PropertiesManager {
 
@@ -63,7 +64,7 @@ public class PropertiesManagerImpl implements PropertiesManager {
 			throw new IllegalArgumentException("argument 'siteContentBaseBean' is null");
 		}
 		
-		List<Properties> documents = new ArrayList<Properties>();
+		List<PropertiesBean> beans = new ArrayList<PropertiesBean>();
 		
 		if (contentBean != null) {
 
@@ -71,8 +72,8 @@ public class PropertiesManagerImpl implements PropertiesManager {
 			HippoBean currentBean = contentBean;
 			while (currentBean != null && !currentBean.getPath().endsWith("hst:content")) {
 		
-				List<Properties> docs = getDocuments(currentBean, names);
-				documents.addAll(docs);
+				List<PropertiesBean> pathBeans = getPropertiesBeans(currentBean, names);
+				beans.addAll(pathBeans);
 				
 				currentBean = currentBean.getParentBean();
 		    }
@@ -80,12 +81,18 @@ public class PropertiesManagerImpl implements PropertiesManager {
 
 		// look at default location
 		HippoBean defaultLocation = getDefaultLocation(siteContentBaseBean);
-		List<Properties> defaultDocs = getDocuments(defaultLocation, names);
-		documents.addAll(defaultDocs);
+		List<PropertiesBean> defaultBeans = getPropertiesBeans(defaultLocation, names);
+		beans.addAll(defaultBeans);
 
-		// merge docs to one bean
-		return new PropertiesBean(documents);
+		// merge beans to one map
+		return new PropertiesMap(beans);
 	}
+
+    // javadoc from interface
+    public void invalidate(final String canonicalPath) {
+        throw new UnsupportedOperationException("Invalidation not supported. Use "
+                + CachingPropertiesManagerImpl.class.getName() + " instead");
+    }
 
 	// setter for Spring injection
 	public void setDefaultDocumentLocation(final String defaultDocumentLocation) {
@@ -106,17 +113,28 @@ public class PropertiesManagerImpl implements PropertiesManager {
 		}
 	}
 
-	private List<Properties> getDocuments(HippoBean location, String[] names) {
+	private List<PropertiesBean> getPropertiesBeans(HippoBean location, String[] names) {
 
-		List<Properties> list = new ArrayList<Properties>();
+		List<PropertiesBean> list = new ArrayList<PropertiesBean>();
 		for (int i = 0; i < names.length; i++) {
-			HippoBean bean = location.getBean(names[i]);
-			if (bean instanceof Properties) {
-				list.add((Properties) bean);
-			}
+		    
+		    PropertiesBean propertiesBean = getPropertiesBean(location, names[i]);
+            if (propertiesBean != null) {
+                list.add(propertiesBean);
+            }    
 		}
 		
 		return list;
 	}
 
+	/**
+	 * Get a serializable PropertiesBean by location and name.
+	 */
+    protected PropertiesBean getPropertiesBean(HippoBean location, String name) {
+        HippoBean doc = location.getBean(name);
+        if (doc instanceof Properties) {
+            return new PropertiesBean((Properties) doc);
+        }
+        return null;
+    }
 }
