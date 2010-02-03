@@ -12,6 +12,7 @@
   <properties>
     <hst.version>2.04.00</hst.version>
     <hippoecm.version>2.10.00</hippoecm.version>
+    <javax.jcr.version>1.0</javax.jcr.version>
   </properties>
 
   <developers>
@@ -51,15 +52,29 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>javax.jcr</groupId>
+        <artifactId>jcr</artifactId>
+        <version>${javax.jcr.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.hippoecm</groupId>
+        <artifactId>hippo-ecm-api</artifactId>
+        <version>${hippoecm.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
         <groupId>org.onehippo.ecm.hst</groupId>
         <artifactId>hst-api</artifactId>
         <version>${hst.version}</version>
+        <scope>provided</scope>
         <type>jar</type>
       </dependency>
       <dependency>
         <groupId>org.onehippo.ecm.hst</groupId>
         <artifactId>hst-content-beans</artifactId>
         <version>${hst.version}</version>
+        <scope>provided</scope>
         <type>jar</type>
       </dependency>
     </dependencies>

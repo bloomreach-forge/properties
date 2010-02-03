@@ -38,7 +38,7 @@ public interface PropertiesManager  {
      * Get the properties from the documents with the given names at the default 
      * location. If multiple documents are found they are merged into one map.
      *
-     * @param the names of the properties documents to search for
+     * @param names the names of the properties documents to search for
      * @param siteContentBaseBean the bean gotten from component.getSiteContentBaseBean
      */
     Map<String, String> getProperties(final String[] names, final HippoBean siteContentBaseBean);
@@ -62,17 +62,19 @@ public interface PropertiesManager  {
      * current bean's level and then upwards, and then at the default location. 
      * If multiple documents are found they are merged into one map.
      * 
-     * @param the names of the properties documents to search for
+     * @param names the names of the properties documents to search for
      * @param contentBean the current bean for the component, usually gotten from component.getContentBean 
      * @param siteContentBaseBean the bean gotten from component.getSiteContentBaseBean
      */
     Map<String, String> getProperties(final String[] names, final HippoBean contentBean, final HippoBean siteContentBaseBean);
     
     
-//    void invalidate(final String path);
-    
     /**
-     * Invalidate all caching going on
+     * Invalidate a cached document based on the canonical path of a labels 
+     * document, or invalidate all if the path is null.
+     * 
+     * @param path the path of a labels document, relative to the site content 
+     *       base bean, or null. 
      */
-//    void invalidateAll();
+    void invalidate(final String canonicalPath);
 }
