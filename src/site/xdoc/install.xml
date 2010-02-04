@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <document>
   <properties>
-    <title>How to install properties plugin</title>
-    <subtitle>Document on how to install the properties plugin</subtitle>
+    <title>How to install properties component</title>
+    <subtitle>Document on how to install the properties component</subtitle>
   </properties>
   <body>
     <section name="How to install the properties plugin">
@@ -81,7 +81,7 @@
             <p>NB: You can also provide your own custom manager. 
               Above configuration will by default search for properties documents in the 
               /construction/labels folder by the name of common, but the API provides ways to do 
-              more. See PropertiesManager.java in the hst-api module.</p>  
+              more. See the PropertiesManager.java interface.</p>  
           </li>
           <li>
             <p>Add these beans in the HST file site/src/main/webapp/WEB-INF/beans-annotated-classes.xml</p>
