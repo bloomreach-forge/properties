@@ -5,7 +5,7 @@
     <subtitle>Document on how to install the properties component</subtitle>
   </properties>
   <body>
-    <section name="How to install the properties plugin">
+    <section name="How to install the properties component">
       <subsection name="Prerequisites">
         <p>
           These instruction assumes that you have an HST project based on the HST archetype, i.e.
