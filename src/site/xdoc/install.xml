@@ -25,7 +25,7 @@
       <subsection name="Installation in CMS/Repository">
         <ol>
           <li>
-            <p>Add this dependencies to the pom.xml of your <i>cms</i> module:</p>
+            <p>Add this dependency to the pom.xml of your <i>cms</i> module:</p>
             <source><![CDATA[
   <dependency>
     <groupId>org.onehippo.forge</groupId>
@@ -44,7 +44,7 @@
       <subsection name="Installation in HST site">
         <ol>
           <li>
-            <p>Add this dependencies the pom.xml of your <i>site</i> module:</p>
+            <p>Add this dependency the pom.xml of your <i>site</i> module:</p>
             <source><![CDATA[
   <dependency>
     <groupId>org.onehippo.forge</groupId>
