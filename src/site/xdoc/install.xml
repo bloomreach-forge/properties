@@ -44,7 +44,7 @@
       <subsection name="Installation in HST site">
         <ol>
           <li>
-            <p>Add this dependency the pom.xml of your <i>site</i> module:</p>
+            <p>Add this dependency to the pom.xml of your <i>site</i> module:</p>
             <source><![CDATA[
   <dependency>
     <groupId>org.onehippo.forge</groupId>
@@ -53,7 +53,7 @@
   </dependency>]]></source>
           </li>
           <li>
-            <p>When using version <b>2.02.00 or lower</b>, also include the artifact properties-hst-api</p>
+            <p>When using version <b>2.02.00 or lower</b>, also include the artifact properties-hst-api:</p>
             <source><![CDATA[
   <dependency>
     <groupId>org.onehippo.forge</groupId>
