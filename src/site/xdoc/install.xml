@@ -28,7 +28,7 @@
             <p>Add this dependencies to the pom.xml of your <i>cms</i> module:</p>
             <source><![CDATA[
   <dependency>
-    <groupId>org.onehippo.forge.selectionplugins</groupId>
+    <groupId>org.onehippo.forge</groupId>
     <artifactId>properties-addon-repository</artifactId>
     <version>2.03.00</version>
   </dependency>]]></source>
