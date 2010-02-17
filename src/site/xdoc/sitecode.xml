@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <document>
   <properties>
-    <title>How to install properties plugin</title>
-    <subtitle>Document on how to install the properties plugin</subtitle>
+    <title>Usage in a HST site</title>
   </properties>
   <body>
     <section name="Usage in a HST site">
@@ -45,7 +44,7 @@
         <source><![CDATA[
   String labelsPath = this.getParameter("labelsPath", request);
   Properties labels = (Properties) this.getContentBean(request).getBean(labelsPath);
-  request.setAttribute("labels", new PropertiesBean(labels));]]></source>
+  request.setAttribute("labels", new PropertiesMap(new PropertiesBean(labels));]]></source>
       </subsection>
       <subsection name="Reading properties in JSP files">
         <p>

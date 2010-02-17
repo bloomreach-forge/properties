@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <document>
   <properties>
-    <title>How to install properties plugin</title>
-    <subtitle>Document on how to install the properties plugin</subtitle>
+    <title>How to install properties component</title>
+    <subtitle>Document on how to install the properties component</subtitle>
   </properties>
   <body>
-    <section name="How to install the properties plugin">
+    <section name="How to install the properties component">
       <subsection name="Prerequisites">
         <p>
           These instruction assumes that you have an HST project based on the HST archetype, i.e.
@@ -25,12 +25,12 @@
       <subsection name="Installation in CMS/Repository">
         <ol>
           <li>
-            <p>Add this dependencies to the pom.xml of your <i>cms</i> module:</p>
+            <p>Add this dependency to the pom.xml of your <i>cms</i> module:</p>
             <source><![CDATA[
   <dependency>
-    <groupId>org.onehippo.forge.selectionplugins</groupId>
+    <groupId>org.onehippo.forge</groupId>
     <artifactId>properties-addon-repository</artifactId>
-    <version>2.02.00</version>
+    <version>2.03.00</version>
   </dependency>]]></source>
           </li>
           <li>
@@ -44,17 +44,20 @@
       <subsection name="Installation in HST site">
         <ol>
           <li>
-            <p>Add these dependencies the pom.xml of your <i>site</i> module:</p>
+            <p>Add this dependency to the pom.xml of your <i>site</i> module:</p>
+            <source><![CDATA[
+  <dependency>
+    <groupId>org.onehippo.forge</groupId>
+    <artifactId>properties-hst-client</artifactId>
+    <version>2.03.00</version>
+  </dependency>]]></source>
+          </li>
+          <li>
+            <p>When using version <b>2.02.00 or lower</b>, also include the artifact properties-hst-api:</p>
             <source><![CDATA[
   <dependency>
     <groupId>org.onehippo.forge</groupId>
     <artifactId>properties-hst-api</artifactId>
-    <version>2.02.00</version>
-  </dependency>
-  
-  <dependency>
-    <groupId>org.onehippo.forge</groupId>
-    <artifactId>properties-hst-client</artifactId>
     <version>2.02.00</version>
   </dependency>]]></source>
           </li>
@@ -71,11 +74,14 @@
         class="org.onehippo.forge.properties.impl.PropertiesManagerImpl">
     <property name="defaultDocumentLocation" value="/construction/labels"/>
     <property name="defaultDocumentName" value="common"/>
-  </bean>]]></source>
-            <p>NB You can also provide your own custom manager. 
+    </bean>]]></source>
+            <p>You may want to set up caching by using <b>org.onehippo.forge.properties.impl.CachingPropertiesManagerImpl</b>.
+              Please see the properties-demo project on how to set up the accompanying <b>PropertiesEventListener</b> 
+              that invalidates that cache.</p>
+            <p>NB: You can also provide your own custom manager. 
               Above configuration will by default search for properties documents in the 
               /construction/labels folder by the name of common, but the API provides ways to do 
-              more. See PropertiesManager.java in the hst-api module.</p>  
+              more. See the PropertiesManager.java interface.</p>  
           </li>
           <li>
             <p>Add these beans in the HST file site/src/main/webapp/WEB-INF/beans-annotated-classes.xml</p>

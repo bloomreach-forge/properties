@@ -8,9 +8,9 @@
   </properties>
   <body>
     <section name="Introduction">
-        <subsection name="What is the properties plugin?">
+        <subsection name="What is the properties component?">
             <p>
-              The Properties Component allows you to create simple CMS documents 
+              The properties component allows you to create simple CMS documents 
               having a flat list of name/value pairs. It also provides easy locating 
               and using these documents in your HST site frontend.
             </p>
@@ -23,7 +23,7 @@
         </subsection>
         <subsection name="Project status">
           <p>
-            The latest version of propert is 2.02.00 running on Hippo ECM 2.10.00 and up.
+            The latest version of property component is 2.03.00 running on Hippo ECM 2.10.00 and up.
           </p>
           <table border="1" cellpadding="0" cellspacing="5">
             <tbody><tr>
@@ -32,21 +32,22 @@
               <th>HST</th>
             </tr>
               <tr>
-                <td>1.01.xx, 1.02.xx</td>
+                <td>1.01.00, 1.02.00, 1.02.01</td>
                 <td>2.06.xx</td>
                 <td>2.03.14+</td>
               </tr>
               <tr>
-                <td>2.01.xx</td>
+                <td>2.01.00</td>
                 <td>2.09.xx</td>
                 <td>2.04.xx</td>
               </tr>
               <tr>
-                <td>2.02.xx</td>
+                <td>2.02.00, 2.03.00</td>
                 <td>2.10.xx</td>
                 <td>2.04.xx</td>
               </tr>
-            </tbody></table>
+            </tbody>
+          </table>
           <p>
             See the <a href="http://forge.onehippo.org/tracker/?group_id=45">project tracker</a>
             for a list of bugs and feature requests.

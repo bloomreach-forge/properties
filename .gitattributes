@@ -10,8 +10,12 @@ hst/pom.xml svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/annotated/Properties.java svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/annotated/Property.java svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/api/PropertiesManager.java svneol=native#text/plain
-hst/src/main/java/org/onehippo/forge/properties/bean/PropertiesBean.java svneol=native#text/plain
+hst/src/main/java/org/onehippo/forge/properties/bean/PropertiesBean.java -text
+hst/src/main/java/org/onehippo/forge/properties/bean/PropertiesMap.java svneol=native#text/plain
+hst/src/main/java/org/onehippo/forge/properties/bean/PropertyBean.java svneol=native#text/plain
+hst/src/main/java/org/onehippo/forge/properties/impl/CachingPropertiesManagerImpl.java svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/impl/PropertiesManagerImpl.java svneol=native#text/plain
+hst/src/main/java/org/onehippo/forge/properties/listener/PropertiesEventListener.java svneol=native#text/plain
 /pom.xml -text
 src/site/resources/images/cms.jpg -text svneol=unset#image/jpeg
 src/site/resources/images/site.jpg -text svneol=unset#image/jpeg

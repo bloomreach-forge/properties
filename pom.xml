@@ -6,12 +6,13 @@
   <groupId>org.onehippo.forge</groupId>
 
   <artifactId>properties</artifactId>
-  <version>2.02.01-SNAPSHOT</version>
+  <version>2.04.00</version>
   <packaging>pom</packaging>
 
   <properties>
-    <hst.version>2.04.00</hst.version>
-    <hippoecm.version>2.10.00</hippoecm.version>
+    <hst.version>2.04.03</hst.version>
+    <hippoecm.version>2.12.02</hippoecm.version>
+    <javax.jcr.version>1.0</javax.jcr.version>
   </properties>
 
   <developers>
@@ -23,9 +24,9 @@
   </developers>
 
   <scm>
-    <connection>scm:svn:http://forge.onehippo.org/svn/properties/properties/trunk</connection>
-    <developerConnection>scm:svn:http://forge.onehippo.org/svn/properties/properties/trunk</developerConnection>
-    <url>http://forge.onehippo.org/svn/properties/properties/trunk</url>
+    <connection>scm:svn:http://forge.onehippo.org/svn/properties/properties/tags/properties-2.04.00</connection>
+    <developerConnection>scm:svn:http://forge.onehippo.org/svn/properties/properties/tags/properties-2.04.00</developerConnection>
+    <url>http://forge.onehippo.org/svn/properties/properties/tags/properties-2.04.00</url>
   </scm>
 
   <distributionManagement>
@@ -51,15 +52,29 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>javax.jcr</groupId>
+        <artifactId>jcr</artifactId>
+        <version>${javax.jcr.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.hippoecm</groupId>
+        <artifactId>hippo-ecm-api</artifactId>
+        <version>${hippoecm.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
         <groupId>org.onehippo.ecm.hst</groupId>
         <artifactId>hst-api</artifactId>
         <version>${hst.version}</version>
+        <scope>provided</scope>
         <type>jar</type>
       </dependency>
       <dependency>
         <groupId>org.onehippo.ecm.hst</groupId>
         <artifactId>hst-content-beans</artifactId>
         <version>${hst.version}</version>
+        <scope>provided</scope>
         <type>jar</type>
       </dependency>
     </dependencies>
