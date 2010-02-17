@@ -4,11 +4,12 @@
 <'mix'='http://www.jcp.org/jcr/mix/1.0'>
 <'hippo'='http://www.onehippo.org/jcr/hippo/nt/2.0'>
 <'hippostd'='http://www.onehippo.org/jcr/hippostd/nt/2.0'>
-<'properties'='http://www.onehippo.org/properties/nt/2.0'>
+<'hippostdpubwf'='http://www.onehippo.org/jcr/hippostdpubwf/nt/1.0'>
+<'properties'='http://www.onehippo.org/properties/nt/2.1'>
 
 [properties:property]
   - properties:name (string) mandatory
   - properties:value (string) 
 
-[properties:properties] > hippo:document, hippostd:publishable, hippostd:publishableSummary
+[properties:properties] > hippo:document, hippostdpubwf:document, hippostd:publishableSummary
 + properties:property (properties:property) multiple

@@ -10,8 +10,8 @@
   <packaging>pom</packaging>
 
   <properties>
-    <hst.version>2.04.00</hst.version>
-    <hippoecm.version>2.10.00</hippoecm.version>
+    <hst.version>2.04.03</hst.version>
+    <hippoecm.version>2.12.02</hippoecm.version>
     <javax.jcr.version>1.0</javax.jcr.version>
   </properties>
 
