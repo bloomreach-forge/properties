@@ -6,6 +6,13 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="2.02.00">
+        <ul>
+          <li>
+            Runs on ECM 2.12.02 and up, involving a namespace bump to version 2.1.
+          </li>
+        </ul>
+      </subsection>
       <subsection name="2.03.00">
         <ul>
           <li>
