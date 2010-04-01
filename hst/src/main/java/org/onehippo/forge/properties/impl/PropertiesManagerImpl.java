@@ -105,12 +105,21 @@ public class PropertiesManagerImpl implements PropertiesManager {
 	}
 
 	private HippoBean getDefaultLocation(HippoBean siteContentBaseBean) {
+	    
+	    HippoBean defaultLocation;
 		if (this.defaultDocumentLocation.startsWith("/")) {
-			return siteContentBaseBean.getBean(this.defaultDocumentLocation.substring(1));
+		    defaultLocation = siteContentBaseBean.getBean(this.defaultDocumentLocation.substring(1));
 		}
 		else {
-			return siteContentBaseBean.getBean(this.defaultDocumentLocation);
+		    defaultLocation = siteContentBaseBean.getBean(this.defaultDocumentLocation);
 		}
+        
+		if (defaultLocation == null) {
+            throw new IllegalStateException("Default location '" + this.defaultDocumentLocation + 
+                    "' is not a folder in the repository");
+        }
+		
+        return defaultLocation;
 	}
 
 	private List<PropertiesBean> getPropertiesBeans(HippoBean location, String[] names) {
@@ -131,6 +140,11 @@ public class PropertiesManagerImpl implements PropertiesManager {
 	 * Get a serializable PropertiesBean by location and name.
 	 */
     protected PropertiesBean getPropertiesBean(HippoBean location, String name) {
+        
+        if (location == null) {
+            throw new IllegalArgumentException("Location bean is null");
+        }
+
         HippoBean doc = location.getBean(name);
         if (doc instanceof Properties) {
             return new PropertiesBean((Properties) doc);

@@ -26,6 +26,10 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
     @Override
     protected PropertiesBean getPropertiesBean(HippoBean location, String name) {
 
+        if (location == null) {
+            throw new IllegalArgumentException("Location bean is null");
+        }
+        
         try {
             // NB: constructing a canonical path with handle/document
             String key = ((HippoNode) location.getNode()).getCanonicalNode().getPath() 
