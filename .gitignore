@@ -1,7 +1,11 @@
 /.classpath
 /.project
 /.settings
+addon/.classpath
+addon/.project
+addon/.settings
 addon/repository/.classpath
+addon/repository/.project
 addon/repository/.settings
 addon/repository/target
 addon/target
