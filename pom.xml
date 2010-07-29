@@ -39,6 +39,11 @@
       <id>jhoffman</id>
       <email>j.hoffman@onehippo.com</email>
     </developer>
+    <developer>
+      <name>Jasha Joachimsthal</name>
+      <id>jjoachimsthal</id>
+      <email>j.joachimsthal@onehippo.com</email>
+    </developer>
   </developers>
 
   <scm>
