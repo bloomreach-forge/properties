@@ -26,6 +26,7 @@
           <li>
             Runs on Hippo CMS 7.4 (2.16.00 and up), involving a namespace bump to version 2.2.
           </li>
+          <li>The Maven groupId of all artifacts has been changed to org.onehippo.forge.properties</li>
         </ul>
       </subsection>
       <subsection name="2.04.00">
