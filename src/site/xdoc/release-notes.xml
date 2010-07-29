@@ -21,10 +21,17 @@
   </properties>
   <body>
     <section name="Release Notes">
-      <subsection name="2.02.00">
+      <subsection name="2.05.00">
         <ul>
           <li>
-            Runs on ECM 2.12.02 and up, involving a namespace bump to version 2.1.
+            Runs on Hippo CMS 7.4 (2.16.00 and up), involving a namespace bump to version 2.2.
+          </li>
+        </ul>
+      </subsection>
+      <subsection name="2.04.00">
+        <ul>
+          <li>
+            Runs on Hippo CMS 7.3 (2.12.02 and up), involving a namespace bump to version 2.1.
           </li>
         </ul>
       </subsection>

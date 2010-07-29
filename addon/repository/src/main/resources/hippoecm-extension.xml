@@ -14,12 +14,13 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<sv:node 
-  xmlns:sv="http://www.jcp.org/jcr/sv/1.0" 
-  sv:name="hippo:initialize">
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" sv:name="hippo:initialize">
 
   <sv:property sv:name="jcr:primaryType" sv:type="Name">
     <sv:value>hippo:initializefolder</sv:value>
+  </sv:property>
+  <sv:property sv:name="hippo:version" sv:type="String">
+    <sv:value>v12a-properties</sv:value>
   </sv:property>
 
   <sv:node sv:name="properties">
@@ -30,7 +31,7 @@
       <sv:value>10100</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:namespace" sv:type="String">
-      <sv:value>http://www.onehippo.org/properties/nt/2.1</sv:value>
+      <sv:value>http://www.onehippo.org/properties/nt/2.2</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:nodetypesresource" sv:type="String">
       <sv:value>properties.cnd</sv:value>

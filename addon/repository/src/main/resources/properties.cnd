@@ -5,7 +5,7 @@
 <'hippo'='http://www.onehippo.org/jcr/hippo/nt/2.0'>
 <'hippostd'='http://www.onehippo.org/jcr/hippostd/nt/2.0'>
 <'hippostdpubwf'='http://www.onehippo.org/jcr/hippostdpubwf/nt/1.0'>
-<'properties'='http://www.onehippo.org/properties/nt/2.1'>
+<'properties'='http://www.onehippo.org/properties/nt/2.2'>
 
 [properties:property]
   - properties:name (string) mandatory

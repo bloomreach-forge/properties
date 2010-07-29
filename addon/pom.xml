@@ -16,13 +16,13 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
  <parent>
-    <groupId>org.onehippo.forge</groupId>
+    <groupId>org.onehippo.forge.properties</groupId>
     <artifactId>properties</artifactId>
     <version>2.05.00-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.onehippo.forge</groupId>
+  <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties-addons</artifactId>
   <name>Hippo Forge Properties Addons</name>
 
