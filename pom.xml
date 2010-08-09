@@ -21,7 +21,7 @@
   <groupId>org.onehippo.forge.properties</groupId>
 
   <artifactId>properties</artifactId>
-  <version>2.05.01-SNAPSHOT</version>
+  <version>2.05.01</version>
   <packaging>pom</packaging>
 
   <properties>
@@ -47,9 +47,9 @@
   </developers>
 
   <scm>
-    <connection>scm:svn:http://forge.onehippo.org/svn/properties/properties/trunk</connection>
-    <developerConnection>scm:svn:http://forge.onehippo.org/svn/properties/properties/trunk</developerConnection>
-    <url>http://forge.onehippo.org/svn/properties/properties/trunk</url>
+    <connection>scm:svn:http://forge.onehippo.org/svn/properties/properties/tags/Release-Properties-v2_05_01</connection>
+    <developerConnection>scm:svn:http://forge.onehippo.org/svn/properties/properties/tags/Release-Properties-v2_05_01</developerConnection>
+    <url>http://forge.onehippo.org/svn/properties/properties/tags/Release-Properties-v2_05_01</url>
   </scm>
 
   <distributionManagement>
