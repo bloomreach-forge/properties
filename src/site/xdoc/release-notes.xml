@@ -21,6 +21,12 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="2.05.01">
+        <ul>
+          <li>Set hippo:version in the repository addon to the same as the end tag 
+            of the upgrader to ECM 7.4, which is 'v16a-properties'</li>
+        </ul>
+      </subsection>
       <subsection name="2.05.00">
         <ul>
           <li>
