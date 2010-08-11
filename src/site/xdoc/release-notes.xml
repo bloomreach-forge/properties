@@ -24,7 +24,7 @@
       <subsection name="2.05.01">
         <ul>
           <li>Set hippo:version in the repository addon to the same as the end tag 
-            of the upgrader to ECM 7.4, which is 'v16a-properties'</li>
+            of the upgrader to ECM 7.4, which is 'v16a-properties'.</li>
         </ul>
       </subsection>
       <subsection name="2.05.00">
@@ -32,7 +32,7 @@
           <li>
             Runs on Hippo CMS 7.4 (2.16.00 and up), involving a namespace bump to version 2.2.
           </li>
-          <li>The Maven groupId of all artifacts has been changed to org.onehippo.forge.properties</li>
+          <li>The Maven groupId of all artifacts has been changed to org.onehippo.forge.properties.</li>
         </ul>
       </subsection>
       <subsection name="2.04.00">
