@@ -68,12 +68,12 @@
         <ol>
           <li>
             <p>Add this dependency to the pom.xml of your <i>site</i> module:</p>
-            <p>When using version <b>2.05.00</b>:</p>
+            <p>When using version <b>2.05.01</b>:</p>
             <source><![CDATA[
   <dependency>
     <groupId>org.onehippo.forge.properties</groupId>
     <artifactId>properties-hst-client</artifactId>
-    <version>2.04.00</version>
+    <version>2.05.01</version>
   </dependency>]]></source>
           <p>When using version <b>2.04.00</b>:</p>
             <source><![CDATA[
