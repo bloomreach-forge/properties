@@ -64,7 +64,7 @@ public interface PropertiesManager  {
      * 
      * Get the properties from the documents with the default name found at the  
      * current bean's level and then upwards, and then at the default location.
-     * location. If multiple documents are found they are merged into one map.
+     * If multiple documents are found they are merged into one map.
      * 
      * @param contentBean the current bean for the component, usually gotten from component.getContentBean 
      * @param siteContentBaseBean the bean gotten from component.getSiteContentBaseBean
