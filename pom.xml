@@ -26,8 +26,8 @@
 
   <properties>
     <hst.version>2.04.03</hst.version>
-    <hippoecm.version>2.16.00</hippoecm.version>
-    <javax.jcr.version>1.0</javax.jcr.version>
+    <hippoecm.version>2.18.00RC1</hippoecm.version>
+    <javax.jcr.version>2.0</javax.jcr.version>
     <slf4j.version>1.5.6</slf4j.version>
     <log4j.version>1.2.14</log4j.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -87,14 +87,14 @@
         <scope>provided</scope>
       </dependency>
       <dependency>
-        <groupId>org.hippoecm</groupId>
-        <artifactId>hippo-ecm-api</artifactId>
+        <groupId>org.onehippo.cms7</groupId>
+        <artifactId>hippo-repository-api</artifactId>
         <version>${hippoecm.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
-        <groupId>org.hippoecm</groupId>
-        <artifactId>hippo-ecm-repository-utilities</artifactId>
+        <groupId>org.onehippo.cms7</groupId>
+        <artifactId>hippo-repository-utilities</artifactId>
         <version>${hippoecm.version}</version>
         <scope>provided</scope>
       </dependency>

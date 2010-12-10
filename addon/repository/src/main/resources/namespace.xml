@@ -178,7 +178,7 @@
             </sv:property>
             <sv:node sv:name="name">
               <sv:property sv:name="jcr:primaryType" sv:type="Name">
-                <sv:value>nt:base</sv:value>
+                <sv:value>frontend:plugin</sv:value>
               </sv:property>
               <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
                 <sv:value>hippo:translated</sv:value>
@@ -208,7 +208,7 @@
             </sv:node>
             <sv:node sv:name="value">
               <sv:property sv:name="jcr:primaryType" sv:type="Name">
-                <sv:value>nt:base</sv:value>
+                <sv:value>frontend:plugin</sv:value>
               </sv:property>
               <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
                 <sv:value>hippo:translated</sv:value>
@@ -523,7 +523,7 @@
             </sv:property>
             <sv:node sv:name="property">
               <sv:property sv:name="jcr:primaryType" sv:type="Name">
-                <sv:value>nt:base</sv:value>
+                <sv:value>frontend:plugin</sv:value>
               </sv:property>
               <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
                 <sv:value>hippo:translated</sv:value>

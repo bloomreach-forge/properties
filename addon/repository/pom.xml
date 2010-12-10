@@ -36,12 +36,12 @@
       <artifactId>slf4j-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.hippoecm</groupId>
-      <artifactId>hippo-ecm-api</artifactId>
+      <groupId>org.onehippo.cms7</groupId>
+      <artifactId>hippo-repository-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.hippoecm</groupId>
-      <artifactId>hippo-ecm-repository-utilities</artifactId>
+      <groupId>org.onehippo.cms7</groupId>
+      <artifactId>hippo-repository-utilities</artifactId>
     </dependency>
   </dependencies>
 
