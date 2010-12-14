@@ -25,7 +25,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <hst.version>2.04.03</hst.version>
+    <hst.version>2.20.00RC1</hst.version>
     <hippoecm.version>2.18.00RC1</hippoecm.version>
     <javax.jcr.version>2.0</javax.jcr.version>
     <slf4j.version>1.5.6</slf4j.version>
@@ -99,14 +99,14 @@
         <scope>provided</scope>
       </dependency>
       <dependency>
-        <groupId>org.onehippo.ecm.hst</groupId>
+        <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-api</artifactId>
         <version>${hst.version}</version>
         <scope>provided</scope>
         <type>jar</type>
       </dependency>
       <dependency>
-        <groupId>org.onehippo.ecm.hst</groupId>
+        <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-content-beans</artifactId>
         <version>${hst.version}</version>
         <scope>provided</scope>
@@ -117,9 +117,9 @@
 
   <repositories>
     <repository>
-      <id>hippo</id>
+      <id>onehippo</id>
       <name>Hippo maven 2 repository.</name>
-      <url>http://repository.hippocms.org/maven2/</url>
+      <url>http://repository.onehippo.org/maven2/</url>
       <snapshots />
       <releases>
         <updatePolicy>never</updatePolicy>
@@ -127,9 +127,9 @@
       <layout>default</layout>
     </repository>
     <repository>
-      <id>hippo.legacy</id>
+      <id>onehippo.legacy</id>
       <name>Hippo Maven 1 repository.</name>
-      <url>http://repository.hippocms.org/maven/</url>
+      <url>http://repository.onehippo.org/maven/</url>
       <snapshots />
       <releases>
         <updatePolicy>never</updatePolicy>
@@ -140,9 +140,9 @@
 
   <pluginRepositories>
     <pluginRepository>
-      <id>hippo</id>
+      <id>onehippo</id>
       <name>Hippo Maven 2 Repository</name>
-      <url>http://repository.hippocms.org/maven2</url>
+      <url>http://repository.onehippo.org/maven2</url>
     </pluginRepository>
     <pluginRepository>
       <id>codehaus</id>
