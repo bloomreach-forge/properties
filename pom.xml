@@ -21,7 +21,7 @@
   <groupId>org.onehippo.forge.properties</groupId>
 
   <artifactId>properties</artifactId>
-  <version>2.05.02-SNAPSHOT</version>
+  <version>2.06.00-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <properties>
