@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
   Copyright 2010 Hippo
   
@@ -13,7 +14,8 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <name>Hippo Forge Properties Project</name>
@@ -25,11 +27,11 @@
   <packaging>pom</packaging>
 
   <properties>
-    <hst.version>2.20.00RC1</hst.version>
-    <hippoecm.version>2.18.00RC1</hippoecm.version>
+    <hippo.hst.version>2.20.00RC1</hippo.hst.version>
+    <hippo.cms.version>2.18.00RC1</hippo.cms.version>
     <javax.jcr.version>2.0</javax.jcr.version>
     <slf4j.version>1.5.6</slf4j.version>
-    <log4j.version>1.2.14</log4j.version>
+    <log4j.version>1.2.16</log4j.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -59,7 +61,7 @@
       <url>svn:http://forge.onehippo.org/svn/properties/maven2/</url>
     </repository>
   </distributionManagement>
-  
+
   <issueManagement>
     <system>Hippo Forge</system>
     <url>http://forge.onehippo.org/tracker/?group_id=45</url>
@@ -71,7 +73,7 @@
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
-  
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -89,26 +91,26 @@
       <dependency>
         <groupId>org.onehippo.cms7</groupId>
         <artifactId>hippo-repository-api</artifactId>
-        <version>${hippoecm.version}</version>
+        <version>${hippo.cms.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.onehippo.cms7</groupId>
         <artifactId>hippo-repository-utilities</artifactId>
-        <version>${hippoecm.version}</version>
+        <version>${hippo.cms.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-api</artifactId>
-        <version>${hst.version}</version>
+        <version>${hippo.hst.version}</version>
         <scope>provided</scope>
         <type>jar</type>
       </dependency>
       <dependency>
         <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-content-beans</artifactId>
-        <version>${hst.version}</version>
+        <version>${hippo.hst.version}</version>
         <scope>provided</scope>
         <type>jar</type>
       </dependency>
@@ -120,21 +122,11 @@
       <id>onehippo</id>
       <name>Hippo maven 2 repository.</name>
       <url>http://repository.onehippo.org/maven2/</url>
-      <snapshots />
+      <snapshots/>
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>
       <layout>default</layout>
-    </repository>
-    <repository>
-      <id>onehippo.legacy</id>
-      <name>Hippo Maven 1 repository.</name>
-      <url>http://repository.onehippo.org/maven/</url>
-      <snapshots />
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <layout>legacy</layout>
     </repository>
   </repositories>
 
@@ -148,7 +140,7 @@
       <id>codehaus</id>
       <url>http://repository.codehaus.org/</url>
       <layout>default</layout>
-      <snapshots> </snapshots>
+      <snapshots></snapshots>
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>
@@ -167,14 +159,10 @@
     <pluginManagement>
       <plugins>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-archetype-plugin</artifactId>
-          <version>2.0-alpha-4</version>
-        </plugin>
-        <plugin>
           <inherited>true</inherited>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.3.2</version>
           <configuration>
             <source>1.5</source>
             <target>1.5</target>
@@ -187,6 +175,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
+        <version>2.1.2</version>
         <inherited>true</inherited>
         <executions>
           <execution>

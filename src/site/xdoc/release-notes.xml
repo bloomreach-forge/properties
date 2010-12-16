@@ -23,8 +23,9 @@
     <section name="Release Notes">
       <subsection name="2.05.01">
         <ul>
-          <li>Set hippo:version in the repository addon to the same as the end tag 
-            of the upgrader to ECM 7.4, which is 'v16a-properties'.</li>
+          <li>Set hippo:version in the repository addon to the same as the end tag
+            of the upgrader to CMS 7.4, which is 'v16a-properties'.
+          </li>
         </ul>
       </subsection>
       <subsection name="2.05.00">
@@ -45,15 +46,15 @@
       <subsection name="2.03.00">
         <ul>
           <li>
-            Introduction of a CachingPropertiesManager plus a PropertiesEventListener for 
+            Introduction of a CachingPropertiesManager plus a PropertiesEventListener for
             invalidation of the cache, both to be set up in the site's Spring configuration.
           </li>
           <li>
-            The artifacts 'properties-hst-api' and 'properties-hst-client' are merged, 
+            The artifacts 'properties-hst-api' and 'properties-hst-client' are merged,
             leaving only 'properties-hst-client'.
           </li>
           <li>
-            Rename of the former PropertiesBean to PropertiesMap, plus introduction of 
+            Rename of the former PropertiesBean to PropertiesMap, plus introduction of
             a new PropertiesBean that can be used to cache properties documents.
           </li>
         </ul>
@@ -61,22 +62,23 @@
       <subsection name="2.02.00">
         <ul>
           <li>
-            Runs on ECM 2.10.00 and up.
+            Runs on CMS 2.10.00 and up.
           </li>
         </ul>
       </subsection>
       <subsection name="2.01.00">
         <ul>
           <li>
-            Runs on ECM 2.09.00.
+            Runs on CMS 2.09.00.
           </li>
         </ul>
       </subsection>
       <subsection name="1.0x.xx">
         <ul>
           <li>
-            Properties Component allowing to create simple CMS documents 
-            having a flat list of name/value pairs</li>
+            Properties Component allowing to create simple CMS documents
+            having a flat list of name/value pairs
+          </li>
           <li>Easy locating and using the properties documents in a HST site frontend.</li>
         </ul>
       </subsection>
