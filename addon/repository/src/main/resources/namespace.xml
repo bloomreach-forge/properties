@@ -60,7 +60,7 @@
         <sv:value>fr</sv:value>
       </sv:property>
       <sv:property sv:name="hippo:message" sv:type="String">
-        <sv:value>TODOFR:Property</sv:value>
+        <sv:value>Propriété</sv:value>
       </sv:property>
     </sv:node>
     <sv:node sv:name="hippo:translation">
@@ -235,7 +235,7 @@
                   <sv:value>fr</sv:value>
                 </sv:property>
                 <sv:property sv:name="hippo:message" sv:type="String">
-                  <sv:value>TODOFR:Name</sv:value>
+                  <sv:value>Nom</sv:value>
                 </sv:property>
               </sv:node>
               <sv:node sv:name="hippo:translation">
@@ -287,7 +287,7 @@
                   <sv:value>fr</sv:value>
                 </sv:property>
                 <sv:property sv:name="hippo:message" sv:type="String">
-                  <sv:value>TODOFR:Value</sv:value>
+                  <sv:value>Valeur</sv:value>
                 </sv:property>
               </sv:node>
               <sv:node sv:name="hippo:translation">
@@ -463,7 +463,7 @@
         <sv:value>fr</sv:value>
       </sv:property>
       <sv:property sv:name="hippo:message" sv:type="String">
-        <sv:value>TODOFR:Properties</sv:value>
+        <sv:value>Propriétés</sv:value>
       </sv:property>
     </sv:node>
     <sv:node sv:name="hippo:translation">
@@ -646,7 +646,7 @@
                   <sv:value>fr</sv:value>
                 </sv:property>
                 <sv:property sv:name="hippo:message" sv:type="String">
-                  <sv:value>TODOFR:Property</sv:value>
+                  <sv:value>Propriété</sv:value>
                 </sv:property>
               </sv:node>
               <sv:node sv:name="hippo:translation">
