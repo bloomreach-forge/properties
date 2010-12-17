@@ -21,6 +21,11 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="2.06">
+        <ul>
+          <li>Compatibility with CMS 7.5 (2.18) and HST 2.20.</li>
+        </ul>
+      </subsection>
       <subsection name="2.05.01">
         <ul>
           <li>Set hippo:version in the repository addon to the same as the end tag
