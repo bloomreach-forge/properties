@@ -21,9 +21,10 @@
   </properties>
   <body>
     <section name="Release Notes">
-      <subsection name="2.06">
+      <subsection name="2.06.00">
         <ul>
-          <li>Compatibility with CMS 7.5 (2.18) and HST 2.20.</li>
+          <li>Compatibility with CMS 7.5 (2.18.00 and up) and HST 2.20.</li>
+          <li>Improvements for cache invalidation in combination with properties documents in subfolders.</li>
         </ul>
       </subsection>
       <subsection name="2.05.01">
