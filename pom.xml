@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2010 Hippo
+  Copyright 2010-2011 Hippo
   
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -26,9 +26,11 @@
   <packaging>pom</packaging>
 
   <properties>
-    <hippo.hst.version>2.20.00RC1</hippo.hst.version>
-    <hippo.cms.version>2.18.00RC1</hippo.cms.version>
+    <hippo.hst.version>2.20.00RC3</hippo.hst.version>
+    <hippo.cms.version>2.18.00</hippo.cms.version>
+    <servlet-api.version>2.4</servlet-api.version>
     <javax.jcr.version>2.0</javax.jcr.version>
+    <jsp.api.version>2.1</jsp.api.version>
     <slf4j.version>1.5.6</slf4j.version>
     <log4j.version>1.2.16</log4j.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -76,6 +78,18 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>${servlet-api.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>${jsp.api.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
         <groupId>javax.jcr</groupId>
         <artifactId>jcr</artifactId>
         <version>${javax.jcr.version}</version>
@@ -109,6 +123,20 @@
       <dependency>
         <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-content-beans</artifactId>
+        <version>${hippo.hst.version}</version>
+        <scope>provided</scope>
+        <type>jar</type>
+      </dependency>
+      <dependency>
+        <groupId>org.onehippo.cms7.hst</groupId>
+        <artifactId>hst-commons</artifactId>
+        <version>${hippo.hst.version}</version>
+        <scope>provided</scope>
+        <type>jar</type>
+      </dependency>
+      <dependency>
+        <groupId>org.onehippo.cms7.hst</groupId>
+        <artifactId>hst-client</artifactId>
         <version>${hippo.hst.version}</version>
         <scope>provided</scope>
         <type>jar</type>
