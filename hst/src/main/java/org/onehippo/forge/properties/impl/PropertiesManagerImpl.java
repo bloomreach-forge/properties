@@ -143,7 +143,7 @@ public class PropertiesManagerImpl implements PropertiesManager {
 		List<PropertiesBean> list = new ArrayList<PropertiesBean>();
 		for (int i = 0; i < names.length; i++) {
 		    
-		    PropertiesBean propertiesBean = getPropertiesBean(location, names[i]);
+		    PropertiesBean propertiesBean = getPropertiesBean(location, names[i].trim());
             if (propertiesBean != null) {
                 list.add(propertiesBean);
             }    
