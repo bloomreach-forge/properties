@@ -92,6 +92,11 @@ public class PropertiesEventListener extends GenericEventListener {
         
         String docPath = (path.lastIndexOf("/") < 0) ? path
                             : path.substring(0, path.lastIndexOf("/"));
+
+        // remove [index] suffix, the cache is built without
+        if (docPath.endsWith("]") && (docPath.lastIndexOf("[") > -1)) {
+            docPath = docPath.substring(0, docPath.lastIndexOf("["));
+        }
         
         propertiesManager.invalidate(docPath);
     }

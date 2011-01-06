@@ -40,23 +40,27 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
     }
 
     @Override
-    protected PropertiesBean getPropertiesBean(HippoBean location, String name) {
+    protected PropertiesBean getPropertiesBean(HippoBean location, String path) {
 
         if (location == null) {
             throw new IllegalArgumentException("Location bean is null");
         }
         
         try {
-            // NB: constructing a canonical path with handle/document
-            String key = ((HippoNode) location.getNode()).getCanonicalNode().getPath() 
-                                + "/" + name + "/" + name;
+            // path contains folder(s): construct a canonical path with folder(s)/handle/document
 
+            // construct a canonical path with (folders)/handle/document
+            // so dubplicat the last part
+            final String docName = (path.lastIndexOf("/") < 0) ? path : path.substring(path.lastIndexOf("/") + 1);
+            final String key = ((HippoNode) location.getNode()).getCanonicalNode().getPath() 
+                            + "/" + path + "/" + docName;
+            
             PropertiesBean bean = cache.get(key);
             if (bean != null) {
                 return bean;
             }
             
-            HippoBean doc = location.getBean(name);
+            HippoBean doc = location.getBean(path);
             if (doc instanceof Properties) {
                 PropertiesBean propertiesBean = new PropertiesBean((Properties) doc);
                 cache.put(key, propertiesBean);
