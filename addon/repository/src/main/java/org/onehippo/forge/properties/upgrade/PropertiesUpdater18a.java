@@ -15,19 +15,40 @@
  */
 package org.onehippo.forge.properties.upgrade;
 
+import javax.jcr.Node;
+import javax.jcr.RepositoryException;
+
 import org.hippoecm.repository.ext.UpdaterContext;
-import org.hippoecm.repository.ext.UpdaterModule;
+import org.hippoecm.repository.ext.UpdaterItemVisitor;
 
 /**
- * Updater module to migrate from ECM 2.16.xx to 2.18.xx
+ * Updater module to migrate from ECM 2.16.xx to 2.18.xx.
+ *
+ * Reloads namespace because of addition of hippotranslation in the prototype.
  */
-public class PropertiesUpdater18a implements UpdaterModule {
+public class PropertiesUpdater18a extends PropertiesBaseUpdater {
 
     public void register(final UpdaterContext context) {
         
-        // nothing but change the hippo:version for identification purpose
+        // change the hippo:version for identification purpose
         context.registerName("properties-upgrade-v18a");
-        context.registerStartTag("v16a-properties");
-        context.registerEndTag("v18a-properties");
+        context.registerStartTag(TAG_V16A);
+        context.registerEndTag(TAG_V18A);
+
+        // remove initializer for the properties namespace
+        context.registerVisitor(new UpdaterItemVisitor.PathVisitor("/hippo:configuration/hippo:initialize") {
+            @Override
+            protected void leaving(Node node, int level) throws RepositoryException {
+                removeNode(node, INIT_NODE_NAMESPACE);
+            }
+        });
+
+        // remove the properties namespace itself,
+        context.registerVisitor(new UpdaterItemVisitor.PathVisitor("/hippo:namespaces") {
+            @Override
+            protected void leaving(Node node, int level) throws RepositoryException {
+                removeNode(node, NAMESPACE);
+            }
+        });
     }
 }

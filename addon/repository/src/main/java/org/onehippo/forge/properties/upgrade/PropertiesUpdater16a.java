@@ -23,17 +23,13 @@ import javax.jcr.RepositoryException;
 import org.hippoecm.repository.ext.UpdaterContext;
 import org.hippoecm.repository.ext.UpdaterItemVisitor;
 import org.hippoecm.repository.ext.UpdaterModule;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Updater module to migrate from ECM 2.12.xx to 2.16.00
  * @author jjoachimsthal
  *
  */
-public class PropertiesUpdater16a implements UpdaterModule {
-
-    private static final Logger log = LoggerFactory.getLogger(PropertiesUpdater16a.class);
+public class PropertiesUpdater16a extends PropertiesBaseUpdater {
 
     /**
      * Removes the (old) properties namespace
@@ -42,22 +38,20 @@ public class PropertiesUpdater16a implements UpdaterModule {
     public void register(final UpdaterContext context) {
         log.debug("Entering register");
         context.registerName("properties-upgrade-v16a");
-        context.registerStartTag("v12a-properties");
-        context.registerEndTag("v16a-properties");
+        context.registerStartTag(TAG_V12A);
+        context.registerEndTag(TAG_V16A);
         log.debug("After register");
         
-        // removes properties namespace
+        // reload properties cnd (bumped version)
         context.registerVisitor(new UpdaterItemVisitor.NamespaceVisitor(context, "properties", 
                 new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("properties.cnd"))));
 
-        
-        // removes initializers for the properties namespace
+        // removes initializers for the cnd and properties namespace
         context.registerVisitor(new UpdaterItemVisitor.PathVisitor("/hippo:configuration/hippo:initialize") {
             @Override
             protected void leaving(Node node, int level) throws RepositoryException {
-                log.debug("Removing initialize");
-                removeInitNode(node, "properties");
-                removeInitNode(node, "properties-namespace");
+                removeNode(node, INIT_NODE_CND);
+                removeNode(node, INIT_NODE_NAMESPACE);
             }
         });
 
@@ -65,35 +59,9 @@ public class PropertiesUpdater16a implements UpdaterModule {
         context.registerVisitor(new UpdaterItemVisitor.PathVisitor("/hippo:namespaces") {
             @Override
             protected void leaving(Node node, int level) throws RepositoryException {
-                log.debug("Removing properties namespace");
-                removeNode(node, "properties");
+                removeNode(node, NAMESPACE);
             }
         });
-
-    }
-    
-    /**
-     * Removed {@link Node} in {@code hippo-initialize} if it exists
-     * @param node {@link Node}
-     * @param name of the Node
-     * @throws RepositoryException
-     */
-    private static void removeInitNode(Node node, String name) throws RepositoryException {
-        log.info("Removing init node '" + name + "' (" + node.hasNode(name) + ")");
-        removeNode(node, name);
-    }
-    
-
-    /**
-     * Removes {@link Node} if it exists
-     * @param node {@link Node}
-     * @param name of the Node
-     * @throws RepositoryException
-     */
-    private static void removeNode(Node node, String name) throws RepositoryException {
-        if (node.hasNode(name)) {
-            node.getNode(name).remove();
-        }
     }
 
 }
