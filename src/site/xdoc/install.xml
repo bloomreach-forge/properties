@@ -115,7 +115,8 @@
               more. See the PropertiesManager.java interface.</p>  
           </li>
           <li>
-            <p>Add these beans in the HST file site/src/main/webapp/WEB-INF/beans-annotated-classes.xml</p>
+            <p>If you don't use classpath loaded bean (available since HST 2.20) but the xml file to define
+              your beans, add these beans in the HST file site/src/main/webapp/WEB-INF/beans-annotated-classes.xml</p>
             <source><![CDATA[
   <hst-content-beans>
     <annotated-class>

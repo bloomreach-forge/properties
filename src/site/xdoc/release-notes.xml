@@ -23,7 +23,8 @@
     <section name="Release Notes">
       <subsection name="2.06.00">
         <ul>
-          <li>Compatibility with CMS 7.5 (2.18.00 and up) and HST 2.20.</li>
+          <li>Compatibility with CMS 7.5 (2.18.00 and up) and HST 2.20, including
+              support in Properties document type for the multilanguage feature of CMS 7.5.</li>
           <li>Introduction of the jsp tag &lt;properties:property /&gt; for easy retrieval of properties (labels) in the view layer.</li>
           <li>Improvements for cache invalidation in combination with properties documents in subfolders.</li>
         </ul>
