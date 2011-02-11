@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Copyright 2009 Hippo
+  Copyright 2009-2011 Hippo
   
   Licensed under the Apache License, Version 2.0 (the  "License");
   you may not use this file except in compliance with the License.
@@ -58,7 +58,10 @@
               <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
             </manifest>
             <manifestEntries>
-              <Hippo-Modules>org.onehippo.forge.properties.upgrade.PropertiesUpdater16a</Hippo-Modules>
+              <Hippo-Modules>
+                org.onehippo.forge.properties.upgrade.PropertiesUpdater16a
+                org.onehippo.forge.properties.upgrade.PropertiesUpdater18a
+              </Hippo-Modules>
             </manifestEntries>
           </archive>
         </configuration>
