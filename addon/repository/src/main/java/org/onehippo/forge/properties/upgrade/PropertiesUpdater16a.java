@@ -26,8 +26,6 @@ import org.hippoecm.repository.ext.UpdaterModule;
 
 /**
  * Updater module to migrate from ECM 2.12.xx to 2.16.00
- * @author jjoachimsthal
- *
  */
 public class PropertiesUpdater16a extends PropertiesBaseUpdater {
 
@@ -36,32 +34,31 @@ public class PropertiesUpdater16a extends PropertiesBaseUpdater {
      * @see UpdaterModule#register(UpdaterContext)
      */
     public void register(final UpdaterContext context) {
-        log.debug("Entering register");
-        context.registerName("properties-upgrade-v16a");
-        context.registerStartTag(TAG_V12A);
-        context.registerEndTag(TAG_V16A);
-        log.debug("After register");
-        
+
+        super.register(context);
+
         // reload properties cnd (bumped version)
         context.registerVisitor(new UpdaterItemVisitor.NamespaceVisitor(context, "properties", 
                 new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("properties.cnd"))));
-
-        // removes initializers for the cnd and properties namespace
-        context.registerVisitor(new UpdaterItemVisitor.PathVisitor("/hippo:configuration/hippo:initialize") {
-            @Override
-            protected void leaving(Node node, int level) throws RepositoryException {
-                removeNode(node, INIT_NODE_CND);
-                removeNode(node, INIT_NODE_NAMESPACE);
-            }
-        });
-
-        // removes properties namespace
-        context.registerVisitor(new UpdaterItemVisitor.PathVisitor("/hippo:namespaces") {
-            @Override
-            protected void leaving(Node node, int level) throws RepositoryException {
-                removeNode(node, NAMESPACE);
-            }
-        });
     }
 
+    @Override
+    protected void registerTags(final UpdaterContext context) {
+        context.registerName("properties-upgrade-v16a");
+        context.registerStartTag(TAG_V12A);
+        context.registerEndTag(TAG_V16A);
+    }
+
+    @Override
+    protected void updateNamespaces(final Node node) throws RepositoryException {
+        // remove the properties namespace, is reloaded
+        removeNode(node, NAMESPACE);
+    }
+
+    @Override
+    protected void updateInitializeNode(final Node node) throws RepositoryException {
+        // remove initializers for the cnd and properties namespace
+        removeNode(node, INIT_NODE_CND);
+        removeNode(node, INIT_NODE_NAMESPACE);
+    }
 }

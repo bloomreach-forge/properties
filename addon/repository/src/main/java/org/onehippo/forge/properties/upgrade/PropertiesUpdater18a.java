@@ -28,27 +28,22 @@ import org.hippoecm.repository.ext.UpdaterItemVisitor;
  */
 public class PropertiesUpdater18a extends PropertiesBaseUpdater {
 
-    public void register(final UpdaterContext context) {
-        
-        // change the hippo:version for identification purpose
+    @Override
+    protected void registerTags(final UpdaterContext context) {
         context.registerName("properties-upgrade-v18a");
         context.registerStartTag(TAG_V16A);
         context.registerEndTag(TAG_V18A);
+    }
 
+    @Override
+    protected void updateNamespaces(final Node node) throws RepositoryException {
+        // remove the properties namespace, is reloaded
+        removeNode(node, NAMESPACE);
+    }
+
+    @Override
+    protected void updateInitializeNode(final Node node) throws RepositoryException {
         // remove initializer for the properties namespace
-        context.registerVisitor(new UpdaterItemVisitor.PathVisitor("/hippo:configuration/hippo:initialize") {
-            @Override
-            protected void leaving(Node node, int level) throws RepositoryException {
-                removeNode(node, INIT_NODE_NAMESPACE);
-            }
-        });
-
-        // remove the properties namespace itself,
-        context.registerVisitor(new UpdaterItemVisitor.PathVisitor("/hippo:namespaces") {
-            @Override
-            protected void leaving(Node node, int level) throws RepositoryException {
-                removeNode(node, NAMESPACE);
-            }
-        });
+        removeNode(node, INIT_NODE_NAMESPACE);
     }
 }
