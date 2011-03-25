@@ -24,6 +24,7 @@ import org.hippoecm.repository.ext.UpdaterItemVisitor;
 /**
  * Updater module to migrate from ECM 2.16.xx to 2.18.xx.
  *
+ * Reloads cnd because of added 'orderable'.
  * Reloads namespace because of addition of hippotranslation in the prototype.
  */
 public class PropertiesUpdater18a extends PropertiesBaseUpdater {
@@ -43,7 +44,8 @@ public class PropertiesUpdater18a extends PropertiesBaseUpdater {
 
     @Override
     protected void updateInitializeNode(final Node node) throws RepositoryException {
-        // remove initializer for the properties namespace
+        // remove initializers for the cnd and properties namespace
+        removeNode(node, INIT_NODE_CND);
         removeNode(node, INIT_NODE_NAMESPACE);
     }
 }

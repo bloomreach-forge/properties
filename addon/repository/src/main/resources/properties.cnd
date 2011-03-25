@@ -11,5 +11,5 @@
   - properties:name (string) mandatory
   - properties:value (string) 
 
-[properties:properties] > hippo:document, hippostdpubwf:document, hippostd:publishableSummary
+[properties:properties] > hippo:document, hippostdpubwf:document, hippostd:publishableSummary orderable
 + properties:property (properties:property) multiple
