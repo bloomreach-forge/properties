@@ -61,7 +61,7 @@
     <repository>
       <uniqueVersion>false</uniqueVersion>
       <id>properties-maven-repo</id>
-      <url>svn:http://maven.onehippo.com/maven2-forge/properties/maven2/</url>
+      <url>svn:http://forge.onehippo.org/svn/properties/maven2/</url>
     </repository>
   </distributionManagement>
 
