@@ -28,26 +28,30 @@
         <p>
           This is an example of how properties documents are read using the manager. 
           The manager will look for properties with configured name or the default name from 
-          current document's level and then upwards, and then at the default location. 
-          If multiple documents are found they are merged into one map. 
+          the configure default location, relative to the given site content base bean.
         </p>
         <source><![CDATA[
   // get the manager  
-  ComponentManager componentManager = (ComponentManager) this.getDefaultClientComponentManager();
-  PropertiesManager propertiesManager = componentManager.getComponent(PropertiesManager.class.getName());
-         
-  // retrieve labels documents
-  Map<String, String> labels;
-  <String> labelsName = this.getParameter("labelsName", request);
-  if (labelsName != null) {
-      labels = this.propertiesManager.getProperties(new String[]{labelsName}, 
-          this.getContentBean(request), this.getSiteContentBaseBean(request));
-  } 
-  else {
-      labels = this.propertiesManager.getProperties(this.getContentBean(request), 
-          this.getSiteContentBaseBean(request));
-  }
+  final ComponentManager componentManager = (ComponentManager) this.getDefaultClientComponentManager();
+  final PropertiesManager propertiesManager = componentManager.getComponent(PropertiesManager.class.getName());
+  final HippoBean baseBean this.getSiteContentBaseBean(request);
 
+  // retrieve one document bean by the configured default name
+  final PropertiesBean defaultPropertiesBean = this.propertiesManager.getPropertiesBean(baseBean);
+  final Map<String, String> defaultLabels = PropertiesUtil.toMap(propertiesBean);
+
+  // .. or retrieve one document bean by path parameter
+  final String labelsPath = this.getParameter("labelsPath", request);
+  final PropertiesBean propertiesBean = this.propertiesManager.getPropertiesBean(labelsPath, baseBean);
+  final Map<String, String> labels = PropertiesUtil.toMap(propertiesBean);
+
+  // .. or retrieve multiple documents bean by paths
+  final List<String> labelsPaths = Arrays.asList("common", "specific");
+  final List<PropertiesBean> propertiesBeans = this.propertiesManager.getPropertiesBeans(labelsPaths, baseBean);
+  final Map<String, String> allLabels = PropertiesUtil.toMap(propertiesBeans);
+
+
+  final Map<String, String> labels = PropertiesUtil.toMap(propertiesBean);
   request.setAttribute("labels", labels);]]></source>
       </subsection>
       <subsection name="Manual retrieval of properties in a HST component">

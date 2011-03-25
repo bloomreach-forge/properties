@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Copyright 2010 Hippo
+  Copyright 2010-2011 Hippo
   
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -24,7 +24,14 @@
       <subsection name="2.06.00">
         <ul>
           <li>Compatibility with CMS 7.5 (2.18.00 and up) and HST 2.20, including
-              support in Properties document type for the multilanguage feature of CMS 7.5.</li>
+              support in Properties document type for the multilanguage feature of CMS 7.5.
+              PropertiesUpgrader18a reloads cnd and namespace.</li>
+          <li>In CMS, made the properties list orderable.</li>
+          <li>Formalized PropertiesManager API: retrieve PropertiesBeans instead of a Map, plus
+              the introduction of static PropertiesUtil to get those maps.
+              Previous methods are deprecated.</li>
+          <li>Automatic fallback to default document in case of given document paths that are null.</li>
+          <li>Removed the never used functionality of getting properties found at current bean's level and upwards.</li>
           <li>Introduction of the jsp tag &lt;properties:property /&gt; for easy retrieval of properties (labels) in the view layer.</li>
           <li>Improvements for cache invalidation in combination with properties documents in subfolders.</li>
         </ul>

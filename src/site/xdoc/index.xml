@@ -38,7 +38,7 @@
         </subsection>
         <subsection name="Project status">
           <p>
-            The latest version of property component is 2.05.01 running on Hippo CMS 7.4 (2.16.00 and up).
+            The latest version of property component is 2.06.00 running on Hippo CMS 7.5 (2.18.00 and up).
           </p>
           <table border="1" cellpadding="0" cellspacing="5">
             <tbody><tr>
@@ -70,7 +70,13 @@
                 <td>2.05.00, 2.05.01</td>
                 <td>7.4 (2.16.xx)</td>
                 <td>2.04.03</td>
-              </tr>            </tbody>
+              </tr>
+              <tr>
+                <td>2.06.00</td>
+                <td>7.5 (2.18.xx)</td>
+                <td>2.20.xx</td>
+              </tr>
+            </tbody>
           </table>
           <p>
             See the <a href="http://forge.onehippo.org/tracker/?group_id=45">project tracker</a>
