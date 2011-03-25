@@ -15,38 +15,25 @@
  */
 package org.onehippo.forge.properties.upgrade;
 
-import java.io.BufferedInputStream;
-
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
 import org.hippoecm.repository.ext.UpdaterContext;
 import org.hippoecm.repository.ext.UpdaterItemVisitor;
-import org.hippoecm.repository.ext.UpdaterModule;
 
 /**
- * Updater module to migrate from ECM 2.12.xx to 2.16.00
+ * Updater module to migrate from ECM 2.16.xx to 2.18.xx.
+ *
+ * Reloads cnd because of added 'orderable'.
+ * Reloads namespace because of addition of hippotranslation in the prototype.
  */
-public class PropertiesUpdater16a extends PropertiesBaseUpdater {
-
-    /**
-     * Removes the (old) properties namespace
-     * @see UpdaterModule#register(UpdaterContext)
-     */
-    public void register(final UpdaterContext context) {
-
-        super.register(context);
-
-        // reload properties cnd (bumped version)
-        context.registerVisitor(new UpdaterItemVisitor.NamespaceVisitor(context, "properties", 
-                new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("properties.cnd"))));
-    }
+public class PropertiesUpdater18a extends PropertiesBaseUpdater {
 
     @Override
     protected void registerTags(final UpdaterContext context) {
-        context.registerName("properties-upgrade-v16a");
-        context.registerStartTag(TAG_V12A);
-        context.registerEndTag(TAG_V16A);
+        context.registerName("properties-upgrade-v18a");
+        context.registerStartTag(TAG_V16A);
+        context.registerEndTag(TAG_V18A);
     }
 
     @Override

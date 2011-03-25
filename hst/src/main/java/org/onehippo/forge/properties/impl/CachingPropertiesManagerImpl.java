@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Hippo
+ * Copyright 2010-2011 Hippo
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,12 +40,15 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
     }
 
     @Override
-    protected PropertiesBean getPropertiesBean(HippoBean location, String path) {
+    protected PropertiesBean getPropertiesBean(final HippoBean location, final String path) {
 
         if (location == null) {
             throw new IllegalArgumentException("Location bean is null");
         }
-        
+        if (path == null) {
+            throw new IllegalArgumentException("Path is null");
+        }
+
         try {
             // path contains folder(s): construct a canonical path with folder(s)/handle/document
 
@@ -55,21 +58,21 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
             final String key = ((HippoNode) location.getNode()).getCanonicalNode().getPath() 
                             + "/" + path + "/" + docName;
             
-            PropertiesBean bean = cache.get(key);
+            final PropertiesBean bean = cache.get(key);
             if (bean != null) {
                 return bean;
             }
             
-            HippoBean doc = location.getBean(path);
-            if (doc instanceof Properties) {
-                PropertiesBean propertiesBean = new PropertiesBean((Properties) doc);
+            final Properties doc = location.getBean(path, Properties.class);
+            if (doc != null) {
+                final PropertiesBean propertiesBean = new PropertiesBean(doc);
                 cache.put(key, propertiesBean);
                 return propertiesBean;
             }
         }
         catch (RepositoryException ignore) {
         }
-        
+
         return null;
     }
 }

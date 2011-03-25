@@ -12,6 +12,8 @@ import org.hippoecm.hst.core.component.HstRequest;
 import org.hippoecm.hst.core.component.HstResponse;
 import org.hippoecm.hst.core.container.ComponentManager;
 import org.onehippo.forge.properties.api.PropertiesManager;
+import org.onehippo.forge.properties.api.PropertiesUtil;
+import org.onehippo.forge.properties.bean.PropertiesBean;
 
 public class PropertyTag extends HstTagSupport {
 
@@ -50,13 +52,8 @@ public class PropertyTag extends HstTagSupport {
         // use PropertiesManager API to retrieve property map
         final HippoBean siteContentBaseBean = this.getSiteContentBaseBean(hstRequest);
 
-        Map<String, String> properties;
-        if (documentPath == null) {
-            properties = propertiesManager.getProperties(siteContentBaseBean);
-        }
-        else {
-            properties = propertiesManager.getProperties(new String[]{documentPath}, siteContentBaseBean);
-        }
+        final PropertiesBean propertiesBean = propertiesManager.getPropertiesBean(documentPath, siteContentBaseBean);
+        final Map<String, String> properties = PropertiesUtil.toMap(propertiesBean);
 
         if (properties == null) {
             handleValue(getDefaultValue(propertiesManager), hstRequest);
@@ -71,10 +68,13 @@ public class PropertyTag extends HstTagSupport {
                 handleValue(getDefaultValue(propertiesManager), hstRequest);
             }
         }
-        
+
         return EVAL_PAGE;
     }
 
+    /**
+     * Get the value that is printed if the property isn;t found
+     */
     protected String getDefaultValue(final PropertiesManager propertiesManager) {
         if (documentPath != null) {
             return documentPath + ":" + name;
