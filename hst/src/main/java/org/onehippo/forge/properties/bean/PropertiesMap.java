@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2010 Hippo.
+ * Copyright 2009-2011 Hippo.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,26 +29,28 @@ import java.util.Set;
  * 
  * Example 1:
  *    // get a document named "properties" at same level as current bean
- *    HippoBean propertiesDoc = this.getContentBean(request).getParentBean().getBean("properties"); 
+ *    Properties propertiesDoc = this.getContentBean(request).getParentBean().getBean("properties", Properties.class);
  *    
- *    if (propertiesDoc instanceof Properties) {
+ *    if (propertiesDoc != null) {
  *        request.setAttribute("properties", new PropertiesMap(new PropertiesBean(propertiesDoc)));
  *    }   
  * 
- * There is also a Spring instantiated PropertiesManager present with which 
- * beans can be gotten from content:   
- *    
  * Example 2:
+ *    There is also a Spring instantiated PropertiesManager present with which
+ *    beans can be gotten from content:
+ *
  *    ComponentManager componentManager = (ComponentManager) this.getDefaultClientComponentManager();
  *    this.propertiesManager = componentManager.getComponent(PropertiesManager.class.getName());
  *    
- *    Map properties = this.propertiesManager.getProperties(
- *                                      this.getContentBean(request)
- *                                      this.getSiteContentBaseBean(request));
- *        
+ *    Map<String, String> properties = new PropertiesMap(this.propertiesManager.getPropertiesBean(this.getSiteContentBaseBean(request)));
  *
- * Because it is a map, access in jsp can be done using direct expression 
- * language notation like "properties['label.header']"
+ * Example 3:
+ *    There is also a static utility class that creates PropertiesMaps.
+ *
+ *    Map<String, String> properties = PropertiesUtil.toMap(this.propertiesManager.getPropertiesBean(this.getSiteContentBaseBean(request)));
+ *
+ * Because it is a map, access in jsp can be done using direct expression
+ * language notation like "labels['label.header']"
  */
 public class PropertiesMap implements Map<String, String> {
 
@@ -59,10 +61,12 @@ public class PropertiesMap implements Map<String, String> {
      */
     public PropertiesMap(final PropertiesBean properties) {
 
-        Iterator<PropertyBean> props = properties.getPropertyBeans().iterator();
-        while (props.hasNext()) {
-            PropertyBean prop = props.next();
-            this.properties.put(prop.getName(), prop.getValue());
+        if (properties != null) {
+            Iterator<PropertyBean> props = properties.getPropertyBeans().iterator();
+            while (props.hasNext()) {
+                PropertyBean prop = props.next();
+                this.properties.put(prop.getName(), prop.getValue());
+            }
         }
     }
 
@@ -74,13 +78,15 @@ public class PropertiesMap implements Map<String, String> {
      */
     public PropertiesMap(final Collection<PropertiesBean> propertiesCol) {
 
-        Iterator<PropertiesBean> it = propertiesCol.iterator();
-        while (it.hasNext()) {
-            Iterator<PropertyBean> props = it.next().getPropertyBeans().iterator();
-            while (props.hasNext()) {
-                PropertyBean prop = props.next();
-                if (!this.properties.containsKey(prop.getName())) {
-                   this.properties.put(prop.getName(), prop.getValue());
+        if (propertiesCol != null) {
+            final Iterator<PropertiesBean> it = propertiesCol.iterator();
+            while (it.hasNext()) {
+                final Iterator<PropertyBean> props = it.next().getPropertyBeans().iterator();
+                while (props.hasNext()) {
+                    final PropertyBean prop = props.next();
+                    if (!this.properties.containsKey(prop.getName())) {
+                       this.properties.put(prop.getName(), prop.getValue());
+                    }
                 }
             }
         }

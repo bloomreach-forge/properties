@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Hippo
+ * Copyright 2010-2011 Hippo
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,11 @@
 
 package org.onehippo.forge.properties.api;
 
+import java.util.List;
 import java.util.Map;
 
 import org.hippoecm.hst.content.beans.standard.HippoBean;
+import org.onehippo.forge.properties.bean.PropertiesBean;
 
 /**
  * Manager for finding properties.
@@ -26,10 +28,9 @@ import org.hippoecm.hst.content.beans.standard.HippoBean;
 public interface PropertiesManager  {
     
     /**
-     * Get the default location where properties are searched.
+     * Get the location where properties are searched.
      * 
-     * The location is relative to the content site root, whether it start with  
-     * '/' or not. 
+     * The location is relative to the baseBean in the API methods, whether it starts with '/' or not.
      */
     String getDefaultDocumentLocation();
 
@@ -39,14 +40,42 @@ public interface PropertiesManager  {
     String getDefaultDocumentName();
 
     /**
-     * Returns a map with String name/value pairs.
-     * 
-     * Get the properties from the document with the default name at the default 
-     * location. 
-     * 
-     * @param siteContentBaseBean the bean gotten from component.getSiteContentBaseBean
+     * Get the bean representing the properties document with the configured default name at the configured location,
+     * relative to the given base bean.
+     *
+     * @param baseBean the base bean from where to get the properties location, normally the siteContentBaseBean.
      */
-    Map<String, String> getProperties(final HippoBean siteContentBaseBean);
+    PropertiesBean getPropertiesBean(final HippoBean baseBean);
+
+    /**
+     * Get the bean representing the properties document with the given name at the configured location,
+     * relative to the given base bean.
+     * 
+     * @param path the relative paths of the properties documents to search for
+     * @param baseBean the base bean from where to get the properties location, normally the siteContentBaseBean.
+     */
+    PropertiesBean getPropertiesBean(final String path, final HippoBean baseBean);
+
+    /**
+     * Get the beans representing the properties documents with the given names at the configured location,
+     * relative to the given base bean.
+     *
+     * @param paths the relative paths of the properties documents to search for
+     * @param baseBean the base bean from where to get the properties location, normally the siteContentBaseBean.
+     */
+    List<PropertiesBean> getPropertiesBeans(final List<String> paths, final HippoBean baseBean);
+
+    /**
+     * Returns a map with String name/value pairs.
+     *
+     * Get the properties from the document with the default name at the default location.
+     *
+     * @param baseBean the base bean from where to get the properties location, normally the siteContentBaseBean.
+     *
+     * @deprecated Replaced by #getPropertiesDocument(final HippoBean baseBean).
+     *             Use PropertiesUtil to get a Map<String, String> directly.
+     */
+    Map<String, String> getProperties(final HippoBean baseBean);
 
     /**
      * Returns a map with String name/value pairs.
@@ -54,43 +83,51 @@ public interface PropertiesManager  {
      * Get the properties from the documents with the given names at the default 
      * location. If multiple documents are found they are merged into one map.
      *
-     * @param names the names of the properties documents to search for
-     * @param siteContentBaseBean the bean gotten from component.getSiteContentBaseBean
+     * @param paths the relative paths of the properties documents to search for
+     * @param baseBean the base bean from where to get the properties location, normally the siteContentBaseBean.
+     *
+     * @deprecated Replaced by #getPropertiesDocument(final List<String> names, final HippoBean baseBean).
+     *             Use PropertiesUtil to get a Map<String, String> directly.
      */
-    Map<String, String> getProperties(final String[] names, final HippoBean siteContentBaseBean);
+    Map<String, String> getProperties(final String[] paths, final HippoBean baseBean);
 
     /**
      * Returns a map with String name/value pairs.
-     * 
-     * Get the properties from the documents with the default name found at the  
+     *
+     * Get the properties from the documents with the default name found at the
      * current bean's level and then upwards, and then at the default location.
      * If multiple documents are found they are merged into one map.
-     * 
-     * @param contentBean the current bean for the component, usually gotten from component.getContentBean 
-     * @param siteContentBaseBean the bean gotten from component.getSiteContentBaseBean
+     *
+     * @param contentBean the current bean for the component, normally gotten from component.getContentBean
+     * @param baseBean the base bean from where to get the properties location, normally the siteContentBaseBean.
+     *
+     * @deprecated The method of getting properties found at current bean's level and upwards is no longer supported.
+     *              Use #getPropertiesDocument(final HippoBean baseBean).
      */
-    Map<String, String> getProperties(final HippoBean contentBean, final HippoBean siteContentBaseBean);
-    
+//    Map<String, String> getProperties(final HippoBean contentBean, final HippoBean baseBean);
+
     /**
      * Returns a map with String name/value pairs.
-     * 
-     * Get the properties from the documents with the given names found at the  
-     * current bean's level and then upwards, and then at the default location. 
+     *
+     * Get the properties from the documents with the given names found at the
+     * current bean's level and then upwards, and then at the default location.
      * If multiple documents are found they are merged into one map.
-     * 
+     *
      * @param names the names of the properties documents to search for
-     * @param contentBean the current bean for the component, usually gotten from component.getContentBean 
-     * @param siteContentBaseBean the bean gotten from component.getSiteContentBaseBean
+     * @param contentBean the current bean for the component, normally gotten from component.getContentBean
+     * @param baseBean the base bean from where to get the properties location, normally the siteContentBaseBean.
+     *
+     * @deprecated The method of getting properties found at current bean's level and upwards is no longer supported.
+     *              Use #getPropertiesDocument(final List<String> names, final HippoBean baseBean).
      */
-    Map<String, String> getProperties(final String[] names, final HippoBean contentBean, final HippoBean siteContentBaseBean);
-    
-    
+//    Map<String, String> getProperties(final String[] names, final HippoBean contentBean, final HippoBean baseBean);
+
+
     /**
      * Invalidate a cached document based on the canonical path of a labels 
      * document, or invalidate all if the path is null.
      * 
-     * @param path the path of a labels document, relative to the site content 
-     *       base bean, or null. 
+     * @param canonicalPath the path of a labels document, relative to the base bean, or null.
      */
     void invalidate(final String canonicalPath);
 }
