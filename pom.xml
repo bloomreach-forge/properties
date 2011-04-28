@@ -17,6 +17,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>org.onehippo.cms7</groupId>
+    <artifactId>hippo-cms7-project</artifactId>
+    <version>6-SNAPSHOT</version>
+  </parent>
+
   <name>Hippo Forge Properties Project</name>
   <description>Hippo Forge Properties Project</description>
   <groupId>org.onehippo.forge.properties</groupId>
@@ -26,16 +32,11 @@
   <packaging>pom</packaging>
 
   <properties>
-    <hippo.hst.version>2.20.01</hippo.hst.version>
-    <hippo.cms.version>2.18.01</hippo.cms.version>
-    <servlet-api.version>2.4</servlet-api.version>
-    <javax.jcr.version>2.0</javax.jcr.version>
-    <jsp.api.version>2.1</jsp.api.version>
-    <slf4j.version>1.5.6</slf4j.version>
-    <log4j.version>1.2.16</log4j.version>
+    <hippo.hst.version>2.21.02-SNAPSHOT</hippo.hst.version>
+    <hippo.cms.version>2.19.04-SNAPSHOT</hippo.cms.version>
 
-    <project.java.version>1.6</project.java.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jsp.api.version>2.1</jsp.api.version>
+    <slf4j.version>1.5.8</slf4j.version>
   </properties>
 
   <developers>
@@ -80,21 +81,9 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>servlet-api</artifactId>
-        <version>${servlet-api.version}</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
         <groupId>javax.servlet.jsp</groupId>
         <artifactId>jsp-api</artifactId>
         <version>${jsp.api.version}</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>javax.jcr</groupId>
-        <artifactId>jcr</artifactId>
-        <version>${javax.jcr.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -185,37 +174,6 @@
         <version>1.9</version>
       </extension>
     </extensions>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <inherited>true</inherited>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3.2</version>
-          <configuration>
-            <source>${project.java.version}</source>
-            <target>${project.java.version}</target>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>2.1.2</version>
-        <inherited>true</inherited>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
   </build>
 
   <modules>
