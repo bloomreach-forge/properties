@@ -40,7 +40,7 @@
               <p>
                 Check out the trunk source code from the SVN repository:
               </p>
-              <source>svn co http://forge.onehippo.org/svn/properties/properties/trunk</source>
+              <source>svn co https://forge.onehippo.org/svn/properties/properties/trunk</source>
               <p>
                 Build the project using Maven 2:
               </p>
@@ -50,13 +50,13 @@
               <p>
                 Check out (trunk):
               </p>
-              <source>svn co http://forge.onehippo.org/svn/properties/properties-demo/trunk</source>
+              <source>svn co https://forge.onehippo.org/svn/properties/properties-demo/trunk</source>
             <p>Build:</p>
             <source>mvn clean install</source>
             <p>Run the cms at <a href="http://localhost:8080">http://localhost:8080</a>:</p>
             <source>cd cms
 mvn jetty:run-war</source>
-            <p>Run the site at <a href="http://localhost:8085/site/preview/home">http://localhost:8085/site/preview/home</a>:</p>
+            <p>Run the site at <a href="http://localhost:8085/site/preview/home">http://localhost:8085/site/preview/home</a> (Hippo CMS 7.5 and lower) or <a href="http://localhost:8080/site/preview/home">http://localhost:8080/site/preview/home</a> (Hippo CMS 7.6 and up):</p>
             <source>cd site
 mvn jetty:run</source>
           </subsection>
