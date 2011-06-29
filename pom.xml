@@ -129,10 +129,18 @@
   </dependencyManagement>
 
   <repositories>
+    <repository> 
+      <id>hippo-maven2-snapshots</id> 
+      <name>Hippo Maven 2</name> 
+      <url>http://maven.onehippo.com/maven2-snapshots/</url> 
+      <snapshots> 
+        <enabled>true</enabled> 
+      </snapshots> 
+    </repository> 
     <repository>
-      <id>onehippo</id>
+      <id>hippo-maven2</id>
       <name>Hippo maven 2 repository.</name>
-      <url>http://repository.onehippo.org/maven2/</url>
+      <url>http://maven.onehippo.com/maven2/</url>
       <snapshots />
       <releases>
         <updatePolicy>never</updatePolicy>
