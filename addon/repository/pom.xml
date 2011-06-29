@@ -31,11 +31,7 @@
       <groupId>javax.jcr</groupId>
       <artifactId>jcr</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-    </dependency>
-    <dependency>
+   <dependency>
       <groupId>org.onehippo.cms7</groupId>
       <artifactId>hippo-repository-api</artifactId>
     </dependency>
@@ -51,7 +47,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.3.1</version>
         <configuration>
           <archive>
             <manifest>

@@ -62,11 +62,7 @@
       <groupId>org.onehippo.cms7.hst</groupId>
       <artifactId>hst-client</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-    </dependency>
-  </dependencies>
+ </dependencies>
 
   <build>
     <defaultGoal>package</defaultGoal>
