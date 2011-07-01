@@ -16,27 +16,32 @@
 -->
 <project name="Hippo Forge Properties Component">
 
-  <publishDate format="d MMMM yyyy"/>
+  <publishDate format="d MMMM yyyy" />
 
   <bannerLeft>
     <name>Hippo Forge Properties Component</name>
   </bannerLeft>
 
-  <body>
+  <skin>
+    <groupId>org.onehippo.ecm.skin</groupId>
+    <artifactId>maven-skin</artifactId>
+    <version>RELEASE</version>
+  </skin>
 
+  <body>
     <menu name="Home">
-      <item name="Home" href="index.html"/>
-      <item name="Screenshots" href="screenshots.html"/>
-      <item name="Release Notes" href="release-notes.html"/>
+      <item name="Home" href="index.html" />
+      <item name="Screenshots" href="screenshots.html" />
+      <item name="Release Notes" href="release-notes.html" />
     </menu>
 
     <menu name="Usage">
-      <item name="Installation" href="install.html"/>
-      <item name="HST Site code" href="sitecode.html"/>
-      <item name="Build from source" href="build-from-source.html"/>
+      <item name="Installation" href="install.html" />
+      <item name="HST Site code" href="sitecode.html" />
+      <item name="Build from source" href="build-from-source.html" />
     </menu>
 
-    <menu ref="reports"/>
+    <menu ref="reports" />
 
   </body>
 

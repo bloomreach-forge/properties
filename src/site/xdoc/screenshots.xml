@@ -25,12 +25,12 @@
     <section name="Screenshots">
       <subsection name="CMS Example Document">
         <p>This is the example document from the demo project, showing CMS managed labels:</p>
-        <img src="images/cms.jpg" alt="CMS Document"/>
+        <img src="images/cms.jpg" alt="CMS Document" style="width:700px;"/>
       </subsection>
       <subsection name="Site example">
         <p>This is the home page from the demo project, showing the usage of 
           the CMS managed labels, using the HST PropertiesManager.</p>
-        <img src="images/site.jpg" alt="Site"/>
+        <img src="images/site.jpg" alt="Site" style="width:700px;"/>
       </subsection>
       </section>
   </body>
