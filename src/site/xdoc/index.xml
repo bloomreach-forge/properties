@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2010 Hippo
-  
+  Copyright 2010-2011 Hippo
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
-  
+
     http://www.apache.org/licenses/LICENSE-2.0
-  
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -25,8 +25,8 @@
     <section name="Introduction">
         <subsection name="What is the properties component?">
             <p>
-              The properties component allows you to create simple CMS documents 
-              having a flat list of name/value pairs. It also provides easy locating 
+              The properties component allows you to create simple CMS documents
+              having a flat list of name/value pairs. It also provides easy locating
               and using these documents in your HST site frontend.
             </p>
         </subsection>
@@ -38,7 +38,7 @@
         </subsection>
         <subsection name="Project status">
           <p>
-            The latest version of property component is 2.06.00 running on Hippo CMS 7.5 (2.18.00 and up).
+            The latest version of property component is 2.07.00 running on Hippo CMS 7.6.1 (2.20.00 and up).
           </p>
           <table border="1" cellpadding="0" cellspacing="5">
             <tbody><tr>
@@ -47,24 +47,14 @@
               <th>HST</th>
             </tr>
               <tr>
-                <td>1.01.00, 1.02.00, 1.02.01</td>
-                <td>7.1 (2.06.xx)</td>
-                <td>2.03.14+</td>
+                <td>2.07.00</td>
+                <td>7.6 (2.20.xx)</td>
+                <td>2.22.xx</td>
               </tr>
               <tr>
-                <td>2.01.00</td>
-                <td>7.2 (2.09.xx)</td>
-                <td>2.04.xx</td>
-              </tr>
-              <tr>
-                <td>2.02.00, 2.03.00</td>
-                <td>2.10.xx - 2.12.01</td>
-                <td>2.04.xx</td>
-              </tr>
-              <tr>
-                <td>2.04.00</td>
-                <td>7.3 (2.12.02+)</td>
-                <td>2.04.03</td>
+                <td>2.06.00</td>
+                <td>7.5 (2.18.xx)</td>
+                <td>2.20.xx</td>
               </tr>
               <tr>
                 <td>2.05.00, 2.05.01</td>
@@ -72,9 +62,24 @@
                 <td>2.04.03</td>
               </tr>
               <tr>
-                <td>2.06.00</td>
-                <td>7.5 (2.18.xx)</td>
-                <td>2.20.xx</td>
+                <td>2.04.00</td>
+                <td>7.3 (2.12.02+)</td>
+                <td>2.04.03</td>
+              </tr>
+              <tr>
+                <td>2.02.00, 2.03.00</td>
+                <td>2.10.xx - 2.12.01</td>
+                <td>2.04.xx</td>
+              </tr>
+              <tr>
+                <td>2.01.00</td>
+                <td>7.2 (2.09.xx)</td>
+                <td>2.04.xx</td>
+              </tr>
+              <tr>
+                <td>1.01.00, 1.02.00, 1.02.01</td>
+                <td>7.1 (2.06.xx)</td>
+                <td>2.03.14+</td>
               </tr>
             </tbody>
           </table>
