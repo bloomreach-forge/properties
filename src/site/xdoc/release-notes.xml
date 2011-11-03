@@ -21,6 +21,15 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="2.07.01-SNAPSHOT">
+        <ul>
+          <li>Support for a Spring configured default location that is outside of the site content root.<br/>
+            <span style="color: red">Note: behaviour change!</span> If the property 'defaultDocumentLocation' of
+            PropertiesManager starts with slash ('/'), the location is retrieved relative to repository root, not
+            relative to the given bean.
+            When upgrading, current implementations should remove any slash in order to be backwards compatible. </li>
+        </ul>
+      </subsection>
       <subsection name="2.07.00">
         <ul>
           <li>Compatibility with CMS 7.6 (2.20.00 and up) and HST 2.22.xx.</li>

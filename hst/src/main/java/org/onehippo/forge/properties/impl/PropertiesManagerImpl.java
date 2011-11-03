@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2011 Hippo
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.hippoecm.hst.content.beans.standard.HippoBean;
-
 import org.onehippo.forge.properties.annotated.Properties;
 import org.onehippo.forge.properties.api.PropertiesManager;
 import org.onehippo.forge.properties.bean.PropertiesBean;
@@ -50,7 +49,7 @@ public class PropertiesManagerImpl implements PropertiesManager {
     @Override
     public PropertiesBean getPropertiesBean(final HippoBean baseBean) {
         if (this.defaultDocumentName == null) {
-            throw new IllegalStateException("defaultDocumentName is null: PropertiesManager not correctly configured");
+            throw new IllegalStateException("defaultDocumentName is null: " + this.getClass().getSimpleName() + " not correctly configured");
         }
 
         return this.getPropertiesBean(this.defaultDocumentName, baseBean);
@@ -142,20 +141,35 @@ public class PropertiesManagerImpl implements PropertiesManager {
             throw new IllegalArgumentException("argument 'baseBean' is null");
         }
         if (this.defaultDocumentLocation == null) {
-            throw new IllegalStateException("defaultDocumentLocation is null: PropertiesManager not correctly configured");
+            throw new IllegalStateException("defaultDocumentLocation is null: " +  this.getClass().getSimpleName() + " not correctly configured");
         }
 
         HippoBean defaultLocation;
         if (this.defaultDocumentLocation.startsWith("/")) {
-            defaultLocation = baseBean.getBean(this.defaultDocumentLocation.substring(1));
+
+            // support for location outside of site content root
+            Object absoluteLocation;
+            try {
+                absoluteLocation = baseBean.getObjectConverter().getObject(baseBean.getNode().getSession(), this.defaultDocumentLocation);
+
+            } catch (Exception e) {
+                throw new IllegalStateException("Can't get location by path " + this.defaultDocumentLocation, e);
+            }
+
+            if (!(absoluteLocation instanceof HippoBean)) {
+                throw new IllegalStateException("Default location object by path " + this.defaultDocumentLocation
+                        + " is not a HippoBean but " + ((absoluteLocation == null) ? "null" : absoluteLocation.getClass().getName()));
+            }
+
+            defaultLocation = (HippoBean) absoluteLocation;
         }
         else {
             defaultLocation = baseBean.getBean(this.defaultDocumentLocation);
         }
 
         if (defaultLocation == null) {
-            throw new IllegalStateException("Default location '" + this.defaultDocumentLocation + 
-                    "' relative to " + baseBean.getPath() + " is not a folder in the repository");
+            throw new IllegalStateException("Default location '" + this.defaultDocumentLocation +
+                    "' (possibly relative to " + baseBean.getPath() + ") is not a folder in the repository");
         }
 
         return defaultLocation;
