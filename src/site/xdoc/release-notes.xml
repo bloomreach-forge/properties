@@ -27,7 +27,7 @@
             <span style="color: red">Note: behaviour change!</span> If the property 'defaultDocumentLocation' of
             PropertiesManager starts with slash ('/'), the location is retrieved relative to repository root, not
             relative to the given bean.
-            When upgrading, current implementations should remove any slash in order to be backwards compatible. </li>
+            When upgrading, current implementations should remove any starting slash in order to be backwards compatible. </li>
         </ul>
       </subsection>
       <subsection name="2.07.00">
