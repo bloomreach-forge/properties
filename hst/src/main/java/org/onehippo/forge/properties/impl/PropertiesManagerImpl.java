@@ -17,61 +17,58 @@
 package org.onehippo.forge.properties.impl;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
+import java.util.Locale;
 
+import org.hippoecm.hst.content.beans.standard.HippoAvailableTranslationsBean;
 import org.hippoecm.hst.content.beans.standard.HippoBean;
 import org.onehippo.forge.properties.annotated.Properties;
-import org.onehippo.forge.properties.api.PropertiesManager;
 import org.onehippo.forge.properties.bean.PropertiesBean;
-import org.onehippo.forge.properties.bean.PropertiesMap;
 
-public class PropertiesManagerImpl implements PropertiesManager {
+public class PropertiesManagerImpl extends AbstractPropertiesManager {
 
     // injected by Spring
     private String defaultDocumentLocation;
     private String defaultDocumentName;
 
-    // javadoc from interface
+    /** {@inheritDoc} */
     @Override
     public String getDefaultDocumentLocation() {
         return this.defaultDocumentLocation;
     }
 
-    // javadoc from interface
+    /** {@inheritDoc} */
     @Override
     public String getDefaultDocumentName() {
         return this.defaultDocumentName;
     }
 
-    // javadoc from interface
+    /** {@inheritDoc} */
     @Override
-    public PropertiesBean getPropertiesBean(final HippoBean baseBean) {
+    public PropertiesBean getPropertiesBean(final HippoBean baseBean, final Locale locale) {
         if (this.defaultDocumentName == null) {
             throw new IllegalStateException("defaultDocumentName is null: " + this.getClass().getSimpleName() + " not correctly configured");
         }
 
-        return this.getPropertiesBean(this.defaultDocumentName, baseBean);
+        return this.getPropertiesBean(this.defaultDocumentName, baseBean, locale);
     }
 
-    // javadoc from interface
+    /** {@inheritDoc} */
     @Override
-    public PropertiesBean getPropertiesBean(final String path, final HippoBean baseBean) {
+    public PropertiesBean getPropertiesBean(final String path, final HippoBean baseBean, final Locale locale) {
         final HippoBean location = getDefaultLocation(baseBean);
         if (path == null) {
             // get document by default name
-            return getPropertiesBean(baseBean);
-        }
-        else {
+            return getPropertiesBean(baseBean, locale);
+        } else {
             // get document by given path
-            return getPropertiesBean(location, path);
+            return getPropertiesBean(location, path, locale);
         }
     }
 
-    // javadoc from interface
+    /** {@inheritDoc} */
     @Override
-    public List<PropertiesBean> getPropertiesBeans(final List<String> paths, final HippoBean baseBean) {
+    public List<PropertiesBean> getPropertiesBeans(final List<String> paths, final HippoBean baseBean, final Locale locale) {
 
         List<PropertiesBean> propertiesBeans = new ArrayList<PropertiesBean>(paths.size());
 
@@ -81,13 +78,12 @@ public class PropertiesManagerImpl implements PropertiesManager {
             if (propertiesBean != null) {
                 propertiesBeans.add(propertiesBean);
             }
-        }
-        else {
+        } else {
             // get multiple documents by given paths
             final HippoBean location = getDefaultLocation(baseBean);
             for (final String path : paths) {
 
-                final PropertiesBean propertiesBean = getPropertiesBean(location, path);
+                final PropertiesBean propertiesBean = getPropertiesBean(location, path, locale);
                 if (propertiesBean != null) {
                     propertiesBeans.add(propertiesBean);
                 }
@@ -97,25 +93,7 @@ public class PropertiesManagerImpl implements PropertiesManager {
         return propertiesBeans;
     }
 
-    // javadoc from interface
-    @Override
-    public Map<String, String> getProperties(final HippoBean baseBean) {
-
-        // use new API and merge beans to one map
-        final PropertiesBean propertiesBean = getPropertiesBean(baseBean);
-        return (propertiesBean != null) ? new PropertiesMap(propertiesBean) : null;
-    }
-
-    // javadoc from interface
-    @Override
-    public Map<String, String> getProperties(final String[] paths, final HippoBean baseBean) {
-
-        // use new API and merge beans to one map
-        final List<PropertiesBean> beans = getPropertiesBeans(Arrays.asList(paths), baseBean);
-        return new PropertiesMap(beans);
-    }
-
-    // javadoc from interface
+    /** {@inheritDoc} */
     @Override
     public void invalidate(final String canonicalPath) {
         throw new UnsupportedOperationException("Invalidation not supported. Use "
@@ -141,7 +119,7 @@ public class PropertiesManagerImpl implements PropertiesManager {
             throw new IllegalArgumentException("argument 'baseBean' is null");
         }
         if (this.defaultDocumentLocation == null) {
-            throw new IllegalStateException("defaultDocumentLocation is null: " +  this.getClass().getSimpleName() + " not correctly configured");
+            throw new IllegalStateException("defaultDocumentLocation is null: " + this.getClass().getSimpleName() + " not correctly configured");
         }
 
         HippoBean defaultLocation;
@@ -162,8 +140,7 @@ public class PropertiesManagerImpl implements PropertiesManager {
             }
 
             defaultLocation = (HippoBean) absoluteLocation;
-        }
-        else {
+        } else {
             defaultLocation = baseBean.getBean(this.defaultDocumentLocation);
         }
 
@@ -176,21 +153,37 @@ public class PropertiesManagerImpl implements PropertiesManager {
     }
 
     /**
-     * Get a serializable PropertiesBean by location and path.
+     * Get a serializable PropertiesBean by location, path and locale.
      */
-    protected PropertiesBean getPropertiesBean(final HippoBean location, final String path) {
+    protected PropertiesBean getPropertiesBean(final HippoBean location, final String path, final Locale locale) {
 
         if (location == null) {
-            throw new IllegalArgumentException("Location bean is null");
+            throw new IllegalArgumentException("Location bean is null, path=" + path);
         }
         if (path == null) {
-            throw new IllegalArgumentException("Path is null");
+            throw new IllegalArgumentException("Path is null, location bean is " + location.getPath());
         }
 
-        Properties doc = location.getBean(path, Properties.class);
+        final Properties doc = getTranslatedProperties(location, path, locale);
         if (doc != null) {
+
             return new PropertiesBean(doc);
         }
         return null;
+    }
+
+    protected Properties getTranslatedProperties(final HippoBean location, final String path, final Locale locale) {
+
+        Properties propertiesDoc = location.getBean(path, Properties.class);
+
+        // check availability of translations in a preferred locale
+        if ((propertiesDoc != null) && (locale != null)) {
+            HippoAvailableTranslationsBean<Properties> translationBean = propertiesDoc.getAvailableTranslationsBean(Properties.class);
+            if ((translationBean != null) && translationBean.hasTranslation(locale.getLanguage())) {
+                propertiesDoc = translationBean.getTranslation(locale.getLanguage());
+            }
+        }
+
+        return propertiesDoc;
     }
 }

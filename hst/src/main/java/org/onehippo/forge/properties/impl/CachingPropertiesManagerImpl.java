@@ -18,6 +18,7 @@ package org.onehippo.forge.properties.impl;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.jcr.RepositoryException;
@@ -29,7 +30,7 @@ import org.onehippo.forge.properties.bean.PropertiesBean;
 
 public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
 
-    // cache, key is properties document bean path
+    // cache, key is properties document bean path locale
     private final static Map<String, PropertiesBean> cache = Collections.synchronizedMap(new HashMap<String, PropertiesBean>());
 
     @Override
@@ -40,7 +41,7 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
     }
 
     @Override
-    protected PropertiesBean getPropertiesBean(final HippoBean location, final String path) {
+    protected PropertiesBean getPropertiesBean(final HippoBean location, final String path, final Locale locale) {
 
         if (location == null) {
             throw new IllegalArgumentException("Location bean is null");
@@ -54,17 +55,20 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
 
             // construct a canonical path with (folders)/handle/document so duplicate the last part of the path
             final String docName = (path.lastIndexOf("/") < 0) ? path : path.substring(path.lastIndexOf("/") + 1);
-            final String key = ((HippoNode) location.getNode()).getCanonicalNode().getPath()
+            String key = ((HippoNode) location.getNode()).getCanonicalNode().getPath()
                             + "/" + path + "/" + docName;
+            if (locale != null ) {
+                key += "/" + locale.toString();
+            }
 
             final PropertiesBean bean = cache.get(key);
             if (bean != null) {
                 return bean;
             }
 
-            final Properties doc = location.getBean(path, Properties.class);
-            if (doc != null) {
-                final PropertiesBean propertiesBean = new PropertiesBean(doc);
+            final Properties propertiesDoc = getTranslatedProperties(location, path, locale);
+            if (propertiesDoc != null) {
+                final PropertiesBean propertiesBean = new PropertiesBean(propertiesDoc);
                 cache.put(key, propertiesBean);
                 return propertiesBean;
             }
