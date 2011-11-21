@@ -179,8 +179,14 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
         // check availability of translations in a preferred locale
         if ((propertiesDoc != null) && (locale != null)) {
             HippoAvailableTranslationsBean<Properties> translationBean = propertiesDoc.getAvailableTranslationsBean(Properties.class);
-            if ((translationBean != null) && translationBean.hasTranslation(locale.getLanguage())) {
-                propertiesDoc = translationBean.getTranslation(locale.getLanguage());
+            if (translationBean != null) {
+                // first try full locale, then just the language
+                if (translationBean.hasTranslation(locale.toString())) {
+                    propertiesDoc = translationBean.getTranslation(locale.toString());
+                }
+                else if (translationBean.hasTranslation(locale.getLanguage())) {
+                    propertiesDoc = translationBean.getTranslation(locale.getLanguage());
+                }
             }
         }
 
