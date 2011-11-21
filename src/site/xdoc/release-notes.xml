@@ -28,6 +28,7 @@
             PropertiesManager starts with slash ('/'), the location is retrieved relative to repository root, not
             relative to the given bean.
             When upgrading, current implementations should remove any starting slash in order to be backwards compatible. </li>
+          <li>Added a CMS configuraton item (a filter on configuration browser) to hide the properties namespace from doc type editor.</li>
         </ul>
       </subsection>
       <subsection name="2.07.00">
