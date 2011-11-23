@@ -56,12 +56,12 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
     /** {@inheritDoc} */
     @Override
     public PropertiesBean getPropertiesBean(final String path, final HippoBean baseBean, final Locale locale) {
-        final HippoBean location = getDefaultLocation(baseBean);
         if (path == null) {
             // get document by default name
             return getPropertiesBean(baseBean, locale);
         } else {
             // get document by given path
+            final HippoBean location = getDefaultLocation(baseBean);
             return getPropertiesBean(location, path, locale);
         }
     }
@@ -72,7 +72,7 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
 
         List<PropertiesBean> propertiesBeans = new ArrayList<PropertiesBean>(paths.size());
 
-        if ((paths == null) || (paths.size() == 0)) {
+        if (paths.size() == 0) {
             // get document by default name
             final PropertiesBean propertiesBean = getPropertiesBean(baseBean);
             if (propertiesBean != null) {
@@ -112,6 +112,9 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
 
     /**
      * Get the base location where the properties documents are stored.
+     *
+     * @param baseBean normally the site content base bean
+     * @return default location bean
      */
     protected HippoBean getDefaultLocation(HippoBean baseBean) {
 
@@ -154,6 +157,11 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
 
     /**
      * Get a serializable PropertiesBean by location, path and locale.
+     *
+     * @param location default location where to find properties beans
+     * @param path path relative to the location for a particular bean
+     * @param locale locale by which to find linked properties documents
+     * @return Serializable cacheable properties bean, based on a properties document
      */
     protected PropertiesBean getPropertiesBean(final HippoBean location, final String path, final Locale locale) {
 
