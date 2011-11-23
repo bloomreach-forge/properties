@@ -38,7 +38,7 @@
         </subsection>
         <subsection name="Project status">
           <p>
-            The latest version of property component is 2.07.00 running on Hippo CMS 7.6.1 (2.20.00 and up).
+            The latest version of property component is 2.07.01 running on Hippo CMS 7.6 (2.20.00 and up).
           </p>
           <table border="1" cellpadding="0" cellspacing="5">
             <tbody><tr>
@@ -47,7 +47,7 @@
               <th>HST</th>
             </tr>
               <tr>
-                <td>2.07.00</td>
+                <td>2.07.00, 2.07.01</td>
                 <td>7.6 (2.20.xx)</td>
                 <td>2.22.xx</td>
               </tr>

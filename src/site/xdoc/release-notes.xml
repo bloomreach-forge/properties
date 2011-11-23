@@ -21,12 +21,18 @@
   </properties>
   <body>
     <section name="Release Notes">
-      <subsection name="2.07.01-SNAPSHOT">
+      <subsection name="2.07.01">
         <ul>
+          <li>
+            Support for translated properties documents in site:<br/>
+            - <span style="color: red">Note: API change!</span><br/>
+            Added a java.util.Locale argument to the PropertiesManager#getPropertiesBean methods, resulting in three extra methods<br/>
+            - Introduced AbstractPropertiesManager implementation class for extendability
+          </li>
           <li>Support for a Spring configured default location that is outside of the site content root.<br/>
-            <span style="color: red">Note: behaviour change!</span> If the property 'defaultDocumentLocation' of
-            PropertiesManager starts with slash ('/'), the location is retrieved relative to repository root, not
-            relative to the given bean.
+            <span style="color: red">Note: behaviour change!</span><br/>
+            If the property 'defaultDocumentLocation' of PropertiesManager starts with slash ('/'), the
+            location is retrieved relative to repository root, not relative to the bean given in API call.
             When upgrading, current implementations should remove any starting slash in order to be backwards compatible. </li>
           <li>Added a CMS configuraton item (a filter on configuration browser) to hide the properties namespace from doc type editor.</li>
         </ul>
