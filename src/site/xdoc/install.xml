@@ -52,7 +52,7 @@
   <dependency>
     <groupId>org.onehippo.forge.properties</groupId>
     <artifactId>properties-addon-repository</artifactId>
-    <version>2.07.01</version>
+    <version>2.07.02</version>
   </dependency>]]></source>
             <p>When using version <b>2.04.00</b> or below:</p>
             <source><![CDATA[
@@ -78,7 +78,7 @@
   <dependency>
     <groupId>org.onehippo.forge.properties</groupId>
     <artifactId>properties-hst-client</artifactId>
-    <version>2.07.01</version>
+    <version>2.07.02</version>
   </dependency>]]></source>
           <p>When using version <b>2.04.00</b>:</p>
             <source><![CDATA[
