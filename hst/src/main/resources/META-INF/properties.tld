@@ -18,21 +18,18 @@
       <name>name</name>
       <required>true</required>
       <rtexprvalue>true</rtexprvalue>
-      <type>String</type>
       <description>Name part of the name/value pair that is the property.</description>
     </attribute>
     <attribute>
       <name>documentPath</name>
       <required>false</required>
       <rtexprvalue>true</rtexprvalue>
-      <type>String</type>
       <description>Path (or just the name) of the properties document to get the property from.</description>
     </attribute>
     <attribute>
       <name>managerPostfix</name>
       <required>false</required>
       <rtexprvalue>false</rtexprvalue>
-      <type>String</type>
       <description>The postfix that is added to 'org.onehippo.forge.properties.api.PropertiesManager.'
             to retrieve the Spring configured properties manager. Defaults to 'labels'</description>
     </attribute>

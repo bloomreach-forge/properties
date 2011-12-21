@@ -223,7 +223,7 @@
         <artifactId>maven-taglib-plugin</artifactId>
         <version>${maven.plugin.taglib.version}</version>
         <configuration>
-          <taglib.src.dir>client/src/main/resources/META-INF</taglib.src.dir>
+          <taglib.src.dir>hst/src/main/resources/META-INF</taglib.src.dir>
           <title>HST ${project.version} JSP tag</title>
         </configuration>
       </plugin>
