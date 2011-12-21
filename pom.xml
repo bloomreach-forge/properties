@@ -12,7 +12,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>7</version>
+    <version>11</version>
   </parent>
 
   <name>Hippo Forge Properties Project</name>
@@ -24,8 +24,8 @@
   <packaging>pom</packaging>
 
   <properties>
-    <hippo.hst.version>2.22.00</hippo.hst.version>
-    <hippo.cms.version>2.20.00</hippo.cms.version>
+    <hippo.hst.version>2.24.00</hippo.hst.version>
+    <hippo.cms.version>2.22.00</hippo.cms.version>
 
     <jsp.api.version>2.1</jsp.api.version>
 
@@ -129,14 +129,6 @@
   </dependencyManagement>
 
   <repositories>
-    <repository>
-      <id>hippo-maven2-snapshots</id>
-      <name>Hippo Maven 2</name>
-      <url>http://maven.onehippo.com/maven2-snapshots/</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
     <repository>
       <id>hippo-maven2</id>
       <name>Hippo maven 2 repository.</name>
