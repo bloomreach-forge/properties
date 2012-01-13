@@ -30,18 +30,18 @@
       <subsection name="Maven 2 repository">
         <p>Add this repository to your root pom.xml (if it has not already been defined in a parent pom):</p>
         <source><![CDATA[
-  	<repository>
-      <id>hippo-forge</id>
-      <name>Hippo Forge maven 2 repository.</name>
-      <url>http://maven.onehippo.com/maven2-forge/</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <layout>default</layout>
-    </repository>]]></source>
+<repository>
+  <id>hippo-forge</id>
+  <name>Hippo Forge maven 2 repository.</name>
+  <url>http://maven.onehippo.com/maven2-forge/</url>
+  <snapshots>
+    <enabled>false</enabled>
+  </snapshots>
+  <releases>
+    <updatePolicy>never</updatePolicy>
+  </releases>
+  <layout>default</layout>
+</repository>]]></source>
       </subsection>
 
       <subsection name="Installation in CMS/Repository">
@@ -49,18 +49,20 @@
           <li>
             <p>Add this dependency to the pom.xml of your <i>cms</i> module:</p>
             <source><![CDATA[
-  <dependency>
-    <groupId>org.onehippo.forge.properties</groupId>
-    <artifactId>properties-addon-repository</artifactId>
-    <version>2.07.02</version>
-  </dependency>]]></source>
+<dependency>
+  <groupId>org.onehippo.forge.properties</groupId>
+  <artifactId>properties-addon-repository</artifactId>
+  <!-- NB version is managed from parent
+       org.onehippo.cms7:hippo-cms7-release:7.7.0 and up -->
+  <version>2.07.03</version>
+</dependency>]]></source>
             <p>When using version <b>2.04.00</b> or below:</p>
             <source><![CDATA[
-  <dependency>
-    <groupId>org.onehippo.forge</groupId>
-    <artifactId>properties-addon-repository</artifactId>
-    <version>2.04.00</version>
-  </dependency>]]></source>
+<dependency>
+  <groupId>org.onehippo.forge</groupId>
+  <artifactId>properties-addon-repository</artifactId>
+  <version>2.04.00</version>
+</dependency>]]></source>
           </li>
           <li>
             <p>
@@ -75,27 +77,29 @@
           <li>
             <p>Add this dependency to the pom.xml of your <i>site</i> module:</p>
             <source><![CDATA[
-  <dependency>
-    <groupId>org.onehippo.forge.properties</groupId>
-    <artifactId>properties-hst-client</artifactId>
-    <version>2.07.02</version>
-  </dependency>]]></source>
+<dependency>
+  <groupId>org.onehippo.forge.properties</groupId>
+  <artifactId>properties-hst-client</artifactId>
+  <!-- NB version is managed from parent
+       org.onehippo.cms7:hippo-cms7-release:7.7.0 and up -->
+  <version>2.07.03</version>
+</dependency>]]></source>
           <p>When using version <b>2.04.00</b>:</p>
             <source><![CDATA[
-  <dependency>
-    <groupId>org.onehippo.forge</groupId>
-    <artifactId>properties-hst-client</artifactId>
-    <version>2.04.00</version>
-  </dependency>]]></source>
+<dependency>
+  <groupId>org.onehippo.forge</groupId>
+  <artifactId>properties-hst-client</artifactId>
+  <version>2.04.00</version>
+</dependency>]]></source>
           </li>
           <li>
             <p>When using version <b>2.02.00 or lower</b>, also include the artifact properties-hst-api:</p>
             <source><![CDATA[
-  <dependency>
-    <groupId>org.onehippo.forge</groupId>
-    <artifactId>properties-hst-api</artifactId>
-    <version>2.02.00</version>
-  </dependency>]]></source>
+<dependency>
+  <groupId>org.onehippo.forge</groupId>
+  <artifactId>properties-hst-api</artifactId>
+  <version>2.02.00</version>
+</dependency>]]></source>
           </li>
           <li>
             <p>In the web.xml, make sure HstContainerServlet has uncommented init-params
@@ -106,11 +110,13 @@
               which to retrieve properties documents from repository. To create such a manager,
               add this part to the Spring configuration file site/src/main/resources/META-INF/client-assembly/base.xml:</p>
             <source><![CDATA[
-  <bean id="org.onehippo.forge.properties.api.PropertiesManager"
-        class="org.onehippo.forge.properties.impl.PropertiesManagerImpl">
-    <property name="defaultDocumentLocation" value="construction/labels"/>
-    <property name="defaultDocumentName" value="common"/>
-    </bean>]]></source>
+<bean id="org.onehippo.forge.properties.api.PropertiesManager"
+    class="org.onehippo.forge.properties.impl.PropertiesManagerImpl">
+  <property name="defaultDocumentLocation"
+            value="construction/labels"/>
+  <property name="defaultDocumentName"
+            value="common"/>
+</bean>]]></source>
             <p>You may want to set up caching by using <b>org.onehippo.forge.properties.impl.CachingPropertiesManagerImpl</b>.
               Please see the properties-demo project on how to set up the accompanying <b>PropertiesEventListener</b>
               that invalidates that cache.</p>
@@ -120,17 +126,26 @@
               more. See the PropertiesManager.java interface.</p>
           </li>
           <li>
-            <p>If you don't use classpath loaded bean (available since HST 2.20) but the xml file to define
-              your beans, add these beans in the HST file site/src/main/webapp/WEB-INF/beans-annotated-classes.xml</p>
+            <p><b>A)</b> If you use classpath loaded beans (available since HST 2.20), add in the web.xml of your site the
+                following value to context parameter <code>hst-beans-annotated-classes</code> (note that the values are
+            comma separated):</p>
             <source><![CDATA[
-  <hst-content-beans>
-    <annotated-class>
-      org.onehippo.forge.properties.annotated.Property
-    </annotated-class>
-    <annotated-class>
-      org.onehippo.forge.properties.annotated.Properties
-    </annotated-class>
-  </hst-content-beans>]]></source>
+<context-param>
+  <param-name>hst-beans-annotated-classes</param-name>
+  <param-value>
+    classpath*:org/onehippo/forge/properties/annotated/**/*.class
+  </param-value>
+</context-param>]]></source>
+            <p><b>B)</b> If you use the xml file to define your beans, add these beans in the HST file site/src/main/webapp/WEB-INF/beans-annotated-classes.xml</p>
+            <source><![CDATA[
+<hst-content-beans>
+  <annotated-class>
+    org.onehippo.forge.properties.annotated.Property
+  </annotated-class>
+  <annotated-class>
+    org.onehippo.forge.properties.annotated.Properties
+  </annotated-class>
+</hst-content-beans>]]></source>
           </li>
         </ol>
         <p>For usage in <a href="sitecode.html">Java/JSP code, see here</a></p>

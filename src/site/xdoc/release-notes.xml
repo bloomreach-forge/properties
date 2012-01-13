@@ -21,6 +21,12 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="2.07.03">
+        <ul>
+          <li>Compatibility with CMS 7.7 (2.22.xx) and HST 2.24.xx.</li>
+          <li>French translations on properties documents folder queries.</li>
+        </ul>
+      </subsection>
       <subsection name="2.07.02">
         <ul>
           <li>Adding request.getLocale() to the PropertiesManager#getPropertiesBean call within the jsp tag &lt;properties:property /&gt;.</li>
