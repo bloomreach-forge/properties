@@ -2,6 +2,7 @@ package org.onehippo.forge.properties.impl;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import org.hippoecm.hst.content.beans.standard.HippoBean;
@@ -19,7 +20,7 @@ public abstract class AbstractPropertiesManager implements PropertiesManager {
      */
     @Override
     public PropertiesBean getPropertiesBean(final HippoBean baseBean) {
-        return this.getPropertiesBean(baseBean, null/*locale*/);
+        return this.getPropertiesBean(baseBean, (Locale)null);
     }
 
     /**
@@ -27,7 +28,7 @@ public abstract class AbstractPropertiesManager implements PropertiesManager {
      */
     @Override
     public PropertiesBean getPropertiesBean(final String path, final HippoBean baseBean) {
-        return this.getPropertiesBean(path, baseBean, null/*locale*/);
+        return this.getPropertiesBean(path, baseBean, (Locale)null);
     }
 
     /**
@@ -35,7 +36,7 @@ public abstract class AbstractPropertiesManager implements PropertiesManager {
      */
     @Override
     public List<PropertiesBean> getPropertiesBeans(final List<String> paths, final HippoBean baseBean) {
-        return this.getPropertiesBeans(paths, baseBean, null/*locale*/);
+        return this.getPropertiesBeans(paths, baseBean, (Locale)null);
     }
 
     /**

@@ -60,6 +60,16 @@ public interface PropertiesManager  {
     PropertiesBean getPropertiesBean(final HippoBean baseBean, final Locale locale);
 
     /**
+     * Get the bean representing the properties document with the configured default name at the configured location,
+     * relative to the given base bean (if configured location does not start with slash).
+     *
+     * @param baseBean the base bean from where to get the properties location (if location does not start with slash),
+     *      normally the siteContentBaseBean.
+     * @param language the locale by which to try to retrieve linked translated properties.
+     */
+    PropertiesBean getPropertiesBean(final HippoBean baseBean, final String language);
+    
+    /**
      * Get the bean representing the properties document with the given name at the configured location,
      * relative to the given base bean (if configured location does not start with slash).
      *
@@ -69,6 +79,16 @@ public interface PropertiesManager  {
      */
     PropertiesBean getPropertiesBean(final String path, final HippoBean baseBean);
 
+    /**
+     * Get the bean representing the properties document with the given name at the configured location,
+     * relative to the given base bean (if configured location does not start with slash).
+     *
+     * @param path the relative path of the properties documents to search for
+     * @param baseBean the base bean from where to get the properties location (if location does not start with slash),
+     *      normally the siteContentBaseBean.
+     * @param language the languagecode by which to try to retrieve linked translated properties.
+     */
+    PropertiesBean getPropertiesBean(final String path, final HippoBean baseBean, final String language);
     /**
      * Get the bean representing the properties document with the given name at the configured location,
      * relative to the given base bean (if configured location does not start with slash).
@@ -99,6 +119,16 @@ public interface PropertiesManager  {
      */
     List<PropertiesBean> getPropertiesBeans(final List<String> paths, final HippoBean baseBean, final Locale locale);
 
+    /**
+     * Get the beans representing the properties documents with the given names at the configured location,
+     * relative to the given base bean (if configured location does not start with slash).
+     *
+     * @param paths the relative paths of the properties documents to search for
+     * @param baseBean the base bean from where to get the properties location, normally the siteContentBaseBean.
+     * @param language the languagecode by which to try to retrieve linked translated properties.
+     */
+    List<PropertiesBean> getPropertiesBeans(final List<String> paths, final HippoBean baseBean, final String language);
+    
     /**
      * Returns a map with String name/value pairs.
      *

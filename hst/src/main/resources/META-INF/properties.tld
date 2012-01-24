@@ -39,9 +39,19 @@
       <required>false</required>
       <rtexprvalue>false</rtexprvalue>
     </attribute>
+    <attribute>
+      <description>The languagecode to be used for translated content. If language is not given then hstRequest.getLocale() is used.</description>
+      <name>language</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
     <example><![CDATA[
           <div>
              <properties:property name="section.title" document="home" />
+          </div>
+
+          <div>
+             <properties:property name="section.title" document="home" language="nl"/>
           </div>
           ]]></example>
   </tag>
