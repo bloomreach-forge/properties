@@ -24,8 +24,8 @@
   <packaging>pom</packaging>
 
   <properties>
-    <hippo.hst.version>2.24.00</hippo.hst.version>
-    <hippo.cms.version>2.22.00</hippo.cms.version>
+    <hippo.hst.version>2.24.03</hippo.hst.version>
+    <hippo.cms.version>2.22.02</hippo.cms.version>
 
     <jsp.api.version>2.1</jsp.api.version>
 
