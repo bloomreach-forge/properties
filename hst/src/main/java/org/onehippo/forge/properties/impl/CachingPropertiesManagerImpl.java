@@ -94,7 +94,7 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
         return null;
     }
 
-    private String createKey(final HippoBean location, final String path, final String localeStr) throws RepositoryException {
+    protected String createKey(final HippoBean location, final String path, final String localeStr) throws RepositoryException {
 
         // path contains folder(s): construct a canonical path with folder(s)/handle/document
 
