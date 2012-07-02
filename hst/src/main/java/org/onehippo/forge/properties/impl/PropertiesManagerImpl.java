@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Hippo
+ * Copyright 2010-2012 Hippo
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,11 +56,11 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
     /** {@inheritDoc} */
     @Override
     public PropertiesBean getPropertiesBean(final HippoBean baseBean, final String language) {
-    	if (this.defaultDocumentName == null) {
-    		throw new IllegalStateException("defaultDocumentName is null: " + this.getClass().getSimpleName() + " not correctly configured");
-    	}
+        if (this.defaultDocumentName == null) {
+            throw new IllegalStateException("defaultDocumentName is null: " + this.getClass().getSimpleName() + " not correctly configured");
+        }
 
-    	return this.getPropertiesBean(this.defaultDocumentName, baseBean, language);
+        return this.getPropertiesBean(this.defaultDocumentName, baseBean, language);
     }
 
 
@@ -80,14 +80,14 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
     /** {@inheritDoc} */
     @Override
     public PropertiesBean getPropertiesBean(final String path, final HippoBean baseBean, final String language) {
-    	if (path == null) {
-    		// get document by default name
-    		return getPropertiesBean(baseBean, language);
-    	} else {
-    		// get document by given path
-    		final HippoBean location = getDefaultLocation(baseBean);
-    		return getPropertiesBean(location, path, language);
-    	}
+        if (path == null) {
+            // get document by default name
+            return getPropertiesBean(baseBean, language);
+        } else {
+            // get document by given path
+            final HippoBean location = getDefaultLocation(baseBean);
+            return getPropertiesBean(location, path, language);
+        }
     }
 
     /** {@inheritDoc} */
@@ -121,27 +121,27 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
     @Override
     public List<PropertiesBean> getPropertiesBeans(final List<String> paths, final HippoBean baseBean, final String language) {
 
-    	List<PropertiesBean> propertiesBeans = new ArrayList<PropertiesBean>(paths.size());
+        List<PropertiesBean> propertiesBeans = new ArrayList<PropertiesBean>(paths.size());
 
-    	if (paths.size() == 0) {
-    		// get document by default name
-    		final PropertiesBean propertiesBean = getPropertiesBean(baseBean);
-    		if (propertiesBean != null) {
-    			propertiesBeans.add(propertiesBean);
-    		}
-    	} else {
-    		// get multiple documents by given paths
-    		final HippoBean location = getDefaultLocation(baseBean);
-    		for (final String path : paths) {
+        if (paths.size() == 0) {
+            // get document by default name
+            final PropertiesBean propertiesBean = getPropertiesBean(baseBean);
+            if (propertiesBean != null) {
+                propertiesBeans.add(propertiesBean);
+            }
+        } else {
+            // get multiple documents by given paths
+            final HippoBean location = getDefaultLocation(baseBean);
+            for (final String path : paths) {
 
-    			final PropertiesBean propertiesBean = getPropertiesBean(location, path, language);
-    			if (propertiesBean != null) {
-    				propertiesBeans.add(propertiesBean);
-    			}
-    		}
-    	}
+                final PropertiesBean propertiesBean = getPropertiesBean(location, path, language);
+                if (propertiesBean != null) {
+                    propertiesBeans.add(propertiesBean);
+                }
+            }
+        }
 
-    	return propertiesBeans;
+        return propertiesBeans;
     }
 
     /** {@inheritDoc} */
@@ -210,8 +210,8 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
      * Get a serializable PropertiesBean by location, path and locale.
      *
      * @param location default location where to find properties beans
-     * @param path path relative to the location for a particular bean
-     * @param locale locale by which to find linked properties documents
+     * @param path     path relative to the location for a particular bean
+     * @param locale   locale by which to find linked properties documents
      * @return Serializable cacheable properties bean, based on a properties document
      */
     protected PropertiesBean getPropertiesBean(final HippoBean location, final String path, final Locale locale) {
@@ -235,42 +235,42 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
      * Get a serializable PropertiesBean by location, path and language.
      *
      * @param location default location where to find properties beans
-     * @param path path relative to the location for a particular bean
+     * @param path     path relative to the location for a particular bean
      * @param language language by which to find linked properties documents
      * @return Serializable cacheable properties bean, based on a properties document
      */
     protected PropertiesBean getPropertiesBean(final HippoBean location, final String path, final String language) {
 
-    	if (location == null) {
-    		throw new IllegalArgumentException("Location bean is null, path=" + path);
-    	}
-    	if (path == null) {
-    		throw new IllegalArgumentException("Path is null, location bean is " + location.getPath());
-    	}
+        if (location == null) {
+            throw new IllegalArgumentException("Location bean is null, path=" + path);
+        }
+        if (path == null) {
+            throw new IllegalArgumentException("Path is null, location bean is " + location.getPath());
+        }
 
-    	final Properties doc = getTranslatedProperties(location, path, language);
-    	if (doc != null) {
+        final Properties doc = getTranslatedProperties(location, path, language);
+        if (doc != null) {
 
-    		return new PropertiesBean(doc);
-    	}
-    	return null;
+            return new PropertiesBean(doc);
+        }
+        return null;
     }
 
     protected Properties getTranslatedProperties(final HippoBean location, final String path, final String language) {
 
-    	Properties propertiesDoc = location.getBean(path, Properties.class);
+        Properties propertiesDoc = location.getBean(path, Properties.class);
 
-    	// check availability of translations in a preferred locale
-    	if ((propertiesDoc != null) && (language != null)) {
-    		HippoAvailableTranslationsBean<Properties> translationBean = propertiesDoc.getAvailableTranslationsBean(Properties.class);
-    		if (translationBean != null) {
-    			if (translationBean.hasTranslation(language)) {
-    				propertiesDoc = translationBean.getTranslation(language);
-    			}
-    		}
-    	}
+        // check availability of translations in a preferred locale
+        if ((propertiesDoc != null) && (language != null)) {
+            HippoAvailableTranslationsBean<Properties> translationBean = propertiesDoc.getAvailableTranslationsBean(Properties.class);
+            if (translationBean != null) {
+                if (translationBean.hasTranslation(language)) {
+                    propertiesDoc = translationBean.getTranslation(language);
+                }
+            }
+        }
 
-    	return propertiesDoc;
+        return propertiesDoc;
     }
 
     protected Properties getTranslatedProperties(final HippoBean location, final String path, final Locale locale) {
