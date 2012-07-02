@@ -51,11 +51,11 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
         }
 
         try {
-            final String key = createkey(location, path, locale.toString());
-    		
-    		if (cache.containsKey(key)) {
-    			return cache.get(key);
-    		}
+            final String key = createKey(location, path, (locale != null) ? locale.toString() : null);
+
+            if (cache.containsKey(key)) {
+                return cache.get(key);
+            }
 
             final Properties propertiesDoc = getTranslatedProperties(location, path, locale);
             if (propertiesDoc != null) {
@@ -63,53 +63,52 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
                 cache.put(key, propertiesBean);
                 return propertiesBean;
             }
-        }
-        catch (RepositoryException ignore) {
+        } catch (RepositoryException ignore) {
         }
 
         return null;
     }
-    
+
     @Override
     protected PropertiesBean getPropertiesBean(final HippoBean location, final String path, final String language) {
-    	
-    	if (location == null) {
-    		throw new IllegalArgumentException("Location bean is null");
-    	}
-    	if (path == null) {
-    		throw new IllegalArgumentException("Path is null");
-    	}
-    	
-    	try {
-            final String key = createkey(location, path, language);
-    		
-    		final Properties propertiesDoc = getTranslatedProperties(location, path, language);
-    		if (propertiesDoc != null) {
-    			final PropertiesBean propertiesBean = new PropertiesBean(propertiesDoc);
-    			cache.put(key, propertiesBean);
-    			return propertiesBean;
-    		}
-    	}
-    	catch (RepositoryException ignore) {
-    	}
-    	
-    	return null;
+
+        if (location == null) {
+            throw new IllegalArgumentException("Location bean is null");
+        }
+        if (path == null) {
+            throw new IllegalArgumentException("Path is null");
+        }
+
+        try {
+            final String key = createKey(location, path, language);
+
+            final Properties propertiesDoc = getTranslatedProperties(location, path, language);
+            if (propertiesDoc != null) {
+                final PropertiesBean propertiesBean = new PropertiesBean(propertiesDoc);
+                cache.put(key, propertiesBean);
+                return propertiesBean;
+            }
+        } catch (RepositoryException ignore) {
+        }
+
+        return null;
     }
-    
-    private String createkey(final HippoBean location, final String path, final String language) throws RepositoryException {
-		// path contains folder(s): construct a canonical path with folder(s)/handle/document
-		
-		// construct a canonical path with (folders)/handle/document so duplicate the last part of the path
-    	 final String docName = (path.lastIndexOf("/") < 0) ? path : path.substring(path.lastIndexOf("/") + 1);
-         StringBuilder sb = new StringBuilder(((HippoNode) location.getNode()).getCanonicalNode().getPath());
-         sb.append('/');
-         sb.append(path);
-         sb.append('/');
-         sb.append(docName);
-         if (language != null ) {
-         	sb.append('/');
-         	sb.append(language);
-         }
-         return sb.toString();
+
+    private String createKey(final HippoBean location, final String path, final String localeStr) throws RepositoryException {
+
+        // path contains folder(s): construct a canonical path with folder(s)/handle/document
+
+        // construct a canonical path with (folders)/handle/document so duplicate the last part of the path
+        final String docName = (path.lastIndexOf("/") < 0) ? path : path.substring(path.lastIndexOf("/") + 1);
+        StringBuilder sb = new StringBuilder(((HippoNode) location.getNode()).getCanonicalNode().getPath());
+        sb.append('/');
+        sb.append(path);
+        sb.append('/');
+        sb.append(docName);
+        if (localeStr != null) {
+            sb.append('/');
+            sb.append(localeStr);
+        }
+        return sb.toString();
     }
 }
