@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Hippo
+ * Copyright 2010-2012 Hippo
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,31 +58,6 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
             }
 
             final Properties propertiesDoc = getTranslatedProperties(location, path, locale);
-            if (propertiesDoc != null) {
-                final PropertiesBean propertiesBean = new PropertiesBean(propertiesDoc);
-                cache.put(key, propertiesBean);
-                return propertiesBean;
-            }
-        } catch (RepositoryException ignore) {
-        }
-
-        return null;
-    }
-
-    @Override
-    protected PropertiesBean getPropertiesBean(final HippoBean location, final String path, final String language) {
-
-        if (location == null) {
-            throw new IllegalArgumentException("Location bean is null");
-        }
-        if (path == null) {
-            throw new IllegalArgumentException("Path is null");
-        }
-
-        try {
-            final String key = createKey(location, path, language);
-
-            final Properties propertiesDoc = getTranslatedProperties(location, path, language);
             if (propertiesDoc != null) {
                 final PropertiesBean propertiesBean = new PropertiesBean(propertiesDoc);
                 cache.put(key, propertiesBean);

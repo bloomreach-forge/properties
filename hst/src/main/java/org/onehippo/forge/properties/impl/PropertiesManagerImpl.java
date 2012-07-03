@@ -55,17 +55,6 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
 
     /** {@inheritDoc} */
     @Override
-    public PropertiesBean getPropertiesBean(final HippoBean baseBean, final String language) {
-        if (this.defaultDocumentName == null) {
-            throw new IllegalStateException("defaultDocumentName is null: " + this.getClass().getSimpleName() + " not correctly configured");
-        }
-
-        return this.getPropertiesBean(this.defaultDocumentName, baseBean, language);
-    }
-
-
-    /** {@inheritDoc} */
-    @Override
     public PropertiesBean getPropertiesBean(final String path, final HippoBean baseBean, final Locale locale) {
         if (path == null) {
             // get document by default name
@@ -74,19 +63,6 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
             // get document by given path
             final HippoBean location = getDefaultLocation(baseBean);
             return getPropertiesBean(location, path, locale);
-        }
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public PropertiesBean getPropertiesBean(final String path, final HippoBean baseBean, final String language) {
-        if (path == null) {
-            // get document by default name
-            return getPropertiesBean(baseBean, language);
-        } else {
-            // get document by given path
-            final HippoBean location = getDefaultLocation(baseBean);
-            return getPropertiesBean(location, path, language);
         }
     }
 
@@ -108,33 +84,6 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
             for (final String path : paths) {
 
                 final PropertiesBean propertiesBean = getPropertiesBean(location, path, locale);
-                if (propertiesBean != null) {
-                    propertiesBeans.add(propertiesBean);
-                }
-            }
-        }
-
-        return propertiesBeans;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public List<PropertiesBean> getPropertiesBeans(final List<String> paths, final HippoBean baseBean, final String language) {
-
-        List<PropertiesBean> propertiesBeans = new ArrayList<PropertiesBean>(paths.size());
-
-        if (paths.size() == 0) {
-            // get document by default name
-            final PropertiesBean propertiesBean = getPropertiesBean(baseBean);
-            if (propertiesBean != null) {
-                propertiesBeans.add(propertiesBean);
-            }
-        } else {
-            // get multiple documents by given paths
-            final HippoBean location = getDefaultLocation(baseBean);
-            for (final String path : paths) {
-
-                final PropertiesBean propertiesBean = getPropertiesBean(location, path, language);
                 if (propertiesBean != null) {
                     propertiesBeans.add(propertiesBean);
                 }
@@ -229,48 +178,6 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
             return new PropertiesBean(doc);
         }
         return null;
-    }
-
-    /**
-     * Get a serializable PropertiesBean by location, path and language.
-     *
-     * @param location default location where to find properties beans
-     * @param path     path relative to the location for a particular bean
-     * @param language language by which to find linked properties documents
-     * @return Serializable cacheable properties bean, based on a properties document
-     */
-    protected PropertiesBean getPropertiesBean(final HippoBean location, final String path, final String language) {
-
-        if (location == null) {
-            throw new IllegalArgumentException("Location bean is null, path=" + path);
-        }
-        if (path == null) {
-            throw new IllegalArgumentException("Path is null, location bean is " + location.getPath());
-        }
-
-        final Properties doc = getTranslatedProperties(location, path, language);
-        if (doc != null) {
-
-            return new PropertiesBean(doc);
-        }
-        return null;
-    }
-
-    protected Properties getTranslatedProperties(final HippoBean location, final String path, final String language) {
-
-        Properties propertiesDoc = location.getBean(path, Properties.class);
-
-        // check availability of translations in a preferred locale
-        if ((propertiesDoc != null) && (language != null)) {
-            HippoAvailableTranslationsBean<Properties> translationBean = propertiesDoc.getAvailableTranslationsBean(Properties.class);
-            if (translationBean != null) {
-                if (translationBean.hasTranslation(language)) {
-                    propertiesDoc = translationBean.getTranslation(language);
-                }
-            }
-        }
-
-        return propertiesDoc;
     }
 
     protected Properties getTranslatedProperties(final HippoBean location, final String path, final Locale locale) {
