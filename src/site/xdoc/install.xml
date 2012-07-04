@@ -54,7 +54,7 @@
   <artifactId>properties-addon-repository</artifactId>
   <!-- NB version is managed from parent
        org.onehippo.cms7:hippo-cms7-release:7.7.0 and up -->
-  <version>2.07.04</version>
+  <version>2.07.05</version>
 </dependency>]]></source>
             <p>When using version <b>2.04.00</b> or below:</p>
             <source><![CDATA[
@@ -82,7 +82,7 @@
   <artifactId>properties-hst-client</artifactId>
   <!-- NB version is managed from parent
        org.onehippo.cms7:hippo-cms7-release:7.7.0 and up -->
-  <version>2.07.04</version>
+  <version>2.07.05</version>
 </dependency>]]></source>
           <p>When using version <b>2.04.00</b>:</p>
             <source><![CDATA[

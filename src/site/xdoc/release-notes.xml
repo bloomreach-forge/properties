@@ -23,7 +23,7 @@
     <section name="Release Notes">
       <subsection name="2.07.05">
         <ul>
-          <li>HIPPLUG-423: Fix NullPointerException when locale is null.</li>
+          <li>HIPPLUG-423: Fix NullPointerException in CachingPropertiesManagerImpl when locale is not given.</li>
         </ul>
       </subsection>
       <subsection name="2.07.04">
