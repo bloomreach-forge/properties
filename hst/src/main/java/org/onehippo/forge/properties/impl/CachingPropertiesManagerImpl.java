@@ -16,8 +16,10 @@
 
 package org.onehippo.forge.properties.impl;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -30,13 +32,22 @@ import org.onehippo.forge.properties.bean.PropertiesBean;
 
 public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
 
-    // cache, key is properties document bean path locale
-    private final static Map<String, PropertiesBean> cache = Collections.synchronizedMap(new HashMap<String, PropertiesBean>());
+    // Beans cache, key is properties canonical path + locale
+    private final static Map<String, PropertiesBean> beansCache = Collections.synchronizedMap(new HashMap<String, PropertiesBean>());
+
+    // Cache of locale specific keys: key is properties document canonical path (without locale).
+    // Reason is that invalidation occurs without locale because it's JCR event based (no locale available)
+    private final static Map<String, List<String>> localeVariantKeysCache = Collections.synchronizedMap(new HashMap<String, List<String>>());
 
     @Override
     public void invalidate(final String canonicalPath) {
         if (canonicalPath != null) {
-            cache.remove(canonicalPath);
+            List<String> localeVariants = localeVariantKeysCache.remove(canonicalPath);
+            if (localeVariants != null) {
+                for (String localeVariantPath : localeVariants) {
+                    beansCache.remove(localeVariantPath);
+                }
+            }
         }
     }
 
@@ -51,25 +62,64 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
         }
 
         try {
-            final String key = createKey(location, path, (locale != null) ? locale.toString() : null);
-
-            if (cache.containsKey(key)) {
-                return cache.get(key);
+            final String canonicalKey = createCanonicalKey(location, path);
+            String localeKey = canonicalKey;
+            if (locale != null) {
+                localeKey += "/" + locale.toString();
             }
 
-            final Properties propertiesDoc = getTranslatedProperties(location, path, locale);
-            if (propertiesDoc != null) {
-                final PropertiesBean propertiesBean = new PropertiesBean(propertiesDoc);
-                cache.put(key, propertiesBean);
+            // check if cached
+            PropertiesBean propertiesBean = getFromCache(localeKey);
+            if (propertiesBean != null) {
                 return propertiesBean;
             }
-        } catch (RepositoryException ignore) {
+
+            // create and cache bean
+            final Properties propertiesDoc = getTranslatedProperties(location, path, locale);
+            if (propertiesDoc != null) {
+                propertiesBean = new PropertiesBean(propertiesDoc);
+
+                storeInCache(canonicalKey, localeKey, propertiesBean);
+
+                return propertiesBean;
+            }
+        } catch (RepositoryException e) {
+            throw new IllegalStateException(e);
         }
 
         return null;
     }
 
-    protected String createKey(final HippoBean location, final String path, final String localeStr) throws RepositoryException {
+    /**
+     * Get a properties bean from cache.
+     */
+    protected PropertiesBean getFromCache(final String localeKey) {
+        return beansCache.get(localeKey);
+    }
+
+    /**
+     * Store a properties bean in cache.
+     */
+    protected void storeInCache(final String canonicalKey, final String localeKey, final PropertiesBean propertiesBean) {
+
+        // Keep track of the locale variants in second cache.
+        // Reason is that invalidation occurs without locale because it's JCR event based
+        final List<String> localeVariantKeys = localeVariantKeysCache.get(canonicalKey);
+        if (localeVariantKeys == null) {
+            localeVariantKeysCache.put(canonicalKey, Arrays.asList(localeKey));
+        }
+        else if (!localeVariantKeys.contains(localeKey)) {
+            localeVariantKeys.add(localeKey);
+        }
+
+        // put bean in actual cache
+        beansCache.put(localeKey, propertiesBean);
+    }
+
+    /**
+     * Create a key for a location an a relative path of a properties document.
+     */
+    protected String createCanonicalKey(final HippoBean location, final String path) throws RepositoryException {
 
         // path contains folder(s): construct a canonical path with folder(s)/handle/document
 
@@ -80,10 +130,6 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
         sb.append(path);
         sb.append('/');
         sb.append(docName);
-        if (localeStr != null) {
-            sb.append('/');
-            sb.append(localeStr);
-        }
         return sb.toString();
     }
 }
