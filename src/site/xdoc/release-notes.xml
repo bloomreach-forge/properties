@@ -21,6 +21,11 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="2.07.06">
+        <ul>
+          <li>HIPPLUG-439: improved cache invalidation when using CachingPropertiesManagerImpl.</li>
+        </ul>
+      </subsection>
       <subsection name="2.07.05">
         <ul>
           <li>HIPPLUG-423: Fix NullPointerException in CachingPropertiesManagerImpl when locale is not given.</li>
