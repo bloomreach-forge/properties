@@ -126,10 +126,10 @@ public interface PropertiesManager  {
     Map<String, String> getProperties(final String[] paths, final HippoBean baseBean);
 
     /**
-     * Invalidate a cached document based on the canonical path of a labels
-     * document, or invalidate all if the path is null.
+     * Invalidate a cached document based on the canonical path of a properties document,
+     * or invalidate all if the path is null.
      *
-     * @param canonicalPath the path of a labels document, relative to the base bean, or null.
+     * @param canonicalPath the path of a properties document, relative to the base bean, or null.
      */
     void invalidate(final String canonicalPath);
 }

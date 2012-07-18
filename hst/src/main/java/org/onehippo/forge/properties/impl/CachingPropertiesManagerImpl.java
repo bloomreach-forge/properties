@@ -49,6 +49,11 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
                 }
             }
         }
+        else {
+            // according to interface, invalidate all if argument is null
+            localeVariantKeysCache.clear();
+            beansCache.clear();
+        }
     }
 
     @Override
