@@ -104,11 +104,13 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
 
     /**
      * Store a properties bean in cache.
+     *
+     * NB synchronized method: although the caches are synchronized themselves, adding values to cached lists is not.
      */
-    protected void storeInCache(final String canonicalKey, final String localeKey, final PropertiesBean propertiesBean) {
+    protected synchronized void storeInCache(final String canonicalKey, final String localeKey, final PropertiesBean propertiesBean) {
 
         // Keep track of the locale variants in second cache.
-        // Reason is that invalidation occurs without locale because it's JCR event based
+        // Reason is that invalidation occurs without locale because it's JCR event based (no locale available, just path)
         final List<String> localeVariantKeys = localeVariantKeysCache.get(canonicalKey);
         if (localeVariantKeys == null) {
             localeVariantKeysCache.put(canonicalKey, Arrays.asList(localeKey));
