@@ -16,7 +16,7 @@
 
 package org.onehippo.forge.properties.impl;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -113,7 +113,9 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
         // Reason is that invalidation occurs without locale because it's JCR event based (no locale available, just path)
         final List<String> localeVariantKeys = localeVariantKeysCache.get(canonicalKey);
         if (localeVariantKeys == null) {
-            localeVariantKeysCache.put(canonicalKey, Arrays.asList(localeKey));
+            final List<String> values = new ArrayList<String>(1);
+            values.add(localeKey);
+            localeVariantKeysCache.put(canonicalKey, values);
         }
         else if (!localeVariantKeys.contains(localeKey)) {
             localeVariantKeys.add(localeKey);
