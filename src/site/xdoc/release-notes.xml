@@ -21,9 +21,14 @@
   </properties>
   <body>
     <section name="Release Notes">
-      <subsection name="2.07.06">
+      <subsection name="2.07.07">
         <ul>
           <li>HIPPLUG-439: improved cache invalidation when using CachingPropertiesManagerImpl.</li>
+        </ul>
+      </subsection>
+      <subsection name="2.07.06">
+        <ul>
+          <li>Tried to solve HIPPLUG-439 but introduced a bug: please don't use this version.</li>
         </ul>
       </subsection>
       <subsection name="2.07.05">
