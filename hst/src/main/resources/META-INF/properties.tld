@@ -55,4 +55,52 @@
           </div>
           ]]></example>
   </tag>
+
+    <tag>
+        <description>This param tag can be nested into format to provide parameters.
+        </description>
+        <name>param</name>
+        <tag-class>org.onehippo.forge.properties.tags.ParamTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <description>The value of the parameter</description>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Object</type>
+        </attribute>
+        <example>
+
+            //please check format tag example.
+        </example>
+    </tag>
+
+    <tag>
+        <description>This Format tag should have param as child tag.
+        </description>
+        <name>format</name>
+        <tag-class>org.onehippo.forge.properties.tags.FormatTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description>The value of the message string</description>
+            <name>message</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <example>
+            <![CDATA[
+          <properties:format message="Hi {0} welcome to {1}. ">
+                <properties:param value="userName"/>
+                <properties:param value="Hippo"/>
+          </properties:format>
+          <!- Above code will result in "Hi userName welcome to Hippo." -->
+          ]]>
+        </example>
+    </tag>
+
+
+
+
+
 </taglib>

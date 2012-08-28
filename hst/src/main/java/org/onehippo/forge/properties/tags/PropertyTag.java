@@ -32,7 +32,7 @@ import org.onehippo.forge.properties.api.PropertiesManager;
 import org.onehippo.forge.properties.api.PropertiesUtil;
 import org.onehippo.forge.properties.bean.PropertiesBean;
 
-public class PropertyTag extends HstTagSupport {
+public class PropertyTag extends ParamContainerTag {
 
     private static final long serialVersionUID = -7907730483215325490L;
 
@@ -85,6 +85,8 @@ public class PropertyTag extends HstTagSupport {
                 handleValue(getDefaultValue(propertiesManager), hstRequest);
             }
         }
+
+
 
         return EVAL_PAGE;
     }

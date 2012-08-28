@@ -12,6 +12,9 @@ hst/src/main/java/org/onehippo/forge/properties/bean/PropertiesMap.java svneol=n
 hst/src/main/java/org/onehippo/forge/properties/bean/PropertyBean.java svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/impl/CachingPropertiesManagerImpl.java svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/listener/PropertiesEventListener.java svneol=native#text/plain
+hst/src/main/java/org/onehippo/forge/properties/tags/FormatTag.java -text
+hst/src/main/java/org/onehippo/forge/properties/tags/ParamContainerTag.java -text
+hst/src/main/java/org/onehippo/forge/properties/tags/ParamTag.java -text
 /pom.xml -text
 src/site/resources/images/cms.jpg -text svneol=unset#image/jpeg
 src/site/resources/images/site.jpg -text svneol=unset#image/jpeg
