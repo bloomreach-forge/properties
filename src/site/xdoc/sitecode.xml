@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!--
-  Copyright 2010 Hippo
-  
+  Copyright 2010-2012 Hippo
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
-  
+
     http://www.apache.org/licenses/LICENSE-2.0
-  
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,58 +16,102 @@
 -->
 <document>
   <properties>
-    <title>Usage in a HST site</title>
+    <title>Usage in an HST site</title>
   </properties>
   <body>
-    <section name="Usage in a HST site">
+    <section name="Usage in an HST site">
       <p>
-        HST components should read documents and prepare data for JSPs. This can be done 
-        manually in Java code or using the Properties Manager.
+        There is a <code>&lt;properties:property/&gt;</code> tag available for usage in a frontend.
+        You also can access properties bean in HST components through the Properties Manager (or directly by path)
+        to prepare a map of name/value pairs for the JSP.
       </p>
+      <subsection name="Use the &lt;properties:property/&gt; tag in JSP">
+        <p>
+          The JSP tag is easy to use for your site's labels and will suffice if the properties documents and the
+          property names do not change in a standing environment. If that is the case, you may want to parameterize the
+          attribute values. This is a standard usage of the JSP tag:
+        </p>
+        <source><![CDATA[
+  <%@ taglib prefix='properties'
+      uri="http://www.onehippo.org/properties/jsp/tags"%>
+
+  <properties:property var="myVariable"
+                       name="myPropertyName"
+                       documentPath="myPropertiesDocumentPath"/>
+  <div>${myVariable}</div>]]></source>
+        <table>
+          <tr>
+            <td><strong>Attribute</strong></td>
+            <td><strong>Description</strong></td>
+          </tr>
+          <tr>
+            <td><strong>var</strong></td>
+            <td>Optional variable name by which to store the property value as request attribute.</td>
+          </tr>
+          <tr>
+            <td><strong>name</strong></td>
+            <td>Mandatory name of the name/value pair that is the property.</td>
+          </tr>
+          <tr>
+            <td><strong>documentPath</strong></td>
+            <td>Optional path to the properties document to get the property from, relative to the default document location
+              as configured in the Properties Manager. If absent, the default document name from the Properties Manager is taken.</td>
+          </tr>
+          <tr>
+            <td><strong>language</strong></td>
+            <td>Optional two letter language code to be used to retrieve a translated variant of the properties
+              document. If language is not given then request's locale is used.</td>
+          </tr>
+          <tr>
+            <td><strong>managerPostFix</strong></td>
+            <td>Optional postfix that is added to 'org.onehippo.forge.properties.api.PropertiesManager.'
+              to retrieve the Properties Manager by id. Defaults to 'labels'.</td>
+          </tr>
+        </table>
+      </subsection>
       <subsection name="Use the PropertiesManager in a HST component">
         <p>
-          This is an example of how properties documents are read using the manager. 
-          The manager will look for properties with configured name or the default name from 
+          This is an example of how properties documents are read using the manager.
+          The manager will look for properties with configured name or the default name from
           the configure default location, relative to the given site content base bean.
         </p>
         <source><![CDATA[
-  // get the manager  
-  final ComponentManager componentManager = (ComponentManager) this.getDefaultClientComponentManager();
-  final PropertiesManager propertiesManager = componentManager.getComponent(PropertiesManager.class.getName());
-  final HippoBean baseBean this.getSiteContentBaseBean(request);
+  // get the manager
+  ComponentManager componentManager = (ComponentManager) this.getDefaultClientComponentManager();
+  PropertiesManager propertiesManager = componentManager.getComponent(PropertiesManager.class.getName());
+  HippoBean baseBean this.getSiteContentBaseBean(request);
 
-  // retrieve one document bean by the configured default name
-  final PropertiesBean defaultPropertiesBean = this.propertiesManager.getPropertiesBean(baseBean);
-  final Map<String, String> defaultLabels = PropertiesUtil.toMap(propertiesBean);
+  // Example A: retrieve one document bean by the configured default name
+  PropertiesBean defaultPropertiesBean = this.propertiesManager.getPropertiesBean(baseBean);
+  Map<String, String> defaultLabels = PropertiesUtil.toMap(propertiesBean);
+  request.setAttribute("labels", defaultLabels);
 
-  // .. or retrieve one document bean by path parameter
-  final String labelsPath = this.getParameter("labelsPath", request);
-  final PropertiesBean propertiesBean = this.propertiesManager.getPropertiesBean(labelsPath, baseBean);
-  final Map<String, String> labels = PropertiesUtil.toMap(propertiesBean);
+  // Example B: retrieve one document bean by path parameter
+  String labelsPath = this.getParameter("labelsPath", request);
+  PropertiesBean propertiesBean = this.propertiesManager.getPropertiesBean(labelsPath, baseBean);
+  Map<String, String> labels = PropertiesUtil.toMap(propertiesBean);
+  request.setAttribute("labels", labels);
 
-  // .. or retrieve multiple documents bean by paths
-  final List<String> labelsPaths = Arrays.asList("common", "specific");
-  final List<PropertiesBean> propertiesBeans = this.propertiesManager.getPropertiesBeans(labelsPaths, baseBean);
-  final Map<String, String> allLabels = PropertiesUtil.toMap(propertiesBeans);
-
-
-  final Map<String, String> labels = PropertiesUtil.toMap(propertiesBean);
-  request.setAttribute("labels", labels);]]></source>
+  // Example C: retrieve multiple document beans by hardcoded paths
+  List<String> labelsPaths = Arrays.asList("common", "specific");
+  List<PropertiesBean> propertiesBeans = this.propertiesManager.getPropertiesBeans(labelsPaths, baseBean);
+  Map<String, String> allLabels = PropertiesUtil.toMap(propertiesBeans);
+  request.setAttribute("labels", allLabels);]]></source>
       </subsection>
-      <subsection name="Manual retrieval of properties in a HST component">
+      <subsection name="Retrieval of properties in a HST component directly by path">
         <p>
-          This is an example of how a properties document containing labels is read 
-          from a configured path relative to current document. This is typically 
-          something that you can do in your project's base component. 
+          This is an example of how a properties document containing labels is read
+          from a configured path relative to current document. This is typically
+          something that you can do in your project's base component.
         </p>
         <source><![CDATA[
   String labelsPath = this.getParameter("labelsPath", request);
   Properties labels = (Properties) this.getContentBean(request).getBean(labelsPath);
   request.setAttribute("labels", new PropertiesMap(new PropertiesBean(labels));]]></source>
       </subsection>
-      <subsection name="Reading properties in JSP files">
+      <subsection name="Reading propert maps in JSP files">
         <p>
-          Because the bean set at the request is a Map, it can be read easily using expression 
+          Because the PropertiesMap set at the request is a Map, it can be read using expression
           language. This is an example of reading labels:
         </p>
         <source><![CDATA[
