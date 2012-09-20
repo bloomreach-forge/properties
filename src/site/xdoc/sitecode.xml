@@ -76,10 +76,10 @@
           the configure default location, relative to the given site content base bean.
         </p>
         <source><![CDATA[
-  // get the manager
+  // get the manager and base bean
   ComponentManager componentManager = (ComponentManager) this.getDefaultClientComponentManager();
   PropertiesManager propertiesManager = componentManager.getComponent(PropertiesManager.class.getName());
-  HippoBean baseBean this.getSiteContentBaseBean(request);
+  HippoBean baseBean = this.getSiteContentBaseBean(request);
 
   // Example A: retrieve one document bean by the configured default name
   PropertiesBean defaultPropertiesBean = this.propertiesManager.getPropertiesBean(baseBean);
@@ -98,18 +98,18 @@
   Map<String, String> allLabels = PropertiesUtil.toMap(propertiesBeans);
   request.setAttribute("labels", allLabels);]]></source>
       </subsection>
-      <subsection name="Retrieval of properties in a HST component directly by path">
+      <subsection name="Retrieval of properties beans in a HST component directly by path">
         <p>
-          This is an example of how a properties document containing labels is read
-          from a configured path relative to current document. This is typically
+          This is an example of how a properties bean containing labels is read
+          from a configured path relative to site base bean. This is typically
           something that you can do in your project's base component.
         </p>
         <source><![CDATA[
   String labelsPath = this.getParameter("labelsPath", request);
-  Properties labels = (Properties) this.getContentBean(request).getBean(labelsPath);
+  Properties labels = (Properties) this.getSiteContentBaseBean(request).getBean(labelsPath);
   request.setAttribute("labels", new PropertiesMap(new PropertiesBean(labels));]]></source>
       </subsection>
-      <subsection name="Reading propert maps in JSP files">
+      <subsection name="Reading property maps in JSP files">
         <p>
           Because the PropertiesMap set at the request is a Map, it can be read using expression
           language. This is an example of reading labels:
