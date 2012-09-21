@@ -41,8 +41,7 @@
   <div>${myVariable}</div>]]></source>
         <table>
           <tr>
-            <td><strong>Attribute</strong></td>
-            <td><strong>Description</strong></td>
+            <th colspan="2"><strong>Attributes of &lt;properties:property/&gt;</strong></th>
           </tr>
           <tr>
             <td><strong>var</strong></td>
@@ -71,32 +70,31 @@
       </subsection>
       <subsection name="Parameterized properties with nested &lt;properties:param/&gt; tags">
         <p>
-          Format a property value with parameters is supported by the &lt;properties:param/&gt; tag which is nested
-          in &lt;properties:property/&gt;. All the possibilities of the java.text.MessageFormat can be used.
+          Formatting a property value with parameters is supported by the &lt;properties:param/&gt; tag which is nested
+          in &lt;properties:property/&gt;. All the possibilities of the class java.text.MessageFormat can be used.
           These are two examples:
         </p>
         <source><![CDATA[
   <properties:property name="date.short" documentPath="example" >
       <properties:param value="<%= new java.util.Date() %>"/>
   <properties:property>
-
-  In property file named 'example' for key date.short value
-  is "Today's date is {0,date,short}"
-  Above code will result in "Today's date is 21/09/12".
-
-   <properties:property name="test.string" documentPath="example" >
+          ]]></source>
+        <p>
+          In property file named 'example' for key date.short the value is "Today's date is {0,date,short}".
+          Above code will result in "Today's date is 21/09/12".
+        </p>
+        <source><![CDATA[
+  <properties:property name="test.string" documentPath="example" >
       <properties:param name="Tom"/>
       <properties:param value="Mac"/>
   </properties:property>
-
-  In property file named 'example' for key test.string value
-  is "{0} and {1} are good friends"
-  Above code will result in "Tom and Mac are good friends".
           ]]></source>
+        <p>In property file named 'example' for key test.string value is "{0} and {1} are good friends".
+          Above code will result in "Tom and Mac are good friends".
+\       </p>
         <table>
           <tr>
-            <td><strong>Attribute</strong></td>
-            <td><strong>Description</strong></td>
+            <th colspan="2"><strong>Attribute of &lt;properties:property/&gt;</strong></th>
           </tr>
           <tr>
             <td><strong>value</strong></td>
