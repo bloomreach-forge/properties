@@ -69,6 +69,41 @@
           </tr>
         </table>
       </subsection>
+      <subsection name="Parameterized properties with nested &lt;properties:param/&gt; tags">
+        <p>
+          Format a property value with parameters is supported by the &lt;properties:param/&gt; tag which is nested
+          in &lt;properties:property/&gt;. All the possibilities of the java.text.MessageFormat can be used.
+          These are two examples:
+        </p>
+        <source><![CDATA[
+  <properties:property name="date.short" documentPath="example" >
+      <properties:param value="<%= new java.util.Date() %>"/>
+  <properties:property>
+
+  In property file named 'example' for key date.short value
+  is "Today's date is {0,date,short}"
+  Above code will result in "Today's date is 21/09/12".
+
+   <properties:property name="test.string" documentPath="example" >
+      <properties:param name="Tom"/>
+      <properties:param value="Mac"/>
+  </properties:property>
+
+  In property file named 'example' for key test.string value
+  is "{0} and {1} are good friends"
+  Above code will result in "Tom and Mac are good friends".
+          ]]></source>
+        <table>
+          <tr>
+            <td><strong>Attribute</strong></td>
+            <td><strong>Description</strong></td>
+          </tr>
+          <tr>
+            <td><strong>value</strong></td>
+            <td>Required value of the parameter of type Object.</td>
+          </tr>
+         </table>
+      </subsection>
       <subsection name="Use the PropertiesManager in a HST component">
         <p>
           This is an example of how properties documents are read using the manager.

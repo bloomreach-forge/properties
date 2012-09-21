@@ -2,13 +2,13 @@
 <taglib xmlns="http://java.sun.com/xml/ns/javaee"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
-  
+
   <tlib-version>1.0</tlib-version>
   <jsp-version>1.2</jsp-version>
   <short-name>properties-tags</short-name>
   <uri>http://www.onehippo.org/properties/jsp/tags</uri>
   <description>Tagsupport for properties</description>
-  
+
   <tag>
     <description>Returns a property value by name</description>
     <name>property</name>
@@ -72,28 +72,22 @@
         <example>
 
             <![CDATA[
-
-                Object as value.
-                 <jsp:useBean id="date" class="java.util.Date" />
-
-                <properties:property name="date.short" documentPath="home/home" >
-                    <properties:param value=${date}/>
+                <properties:property name="date.short" documentPath="example" >
+                    <properties:param value="<%= new java.util.Date() %>"/>
                 <properties:property>
 
-                *In property file for key date.short value is Today's date is {0,date,short}
-                 Above code will result in "Today's date is 21/09/12"
+                *In property file named 'example' for key date.short value is "Today's date is {0,date,short}"
+                 Above code will result in "Today's date is 21/09/12".
 
                  OR
-                 String as value
 
-                 <properties:property name="test.string" documentPath="home/home" >
+                 <properties:property name="test.string" documentPath="example" >
                     <properties:param name="Tom"/>
                     <properties:param value="Mac"/>
                 </properties:property>
 
-                *In property file for key test.string value is {0} and {1} are good friends
-                Above code will result in "Above code will result in "Today's date is 21/09/12"
-
+                *In property file named 'example' for key test.string value is "{0} and {1} are good friends"
+                Above code will result in "Tom and Mac are good friends".
           ]]>
         </example>
     </tag>

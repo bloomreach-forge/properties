@@ -18,7 +18,6 @@ package org.onehippo.forge.properties.tags;
 
 import java.io.IOException;
 import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.Map;
 
 import javax.servlet.jsp.JspWriter;
@@ -29,7 +28,6 @@ import org.hippoecm.hst.content.beans.standard.HippoBean;
 import org.hippoecm.hst.core.component.HstRequest;
 import org.hippoecm.hst.core.component.HstResponse;
 import org.hippoecm.hst.core.container.ComponentManager;
-import org.hippoecm.hst.tag.HstTagSupport;
 import org.onehippo.forge.properties.api.PropertiesManager;
 import org.onehippo.forge.properties.api.PropertiesUtil;
 import org.onehippo.forge.properties.bean.PropertiesBean;
