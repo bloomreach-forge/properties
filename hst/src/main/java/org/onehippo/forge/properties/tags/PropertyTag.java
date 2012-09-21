@@ -36,7 +36,7 @@ public class PropertyTag extends ParamContainerTag {
 
     private static final long serialVersionUID = -7907730483215325490L;
 
-    public static final String MANAGER_POSTFIX_DEFAULT = ".labels";
+    public static final String MANAGER_POSTFIX_DEFAULT = "labels";
 
     protected String name;
     protected String documentPath;
