@@ -38,7 +38,7 @@ public class PropertyTag extends ParamContainerTag {
 
     private static final long serialVersionUID = -7907730483215325490L;
 
-    public static final String MANAGER_POSTFIX_DEFAULT = PropertiesManager.class.getName() + ".labels";
+    public static final String MANAGER_POSTFIX_DEFAULT = ".labels";
 
     protected String name;
     protected String documentPath;
@@ -61,8 +61,8 @@ public class PropertyTag extends ParamContainerTag {
             return EVAL_PAGE;
         }
 
-        final String propertiesManagerId = (managerPostfix == null) ? MANAGER_POSTFIX_DEFAULT : PropertiesManager.class.getName()
-                + "." + managerPostfix;
+        final String propertiesManagerPostfix = (managerPostfix != null) ? managerPostfix : MANAGER_POSTFIX_DEFAULT;
+        final String propertiesManagerId = PropertiesManager.class.getName()+ "." + propertiesManagerPostfix;
 
         final PropertiesManager propertiesManager = componentManager.getComponent(propertiesManagerId);
         if (propertiesManager == null) {
