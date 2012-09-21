@@ -57,7 +57,7 @@
   </tag>
 
     <tag>
-        <description>This param tag can be nested into format to provide parameters.
+        <description>This param tag can be nested into property tag to provide parameters.
         </description>
         <name>param</name>
         <tag-class>org.onehippo.forge.properties.tags.ParamTag</tag-class>
@@ -71,36 +71,31 @@
         </attribute>
         <example>
 
-            //please check format tag example.
-        </example>
-    </tag>
-
-    <tag>
-        <description>This Format tag should have param as child tag.
-        </description>
-        <name>format</name>
-        <tag-class>org.onehippo.forge.properties.tags.FormatTag</tag-class>
-        <body-content>JSP</body-content>
-        <attribute>
-            <description>The value of the message string</description>
-            <name>message</name>
-            <required>true</required>
-            <rtexprvalue>true</rtexprvalue>
-            <type>java.lang.String</type>
-        </attribute>
-        <example>
             <![CDATA[
-          <properties:format message="Hi {0} welcome to {1}. ">
-                <properties:param value="userName"/>
-                <properties:param value="Hippo"/>
-          </properties:format>
-          <!- Above code will result in "Hi userName welcome to Hippo." -->
+
+                Object as value.
+                 <jsp:useBean id="date" class="java.util.Date" />
+
+                <properties:property name="date.short" documentPath="home/home" >
+                    <properties:param value=${date}/>
+                <properties:property>
+
+                *In property file for key date.short value is Today's date is {0,date,short}
+                 Above code will result in "Today's date is 21/09/12"
+
+                 OR
+                 String as value
+
+                 <properties:property name="test.string" documentPath="home/home" >
+                    <properties:param name="Tom"/>
+                    <properties:param value="Mac"/>
+                </properties:property>
+
+                *In property file for key test.string value is {0} and {1} are good friends
+                Above code will result in "Above code will result in "Today's date is 21/09/12"
+
           ]]>
         </example>
     </tag>
-
-
-
-
 
 </taglib>

@@ -17,6 +17,8 @@
 package org.onehippo.forge.properties.tags;
 
 import java.io.IOException;
+import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Map;
 
 import javax.servlet.jsp.JspWriter;
@@ -55,6 +57,7 @@ public class PropertyTag extends ParamContainerTag {
         // get PropertiesManager through ClientComponentManager
         final ComponentManager componentManager = this.getDefaultClientComponentManager();
         if (componentManager == null) {
+            cleanup();
             return EVAL_PAGE;
         }
 
@@ -64,6 +67,7 @@ public class PropertyTag extends ParamContainerTag {
         final PropertiesManager propertiesManager = componentManager.getComponent(propertiesManagerId);
         if (propertiesManager == null) {
             logger.warn("No propertiesManager found by id " + propertiesManagerId);
+            cleanup();
             return EVAL_PAGE;
         }
 
@@ -87,7 +91,7 @@ public class PropertyTag extends ParamContainerTag {
         }
 
 
-
+        cleanup();
         return EVAL_PAGE;
     }
 
@@ -104,8 +108,8 @@ public class PropertyTag extends ParamContainerTag {
 
     protected void handleValue(final String value, final HstRequest hstRequest) {
 
-        final String escapedValue = StringEscapeUtils.escapeXml(value);
-
+        final String message = StringEscapeUtils.escapeXml(value);
+        final String escapedValue =  MessageFormat.format(message, parametersList.toArray(new Object[parametersList.size()]));
         if (var != null) {
             hstRequest.setAttribute(var, escapedValue);
         } else {
@@ -136,6 +140,16 @@ public class PropertyTag extends ParamContainerTag {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    @Override
+    protected void cleanup() {
+        name = null;
+        documentPath = null;
+        var = null;
+        managerPostfix = null;
+        language = null;
+        super.cleanup();
     }
 
 }
