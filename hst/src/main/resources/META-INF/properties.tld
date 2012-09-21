@@ -31,7 +31,7 @@
       <required>false</required>
       <rtexprvalue>false</rtexprvalue>
       <description>The postfix that is added to 'org.onehippo.forge.properties.api.PropertiesManager.'
-            to retrieve the Spring configured properties manager. Defaults to 'labels'</description>
+            to retrieve the Spring configured properties manager by id. Defaults to 'labels'</description>
     </attribute>
     <attribute>
       <description>The variable name by which to store the property value as request attribute.</description>
@@ -40,7 +40,7 @@
       <rtexprvalue>false</rtexprvalue>
     </attribute>
     <attribute>
-      <description>The languagecode to be used for translated content. If language is not given then hstRequest.getLocale() is used.</description>
+      <description>The language code to be used for translated content. If language is not given then hstRequest.getLocale() is used.</description>
       <name>language</name>
       <required>false</required>
       <rtexprvalue>true</rtexprvalue>
