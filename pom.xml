@@ -154,7 +154,7 @@
     <pluginRepository>
       <id>onehippo</id>
       <name>Hippo Maven 2 Repository</name>
-      <url>http://repository.onehippo.org/maven2</url>
+      <url>http://maven.onehippo.org/maven2</url>
     </pluginRepository>
     <pluginRepository>
       <id>codehaus</id>
