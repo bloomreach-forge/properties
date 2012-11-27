@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>11</version>
+    <version>15</version>
   </parent>
 
   <name>Hippo Forge Properties Project</name>
@@ -33,8 +33,8 @@
   <inceptionYear>2009</inceptionYear>
 
   <properties>
-    <hippo.hst.version>2.24.03</hippo.hst.version>
-    <hippo.cms.version>2.22.02</hippo.cms.version>
+    <hippo.hst.version>2.26.00</hippo.hst.version>
+    <hippo.repository.version>2.24.00</hippo.repository.version>
 
     <jsp.api.version>2.1</jsp.api.version>
 
@@ -44,7 +44,6 @@
     <maven.plugin.jxr.version>2.2</maven.plugin.jxr.version>
     <maven.plugin.taglib.version>2.4</maven.plugin.taglib.version>
 
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <developers>
@@ -97,13 +96,13 @@
       <dependency>
         <groupId>org.onehippo.cms7</groupId>
         <artifactId>hippo-repository-api</artifactId>
-        <version>${hippo.cms.version}</version>
+        <version>${hippo.repository.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.onehippo.cms7</groupId>
         <artifactId>hippo-repository-utilities</artifactId>
-        <version>${hippo.cms.version}</version>
+        <version>${hippo.repository.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -111,28 +110,24 @@
         <artifactId>hst-api</artifactId>
         <version>${hippo.hst.version}</version>
         <scope>provided</scope>
-        <type>jar</type>
       </dependency>
       <dependency>
         <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-content-beans</artifactId>
         <version>${hippo.hst.version}</version>
         <scope>provided</scope>
-        <type>jar</type>
       </dependency>
       <dependency>
         <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-commons</artifactId>
         <version>${hippo.hst.version}</version>
         <scope>provided</scope>
-        <type>jar</type>
       </dependency>
       <dependency>
         <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-client</artifactId>
         <version>${hippo.hst.version}</version>
         <scope>provided</scope>
-        <type>jar</type>
       </dependency>
     </dependencies>
   </dependencyManagement>
