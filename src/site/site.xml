@@ -16,17 +16,13 @@
 -->
 <project name="Hippo Forge Properties Component">
 
-  <publishDate format="d MMMM yyyy" />
-
-  <bannerLeft>
-    <name>Hippo Forge Properties Component</name>
-  </bannerLeft>
-
   <skin>
     <groupId>org.onehippo.forge.mavenskin</groupId>
     <artifactId>forge-maven-skin</artifactId>
     <version>1.01.00</version>
   </skin>
+
+  <publishDate format="d MMMM yyyy" />
 
   <custom>
     <hippoSkin>
