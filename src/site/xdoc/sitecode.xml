@@ -39,7 +39,7 @@
                        name="myPropertyName"
                        documentPath="myPropertiesDocumentPath"/>
   <div>${myVariable}</div>]]></source>
-        <table>
+        <table border="1" cellpadding="0" cellspacing="5">
           <tr>
             <th colspan="2"><strong>Attributes of &lt;properties:property/&gt;</strong></th>
           </tr>
@@ -92,7 +92,7 @@
         <p>In property file named 'example' for key test.string value is "{0} and {1} are good friends".
           Above code will result in "Tom and Mac are good friends".
 \       </p>
-        <table>
+        <table border="1" cellpadding="0" cellspacing="5">
           <tr>
             <th colspan="2"><strong>Attribute of &lt;properties:property/&gt;</strong></th>
           </tr>
