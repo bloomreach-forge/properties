@@ -52,11 +52,6 @@
       <id>jhoffman</id>
       <email>j.hoffman@onehippo.com</email>
     </developer>
-    <developer>
-      <name>Jasha Joachimsthal</name>
-      <id>jjoachimsthal</id>
-      <email>j.joachimsthal@onehippo.com</email>
-    </developer>
   </developers>
 
   <scm>
@@ -142,6 +137,12 @@
         <updatePolicy>never</updatePolicy>
       </releases>
       <layout>default</layout>
+    </repository>
+    <repository>
+      <id>hippo-maven2-forge</id>
+      <name>Hippo Maven 2 Forge repository</name>
+      <url>http://maven.onehippo.com/maven2-forge/</url>
+      <snapshots />
     </repository>
   </repositories>
 
