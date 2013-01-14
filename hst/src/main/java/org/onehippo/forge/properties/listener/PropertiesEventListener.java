@@ -1,5 +1,5 @@
 /*
- *  Copyright 2010 Hippo.
+ *  Copyright 2010-2013 Hippo B.V. (http://www.onehippo.com)
  * 
  */
 package org.onehippo.forge.properties.listener;
