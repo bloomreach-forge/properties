@@ -2,6 +2,9 @@
 addon/pom.xml svneol=native#text/plain
 addon/repository/pom.xml svneol=native#text/plain
 addon/repository/src/main/resources/namespace.xml -text
+addon/repository/src/main/resources/namespace_de.xml -text
+addon/repository/src/main/resources/new-properties-document_de.xml -text
+addon/repository/src/main/resources/new-properties-folder_de.xml -text
 addon/repository/src/main/resources/properties.cnd -text
 hst/pom.xml svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/annotated/Properties.java svneol=native#text/plain
