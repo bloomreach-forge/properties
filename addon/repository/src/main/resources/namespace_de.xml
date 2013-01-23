@@ -36,12 +36,6 @@
           <sv:node sv:name="hippostd:translations" h:merge="combine">
 
             <sv:node sv:name="name" h:merge="combine">
-              <sv:property sv:name="jcr:primaryType" sv:type="Name">
-                <sv:value>frontend:plugin</sv:value>
-              </sv:property>
-              <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
-                <sv:value>hippo:translated</sv:value>
-              </sv:property>
               <sv:node sv:name="hippo:translation">
                 <sv:property sv:name="jcr:primaryType" sv:type="Name">
                   <sv:value>hippo:translation</sv:value>
@@ -54,8 +48,8 @@
                 </sv:property>
               </sv:node>
             </sv:node>
-            <sv:node sv:name="value" h:merge="combine">
 
+            <sv:node sv:name="value" h:merge="combine">
               <sv:node sv:name="hippo:translation">
                 <sv:property sv:name="jcr:primaryType" sv:type="Name">
                   <sv:value>hippo:translation</sv:value>
@@ -67,8 +61,8 @@
                   <sv:value>Wert</sv:value>
                 </sv:property>
               </sv:node>
-
             </sv:node>
+
           </sv:node>
         </sv:node>
       </sv:node>
