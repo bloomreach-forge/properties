@@ -28,7 +28,7 @@
       <sv:value>hippo:initializeitem</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:sequence" sv:type="Double">
-      <sv:value>10100</sv:value>
+      <sv:value>20100</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:namespace" sv:type="String">
       <sv:value>http://www.onehippo.org/properties/nt/2.2</sv:value>
@@ -43,7 +43,7 @@
       <sv:value>hippo:initializeitem</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:sequence" sv:type="Double">
-      <sv:value>10101</sv:value>
+      <sv:value>20101</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:contentresource" sv:type="String">
       <sv:value>namespace.xml</sv:value>
@@ -58,7 +58,7 @@
       <sv:value>hippo:initializeitem</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:sequence" sv:type="Double">
-      <sv:value>10101.1</sv:value>
+      <sv:value>20101.1</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:contentresource" sv:type="String">
       <sv:value>namespace_de.xml</sv:value>
@@ -73,7 +73,7 @@
       <sv:value>hippo:initializeitem</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:sequence" sv:type="Double">
-      <sv:value>10102</sv:value>
+      <sv:value>20102</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:contentresource" sv:type="String">
       <sv:value>hide-properties-namespace.xml</sv:value>
@@ -88,7 +88,7 @@
       <sv:value>hippo:initializeitem</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:sequence" sv:type="Double">
-      <sv:value>10103</sv:value>
+      <sv:value>20103</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:contentresource" sv:type="String">
       <sv:value>new-properties-folder.xml</sv:value>
@@ -103,7 +103,7 @@
       <sv:value>hippo:initializeitem</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:sequence" sv:type="Double">
-      <sv:value>10103.1</sv:value>
+      <sv:value>20103.1</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:contentresource" sv:type="String">
       <sv:value>new-properties-folder_de.xml</sv:value>
@@ -118,7 +118,7 @@
       <sv:value>hippo:initializeitem</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:sequence" sv:type="Double">
-      <sv:value>10104</sv:value>
+      <sv:value>20104</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:contentresource" sv:type="String">
       <sv:value>new-properties-document.xml</sv:value>
@@ -133,7 +133,7 @@
       <sv:value>hippo:initializeitem</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:sequence" sv:type="Double">
-      <sv:value>10104.01</sv:value>
+      <sv:value>20104.01</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:contentresource" sv:type="String">
       <sv:value>new-properties-document_de.xml</sv:value>
