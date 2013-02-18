@@ -30,6 +30,7 @@
   <version>2.07.10-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <url>https://forge.onehippo.org/gf/project/properties</url>
   <inceptionYear>2009</inceptionYear>
 
   <properties>
@@ -72,8 +73,8 @@
   </distributionManagement>
 
   <issueManagement>
-    <system>Hippo Forge</system>
-    <url>https://forge.onehippo.org/gf/project/properties/tracker/</url>
+    <system>Jira</system>
+    <url>https://issues.onehippo.com/browse/HIPPLUG/component/12153</url>
   </issueManagement>
 
   <licenses>
@@ -258,5 +259,21 @@
       </build>
     </profile>
   </profiles>
+
+  <!-- overwrite mailinglist, removing the repository mailing list from inherited -->
+  <mailingLists>
+    <mailingList>
+      <name>Hippo CMS 7 User Forums</name>
+      <subscribe>hippo-cms7-user-join@lists.onehippo.org</subscribe>
+      <unsubscribe>hippo-cms7-user-leave@lists.onehippo.org</unsubscribe>
+      <archive>http://lists.onehippo.org/pipermail/hippo-cms7-user/</archive>
+    </mailingList>
+  </mailingLists>
+
+  <!-- clear unused elements inherited from hippo-cms7-project pom -->
+  <contributors>
+    <contributor />
+  </contributors>
+  <ciManagement />
 
 </project>

@@ -38,7 +38,7 @@
         </subsection>
         <subsection name="Project status">
           <p>
-            The latest version of property component is 2.07.09 running on both Hippo CMS 7.7 and 7.8.
+            The latest version of property component is 2.08.00 running on both Hippo CMS 7.8, with compatibility for 7.7.
             The matrix below shows against which versions the plugin is developed. Which does not mean
             that version doesn't run against an earlier (or later) version of the CMS and HST.
           </p>
@@ -49,7 +49,7 @@
               <th>HST</th>
             </tr>
               <tr>
-                <td>2.07.10 - </td>
+                <td>2.08.00</td>
                 <td>7.8 (2.24.xx)</td>
                 <td>2.26.xx</td>
               </tr>

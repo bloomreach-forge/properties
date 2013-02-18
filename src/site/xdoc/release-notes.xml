@@ -21,35 +21,51 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="2.08.00">
+        <ul>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-544">HIPPLUG-544</a>
+            Upgrade to Hippo CMS 7.8.</li>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-548">HIPPLUG-548</a>
+            Sequence numbering between 20000 and 30000.</li>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-571">HIPPLUG-571</a>
+            Cleanup and refresh LICENSE and NOTICE files.</li>
+          <li><a href="https://issues.onehippo.com/browse/CMS7-6835 ">CMS7-6835</a>
+            Translate to German.</li>
+        </ul>
+      </subsection>
       <subsection name="2.07.09">
         <ul>
-          <li>Pom and documentation improvements</li>
+          <li>Pom and documentation improvements.</li>
         </ul>
       </subsection>
       <subsection name="2.07.08">
         <ul>
-          <li>HIPPLUG-481: support in the &lt;properties:property /&gt; tag for formatting a property value with nested
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-481">HIPPLUG-481</a>
+            Support in the &lt;properties:property /&gt; tag for formatting a property value with nested
               tag &lt;properties:param /&gt;.</li>
         </ul>
       </subsection>
       <subsection name="2.07.07">
         <ul>
-          <li>HIPPLUG-439: improved cache invalidation when using CachingPropertiesManagerImpl.</li>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-439">HIPPLUG-439</a>
+            Improved cache invalidation when using CachingPropertiesManagerImpl.</li>
         </ul>
       </subsection>
       <subsection name="2.07.06">
         <ul>
-          <li>Tried to solve HIPPLUG-439 but introduced a bug: please don't use this version.</li>
+          <li>Tried to solve HIPPLUG-439 but introduced a bug: please do NOT use this version.</li>
         </ul>
       </subsection>
       <subsection name="2.07.05">
         <ul>
-          <li>HIPPLUG-423: Fix NullPointerException in CachingPropertiesManagerImpl when locale is not given.</li>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-423">HIPPLUG-423</a>
+            Fix NullPointerException in CachingPropertiesManagerImpl when locale is not given.</li>
         </ul>
       </subsection>
       <subsection name="2.07.04">
         <ul>
-          <li>HIPPLUG-293: Add support for a language parameter on the property tag.</li>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-293">HIPPLUG-293</a>
+            Add support for a language parameter on the property tag.</li>
         </ul>
       </subsection>
       <subsection name="2.07.03">
