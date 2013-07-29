@@ -24,12 +24,20 @@ import org.hippoecm.hst.content.beans.standard.HippoAvailableTranslationsBean;
 import org.hippoecm.hst.content.beans.standard.HippoBean;
 import org.onehippo.forge.properties.annotated.Properties;
 import org.onehippo.forge.properties.bean.PropertiesBean;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PropertiesManagerImpl extends AbstractPropertiesManager {
 
+    private static final Logger log = LoggerFactory.getLogger(PropertiesManagerImpl.class);
     // injected by Spring
     private String defaultDocumentLocation;
     private String defaultDocumentName;
+
+    public PropertiesManagerImpl() {
+        log.warn("{} is deprecated. Do not use because it has bad performance. Use {} instead. Possibly you need to adjust this in your spring beans. ",
+                PropertiesManagerImpl.class.getName(), CachingPropertiesManagerImpl.class.getName());
+    }
 
     /** {@inheritDoc} */
     @Override
@@ -164,7 +172,6 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
      * @return Serializable cacheable properties bean, based on a properties document
      */
     protected PropertiesBean getPropertiesBean(final HippoBean location, final String path, final Locale locale) {
-
         if (location == null) {
             throw new IllegalArgumentException("Location bean is null, path=" + path);
         }

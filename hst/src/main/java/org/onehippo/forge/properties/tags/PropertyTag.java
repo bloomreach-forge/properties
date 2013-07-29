@@ -31,6 +31,8 @@ import org.hippoecm.hst.core.container.ComponentManager;
 import org.onehippo.forge.properties.api.PropertiesManager;
 import org.onehippo.forge.properties.api.PropertiesUtil;
 import org.onehippo.forge.properties.bean.PropertiesBean;
+import org.onehippo.forge.properties.impl.CachingPropertiesManagerImpl;
+import org.onehippo.forge.properties.impl.PropertiesManagerImpl;
 
 public class PropertyTag extends ParamContainerTag {
 
@@ -67,6 +69,10 @@ public class PropertyTag extends ParamContainerTag {
             logger.warn("No propertiesManager found by id " + propertiesManagerId);
             cleanup();
             return EVAL_PAGE;
+        }
+        if (propertiesManager instanceof PropertiesManagerImpl) {
+            logger.warn("You are using deprecated {} in combination with PropertyTag. This is very bad for performance. Please use {} instead",
+                    PropertiesManagerImpl.class.getName(), CachingPropertiesManagerImpl.class.getName());
         }
 
         // use PropertiesManager API to retrieve property map
