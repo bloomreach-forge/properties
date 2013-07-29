@@ -17,11 +17,13 @@
 package org.onehippo.forge.properties.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.jcr.RepositoryException;
 
@@ -33,11 +35,11 @@ import org.onehippo.forge.properties.bean.PropertiesBean;
 public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
 
     // Beans cache, key is properties canonical path + locale
-    private final static Map<String, PropertiesBean> beansCache = Collections.synchronizedMap(new HashMap<String, PropertiesBean>());
+    private final static ConcurrentHashMap<String, PropertiesBean> beansCache = new ConcurrentHashMap<String, PropertiesBean>();
 
     // Cache of locale specific keys: key is properties document canonical path (without locale).
     // Reason is that invalidation occurs without locale because it's JCR event based (no locale available)
-    private final static Map<String, List<String>> localeVariantKeysCache = Collections.synchronizedMap(new HashMap<String, List<String>>());
+    private final static ConcurrentHashMap<String, List<String>> localeVariantKeysCache = new ConcurrentHashMap<String, List<String>>();
 
     @Override
     public void invalidate(final String canonicalPath) {
@@ -74,7 +76,7 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
             }
 
             // check if cached
-            PropertiesBean propertiesBean = getFromCache(localeKey);
+            PropertiesBean propertiesBean = beansCache.get(localeKey);
             if (propertiesBean != null) {
                 return propertiesBean;
             }
@@ -83,10 +85,11 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
             final Properties propertiesDoc = getTranslatedProperties(location, path, locale);
             if (propertiesDoc != null) {
                 propertiesBean = new PropertiesBean(propertiesDoc);
-
                 storeInCache(canonicalKey, localeKey, propertiesBean);
-
                 return propertiesBean;
+            } else {
+                // also cache null
+                beansCache.put(localeKey, PropertiesBean.EMPTY);
             }
         } catch (RepositoryException e) {
             throw new IllegalStateException(e);
@@ -96,31 +99,20 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
     }
 
     /**
-     * Get a properties bean from cache.
-     */
-    protected PropertiesBean getFromCache(final String localeKey) {
-        return beansCache.get(localeKey);
-    }
-
-    /**
      * Store a properties bean in cache.
      *
-     * NB synchronized method: although the caches are synchronized themselves, adding values to cached lists is not.
      */
-    protected synchronized void storeInCache(final String canonicalKey, final String localeKey, final PropertiesBean propertiesBean) {
+    protected void storeInCache(final String canonicalKey, final String localeKey, final PropertiesBean propertiesBean) {
 
         // Keep track of the locale variants in second cache.
         // Reason is that invalidation occurs without locale because it's JCR event based (no locale available, just path)
         final List<String> localeVariantKeys = localeVariantKeysCache.get(canonicalKey);
         if (localeVariantKeys == null) {
-            final List<String> values = new ArrayList<String>(1);
-            values.add(localeKey);
-            localeVariantKeysCache.put(canonicalKey, values);
+            localeVariantKeysCache.put(canonicalKey, Arrays.asList(new String[]{localeKey}));
         }
         else if (!localeVariantKeys.contains(localeKey)) {
             localeVariantKeys.add(localeKey);
         }
-
         // put bean in actual cache
         beansCache.put(localeKey, propertiesBean);
     }

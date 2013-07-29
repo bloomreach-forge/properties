@@ -17,6 +17,7 @@ package org.onehippo.forge.properties.bean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -30,7 +31,15 @@ public class PropertiesBean implements Serializable {
 
     private static final long serialVersionUID = 1489125475321853863L;
 
-    private final List<PropertyBean> properties = new ArrayList<PropertyBean>();
+    private List<PropertyBean> properties = new ArrayList<PropertyBean>();
+
+    public final static PropertiesBean EMPTY = new PropertiesBean();
+
+    private PropertiesBean(){
+        // empty PropertiesBean
+        // make immutable
+        properties = Collections.emptyList();
+    }
 
     public PropertiesBean(final Properties propertiesDoc) {
         super();
