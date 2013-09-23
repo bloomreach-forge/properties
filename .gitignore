@@ -2,7 +2,6 @@
 /.idea
 /.project
 /.settings
-addon/*.iml
 addon/.classpath
 addon/.project
 addon/.settings
@@ -11,7 +10,6 @@ addon/repository/.project
 addon/repository/.settings
 addon/repository/target
 addon/target
-hst/*.iml
 hst/.classpath
 hst/.project
 hst/.settings
