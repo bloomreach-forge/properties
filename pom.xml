@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>19</version>
+    <version>24-SNAPSHOT</version>
   </parent>
 
   <name>Hippo Forge Properties Addon</name>
@@ -61,7 +61,7 @@
   <scm>
     <connection>scm:svn:https://forge.onehippo.org/svn/properties/properties/branches/hippo-cms-7.9</connection>
     <developerConnection>scm:svn:https://forge.onehippo.org/svn/properties/properties/branches/hippo-cms-7.9</developerConnection>
-    <url>https://forge.onehippo.org/svn/properties/properties/branches/hippo-cms-7.9</url>
+    <url>http://properties.forge.onehippo.org/</url>
   </scm>
 
   <distributionManagement>
