@@ -43,7 +43,6 @@
     <jsp.api.version>2.1</jsp.api.version>
 
     <!-- Documentation -->
-    <maven.plugin.javadoc.version>2.7</maven.plugin.javadoc.version>
     <maven.plugin.site.version>3.0-beta-3</maven.plugin.site.version>
     <maven.plugin.jxr.version>2.2</maven.plugin.jxr.version>
     <maven.plugin.taglib.version>2.4</maven.plugin.taglib.version>
@@ -196,13 +195,8 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>${maven.plugin.javadoc.version}</version>
         <configuration>
           <aggregate>true</aggregate>
-          <source>1.6</source>
-          <links>
-            <link>http://download.oracle.com/javase/6/docs/api</link>
-          </links>
         </configuration>
       </plugin>
       <plugin>
