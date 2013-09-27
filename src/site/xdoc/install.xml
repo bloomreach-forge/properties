@@ -24,7 +24,7 @@
       <subsection name="Prerequisites">
         <p>
           These instruction assumes that you have an HST project based on the HST archetype, i.e.
-          a Maven multiproject consisting of at least three submodules: cms, site and content.
+          a Maven multi project consisting of at least three submodules: cms, site and content.
         </p>
       </subsection>
       <subsection name="Maven 2 repository">
@@ -52,17 +52,10 @@
 <dependency>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties-addon-repository</artifactId>
-  <!-- NB version is managed from parent
-       org.onehippo.cms7:hippo-cms7-release:7.7.0 and up -->
-  <version>${forge.properties.version}</version>
+  <!-- NB version is managed from parent org.onehippo.cms7:hippo-cms7-release
+          and can be overridden in the project root pom with <forge.properties.version> -->
 </dependency>]]></source>
-            <p>When using version <b>2.04.00</b> or below:</p>
-            <source><![CDATA[
-<dependency>
-  <groupId>org.onehippo.forge</groupId>
-  <artifactId>properties-addon-repository</artifactId>
-  <version>2.04.00</version>
-</dependency>]]></source>
+            <p>Note: when using version <b>2.04.00</b> or lower, the groupId is <code>org.onehippo.forge</code>.</p>
           </li>
           <li>
             <p>
@@ -80,26 +73,10 @@
 <dependency>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties-hst-client</artifactId>
-  <!-- NB version is managed from parent
-       org.onehippo.cms7:hippo-cms7-release:7.7.0 and up -->
-  <version>${forge.properties.version}</version>
+  <!-- NB version is managed from parent org.onehippo.cms7:hippo-cms7-release
+          and can be overridden in the project root pom with <forge.properties.version> -->
 </dependency>]]></source>
-          <p>When using version <b>2.04.00</b>:</p>
-            <source><![CDATA[
-<dependency>
-  <groupId>org.onehippo.forge</groupId>
-  <artifactId>properties-hst-client</artifactId>
-  <version>2.04.00</version>
-</dependency>]]></source>
-          </li>
-          <li>
-            <p>When using version <b>2.02.00 or lower</b>, also include the artifact properties-hst-api:</p>
-            <source><![CDATA[
-<dependency>
-  <groupId>org.onehippo.forge</groupId>
-  <artifactId>properties-hst-api</artifactId>
-  <version>2.02.00</version>
-</dependency>]]></source>
+            <p>Note: when using version <b>2.04.00</b> or lower, the groupId is <code>org.onehippo.forge</code>.</p>
           </li>
           <li>
             <p>In the web.xml, make sure HstContainerServlet has uncommented init-params
@@ -107,23 +84,85 @@
           </li>
           <li>
             <p>The properties component contains a manager object that provides an API by
-              which to retrieve properties documents from repository. To create such a manager,
-              add this part to the Spring configuration file site/src/main/resources/META-INF/client-assembly/base.xml:</p>
+              which to retrieve properties documents from repository. To create such a manager, add a file to the Spring
+              configuration, say <code>site/src/main/resources/META-INF/client-assembly/propertiesManager.xml</code>
+              (similar to the example base.xml). Set up Spring beans similar to this (default location and document name
+              may be project specific):</p>
             <source><![CDATA[
-<bean id="org.onehippo.forge.properties.api.PropertiesManager"
-    class="org.onehippo.forge.properties.impl.PropertiesManagerImpl">
-  <property name="defaultDocumentLocation"
-            value="construction/labels"/>
-  <property name="defaultDocumentName"
-            value="common"/>
-</bean>]]></source>
-            <p>You may want to set up caching by using <b>org.onehippo.forge.properties.impl.CachingPropertiesManagerImpl</b>.
-              Please see the properties-demo project on how to set up the accompanying <b>PropertiesEventListener</b>
-              that invalidates that cache.</p>
+  <!-- create caching properties manager, for labels in this case, works in combination with PropertiesEventListener below -->
+  <bean id="org.onehippo.forge.properties.api.PropertiesManager.labels"
+        class="org.onehippo.forge.properties.impl.CachingPropertiesManagerImpl">
+    <property name="defaultDocumentLocation" value="labels"/>
+    <property name="defaultDocumentName" value="common"/>
+  </bean>
+
+  <!-- reference to containerComponentManager -->
+  <bean id="containerComponentManager" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+    <property name="targetClass" value="org.hippoecm.hst.site.HstServices" />
+    <property name="targetMethod" value="getComponentManager" />
+  </bean>
+
+  <!-- reference to repository -->
+  <bean id="javax.jcr.Repository" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+    <property name="targetObject" ref="containerComponentManager" />
+    <property name="targetMethod" value="getComponent" />
+    <property name="arguments">
+      <list>
+        <value>javax.jcr.Repository</value>
+      </list>
+    </property>
+  </bean>
+
+  <!-- reference to HST configuration reader credentials -->
+  <bean id="javax.jcr.Credentials.hstconfigreader" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+    <property name="targetObject" ref="containerComponentManager" />
+    <property name="targetMethod" value="getComponent" />
+    <property name="arguments">
+      <list>
+        <value>javax.jcr.Credentials.hstconfigreader</value>
+      </list>
+    </property>
+  </bean>
+
+  <!--
+    Set up a PropertiesEventListener listening for changes on properties:properties documents to invalidate caching.
+    Uses the above references of containerComponentManager, repository and credentials beans.
+  -->
+  <bean id="org.hippoecm.hst.core.jcr.EventListenersContainer" class="org.hippoecm.hst.core.jcr.EventListenersContainerImpl"
+    init-method="start" destroy-method="stop">
+    <property name="repository" ref="javax.jcr.Repository" />
+    <property name="sessionLiveCheck" value="true" />
+    <property name="credentials" ref="javax.jcr.Credentials.hstconfigreader" />
+    <property name="sessionLiveCheckInterval" value="60000" />
+    <property name="eventListenerItems">
+      <list>
+        <bean class="org.hippoecm.hst.core.jcr.EventListenerItemImpl">
+          <property name="nodeAddedEnabled" value="false" />
+          <property name="nodeRemovedEnabled" value="false" />
+          <property name="propertyAddedEnabled" value="false" />
+          <property name="propertyChangedEnabled" value="true" />
+          <property name="propertyRemovedEnabled" value="false" />
+          <property name="absolutePath" value="/" />
+          <property name="deep" value="true" />
+          <property name="uuids">
+            <null />
+          </property>
+          <property name="nodeTypeNames" value="properties:properties" />
+          <property name="noLocal" value="false" />
+          <property name="eventListener">
+            <bean class="org.onehippo.forge.properties.listener.PropertiesEventListener">
+              <property name="propertiesManager" ref="org.onehippo.forge.properties.api.PropertiesManager.labels" />
+            </bean>
+          </property>
+        </bean>
+      </list>
+    </property>
+  </bean>
+</beans>
+]]></source>
             <p>NB: You can also provide your own custom manager.
-              Above configuration will by default search for properties documents in the
-              /construction/labels folder by the name of common, but the API provides ways to do
-              more. See the PropertiesManager.java interface.</p>
+              Above configuration will by default search for properties documents in the [site-root]/labels folder by
+              the name of common, but the API provides ways to do more. See the PropertiesManager.java interface.</p>
           </li>
           <li>
             <p><b>A)</b> If you use classpath loaded beans (available since HST 2.20), add in the web.xml of your site the
