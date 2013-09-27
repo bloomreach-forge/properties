@@ -21,7 +21,7 @@
   </properties>
   <body>
     <section name="Release Notes">
-      <subsection name="2.08.01">
+      <subsection name="2.08.01 (unreleased)">
         <ul>
           <li><a href="https://issues.onehippo.com/browse/HIPPLUG-684">HIPPLUG-684</a><br/>
             Deprecate the non caching PropertiesManagerImpl as it is very bad for performance.</li>
