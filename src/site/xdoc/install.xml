@@ -79,8 +79,10 @@
             <p>Note: when using version <b>2.04.00</b> or lower, the groupId is <code>org.onehippo.forge</code>.</p>
           </li>
           <li>
-            <p>In the web.xml, make sure HstContainerServlet has uncommented init-params
-              clientComponentManagerClass and clientComponentManagerConfigurations.</p>
+            <p>In the web.xml, make sure HstFilter has uncommented init-params
+              clientComponentManagerClass and clientComponentManagerConfigurations.<br/>
+              See also <a href="http://www.onehippo.org/7_8/library/concepts/component-development/using-the-spring-clientcomponent.html">Using the Spring ClientComponent</a>.
+            </p>
           </li>
           <li>
             <p>The properties component contains a manager object that provides an API by
