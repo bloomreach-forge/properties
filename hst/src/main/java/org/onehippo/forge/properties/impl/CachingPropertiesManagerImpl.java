@@ -17,12 +17,8 @@
 package org.onehippo.forge.properties.impl;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.jcr.RepositoryException;
@@ -76,7 +72,7 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
             }
 
             // check if cached
-            PropertiesBean propertiesBean = beansCache.get(localeKey);
+            PropertiesBean propertiesBean = getFromCache(localeKey);
             if (propertiesBean != null) {
                 return propertiesBean;
             }
@@ -89,7 +85,7 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
                 return propertiesBean;
             } else {
                 // also cache null
-                beansCache.put(localeKey, PropertiesBean.EMPTY);
+                storeInCache(canonicalKey, localeKey, PropertiesBean.EMPTY);
             }
         } catch (RepositoryException e) {
             throw new IllegalStateException(e);
@@ -99,8 +95,14 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
     }
 
     /**
+     * Get a properties bean from cache.
+     */
+    protected PropertiesBean getFromCache(final String localeKey) {
+        return beansCache.get(localeKey);
+    }
+
+    /**
      * Store a properties bean in cache.
-     *
      */
     protected void storeInCache(final String canonicalKey, final String localeKey, final PropertiesBean propertiesBean) {
 
@@ -108,11 +110,16 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
         // Reason is that invalidation occurs without locale because it's JCR event based (no locale available, just path)
         final List<String> localeVariantKeys = localeVariantKeysCache.get(canonicalKey);
         if (localeVariantKeys == null) {
-            localeVariantKeysCache.put(canonicalKey, Arrays.asList(new String[]{localeKey}));
+            // NB do not use Arrays.asList since that returns an unmodifiable list; resulting in
+            //    UnsupportedOperationException later when adding more localeKeys
+            final List<String> values = new ArrayList<String>(1);
+            values.add(localeKey);
+            localeVariantKeysCache.put(canonicalKey, values);
         }
         else if (!localeVariantKeys.contains(localeKey)) {
             localeVariantKeys.add(localeKey);
         }
+
         // put bean in actual cache
         beansCache.put(localeKey, propertiesBean);
     }
