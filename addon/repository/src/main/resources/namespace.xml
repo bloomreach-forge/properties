@@ -79,7 +79,7 @@
         <sv:value>hippo:handle</sv:value>
       </sv:property>
       <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
-        <sv:value>hippo:hardhandle</sv:value>
+        <sv:value>mix:referenceable</sv:value>
       </sv:property>
       <sv:node sv:name="hipposysedit:nodetype">
         <sv:property sv:name="jcr:primaryType" sv:type="Name">
@@ -87,7 +87,7 @@
         </sv:property>
         <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
           <sv:value>hipposysedit:remodel</sv:value>
-          <sv:value>hippo:harddocument</sv:value>
+          <sv:value>mix:referenceable</sv:value>
         </sv:property>
         <sv:property sv:name="hipposysedit:node" sv:type="Boolean">
           <sv:value>true</sv:value>
@@ -482,7 +482,7 @@
         <sv:value>hippo:handle</sv:value>
       </sv:property>
       <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
-        <sv:value>hippo:hardhandle</sv:value>
+        <sv:value>mix:referenceable</sv:value>
       </sv:property>
       <sv:node sv:name="hipposysedit:nodetype">
         <sv:property sv:name="jcr:primaryType" sv:type="Name">
@@ -490,7 +490,7 @@
         </sv:property>
         <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
           <sv:value>hipposysedit:remodel</sv:value>
-          <sv:value>hippo:harddocument</sv:value>
+          <sv:value>mix:referenceable</sv:value>
         </sv:property>
         <sv:property sv:name="hipposysedit:node" sv:type="Boolean">
           <sv:value>true</sv:value>
@@ -537,7 +537,7 @@
           <sv:value>properties:properties</sv:value>
         </sv:property>
         <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
-          <sv:value>hippo:harddocument</sv:value>
+          <sv:value>mix:referenceable</sv:value>
           <sv:value>hippotranslation:translated</sv:value>
         </sv:property>
         <sv:property sv:name="hippostd:state" sv:type="String">
