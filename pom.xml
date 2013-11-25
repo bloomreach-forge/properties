@@ -27,7 +27,7 @@
   <description>Hippo Forge Properties Addon</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties</artifactId>
-  <version>2.08.01</version>
+  <version>2.08.02-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <url>https://forge.onehippo.org/gf/project/properties</url>
@@ -59,9 +59,9 @@
   </developers>
 
   <scm>
-    <connection>scm:svn:https://forge.onehippo.org/svn/properties/properties/tags/properties-2.08.01</connection>
-    <developerConnection>scm:svn:https://forge.onehippo.org/svn/properties/properties/tags/properties-2.08.01</developerConnection>
-    <url>https://forge.onehippo.org/svn/properties/properties/tags/properties-2.08.01</url>
+    <connection>scm:svn:https://forge.onehippo.org/svn/properties/properties/trunk</connection>
+    <developerConnection>scm:svn:https://forge.onehippo.org/svn/properties/properties/trunk</developerConnection>
+    <url>https://forge.onehippo.org/svn/properties/properties/trunk</url>
   </scm>
 
   <distributionManagement>
