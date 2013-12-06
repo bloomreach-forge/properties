@@ -35,7 +35,7 @@ public abstract class AbstractPropertiesManager implements PropertiesManager {
      */
     @Override
     public PropertiesBean getPropertiesBean(final HippoBean baseBean) {
-        return this.getPropertiesBean(baseBean, (Locale)null);
+        return this.getPropertiesBean(baseBean, null);
     }
 
     /**
@@ -43,7 +43,7 @@ public abstract class AbstractPropertiesManager implements PropertiesManager {
      */
     @Override
     public PropertiesBean getPropertiesBean(final String path, final HippoBean baseBean) {
-        return this.getPropertiesBean(path, baseBean, (Locale)null);
+        return this.getPropertiesBean(path, baseBean, null);
     }
 
     /**
@@ -51,7 +51,7 @@ public abstract class AbstractPropertiesManager implements PropertiesManager {
      */
     @Override
     public List<PropertiesBean> getPropertiesBeans(final List<String> paths, final HippoBean baseBean) {
-        return this.getPropertiesBeans(paths, baseBean, (Locale)null);
+        return this.getPropertiesBeans(paths, baseBean, null);
     }
 
     /**
