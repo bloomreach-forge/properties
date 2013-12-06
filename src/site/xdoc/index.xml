@@ -16,12 +16,24 @@
 -->
 <!DOCTYPE document PUBLIC
   "-//Apache Software Foundation//DTD XDOC 1.0//EN"
-  "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+  "http://maven.apache.org/xsd/xdoc-2.0.xsd">
 <document>
   <properties>
       <title>Introduction</title>
   </properties>
   <body>
+    <section name="Deprecated">
+      <subsection name="Properties plugin is deprecated">
+        <p>Instead, we prefer the usage of resource bundles, see
+          <a href="http://www.onehippo.org/7_8/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">
+            HST Dynamic Resource Bundles support
+          </a> and
+          <a href="http://resourcebundle.forge.onehippo.org/">
+            HST Resource Bundle Editor Plugin
+          </a>
+        </p>
+      </subsection>
+    </section>
     <section name="Introduction">
         <subsection name="What is the properties component?">
             <p>
