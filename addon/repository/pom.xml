@@ -42,24 +42,5 @@
 
   <build>
     <defaultGoal>install</defaultGoal>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <archive>
-            <manifest>
-              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-            </manifest>
-            <manifestEntries>
-              <Hippo-Modules>
-                org.onehippo.forge.properties.upgrade.PropertiesUpdater16a
-                org.onehippo.forge.properties.upgrade.PropertiesUpdater18a
-              </Hippo-Modules>
-            </manifestEntries>
-          </archive>
-        </configuration>
-      </plugin>
-    </plugins>
   </build>
 </project>
