@@ -28,13 +28,18 @@ import org.hippoecm.hst.content.beans.standard.HippoBean;
 import org.hippoecm.hst.core.component.HstRequest;
 import org.hippoecm.hst.core.component.HstResponse;
 import org.hippoecm.hst.core.container.ComponentManager;
+import org.hippoecm.hst.site.HstServices;
 import org.onehippo.forge.properties.api.PropertiesManager;
 import org.onehippo.forge.properties.api.PropertiesUtil;
 import org.onehippo.forge.properties.bean.PropertiesBean;
 import org.onehippo.forge.properties.impl.CachingPropertiesManagerImpl;
 import org.onehippo.forge.properties.impl.PropertiesManagerImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PropertyTag extends ParamContainerTag {
+
+    private static final Logger log = LoggerFactory.getLogger(PropertyTag.class);
 
     private static final long serialVersionUID = -7907730483215325490L;
 
@@ -54,21 +59,25 @@ public class PropertyTag extends ParamContainerTag {
             throw new IllegalStateException("Missing required attribute 'name' in PropertyTag");
         }
 
-        // get PropertiesManager through ClientComponentManager
-        final ComponentManager componentManager = this.getDefaultClientComponentManager();
-        if (componentManager == null) {
-            cleanup();
-            return EVAL_PAGE;
-        }
+        final ComponentManager componentManager = HstServices.getComponentManager();
 
         final String propertiesManagerPostfix = (managerPostfix != null) ? managerPostfix : MANAGER_POSTFIX_DEFAULT;
         final String propertiesManagerId = PropertiesManager.class.getName()+ "." + propertiesManagerPostfix;
 
-        final PropertiesManager propertiesManager = componentManager.getComponent(propertiesManagerId);
+        PropertiesManager propertiesManager = componentManager.getComponent(propertiesManagerId);
         if (propertiesManager == null) {
-            logger.warn("No propertiesManager found by id " + propertiesManagerId);
-            cleanup();
-            return EVAL_PAGE;
+            // do a fallback to the deprecated ClientComponentManager
+            final ComponentManager clientComponentManager = this.getDefaultClientComponentManager();
+            propertiesManager = clientComponentManager.getComponent(propertiesManagerId);
+            if (propertiesManager == null) {
+                logger.warn("No propertiesManager found by id " + propertiesManagerId);
+                cleanup();
+                return EVAL_PAGE;
+            } else {
+                log.warn("Using properties manager via deprecated ClientComponentManager. You must replace the " +
+                        "META-INF/client-assembly/*.xml spring configuration with /META-INF/hst-assembly/overrides/*.xml. " +
+                        "Also see http://properties.forge.onehippo.org/install.html");
+            }
         }
 
         // use PropertiesManager API to retrieve property map

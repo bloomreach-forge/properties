@@ -39,7 +39,7 @@ import java.util.Set;
  *    There is also a Spring instantiated PropertiesManager present with which
  *    beans can be gotten from content:
  *
- *    ComponentManager componentManager = (ComponentManager) this.getDefaultClientComponentManager();
+ *    ComponentManager componentManager = HstServices.getComponentManager();;
  *    this.propertiesManager = componentManager.getComponent(PropertiesManager.class.getName());
  *    
  *    Map<String, String> properties = new PropertiesMap(this.propertiesManager.getPropertiesBean(this.getSiteContentBaseBean(request)));
