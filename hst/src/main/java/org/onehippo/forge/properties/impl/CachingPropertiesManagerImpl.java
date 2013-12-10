@@ -100,19 +100,23 @@ public class CachingPropertiesManagerImpl extends PropertiesManagerImpl {
 
     /**
      * Store a properties bean in cache.
-     *
      */
     protected void storeInCache(final String canonicalKey, final String localeKey, final PropertiesBean propertiesBean) {
 
         // Keep track of the locale variants in second cache.
         // Reason is that invalidation occurs without locale because it's JCR event based (no locale available, just path)
-        final List<String> localeVariantKeys = localeVariantKeysCache.get(canonicalKey);
+        List<String> localeVariantKeys = localeVariantKeysCache.get(canonicalKey);
         if (localeVariantKeys == null) {
-            localeVariantKeysCache.put(canonicalKey, Arrays.asList(new String[]{localeKey}));
+            // NB do not use Arrays.asList since that returns an unmodifiable list; resulting in
+            //    UnsupportedOperationException later when adding more localeKeys
+            localeVariantKeys =  new ArrayList<String>(1);
+            localeVariantKeysCache.put(canonicalKey, localeVariantKeys);
         }
-        else if (!localeVariantKeys.contains(localeKey)) {
+
+        if (!localeVariantKeys.contains(localeKey)) {
             localeVariantKeys.add(localeKey);
         }
+
         // put bean in actual cache
         beansCache.put(localeKey, propertiesBean);
     }
