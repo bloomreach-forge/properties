@@ -70,10 +70,6 @@ public class PropertyTag extends ParamContainerTag {
             cleanup();
             return EVAL_PAGE;
         }
-        if (propertiesManager instanceof PropertiesManagerImpl) {
-            logger.warn("You are using deprecated {} in combination with PropertyTag. This is very bad for performance. Please use {} instead",
-                    PropertiesManagerImpl.class.getName(), CachingPropertiesManagerImpl.class.getName());
-        }
 
         // use PropertiesManager API to retrieve property map
         final HippoBean siteContentBaseBean = this.getSiteContentBaseBean(hstRequest);
