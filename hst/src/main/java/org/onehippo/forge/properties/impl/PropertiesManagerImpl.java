@@ -27,6 +27,12 @@ import org.onehippo.forge.properties.bean.PropertiesBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Note: this class is deprecated.
+ *
+ * Do not use it because it has bad performance.
+ * Use the CachingPropertiesManagerImpl instead in your Spring configuration.
+ */
 public class PropertiesManagerImpl extends AbstractPropertiesManager {
 
     private static final Logger log = LoggerFactory.getLogger(PropertiesManagerImpl.class);

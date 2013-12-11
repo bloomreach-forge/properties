@@ -21,6 +21,14 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="2.08.01">
+        <ul>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-684">HIPPLUG-684</a><br/>
+            Deprecate the non caching PropertiesManagerImpl as it is very bad for performance.</li>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-685">HIPPLUG-685</a><br/>
+            Improve caching of CachingPropertiesManagerImpl to also cache null values.</li>
+        </ul>
+      </subsection>
       <subsection name="2.08.00">
         <ul>
           <li><a href="https://issues.onehippo.com/browse/HIPPLUG-544">HIPPLUG-544</a><br/>
