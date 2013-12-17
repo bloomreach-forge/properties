@@ -21,7 +21,17 @@
   </properties>
   <body>
     <section name="Release Notes">
-      <subsection name="2.08.01">
+      <subsection name="2.09.01 (unreleased)">
+        <ul>
+          <li>Upgraded for Hippo CMS 7.9, involving Java 7 and Wicket 6. Incompatible with 7.8 or lower.</li>
+          <li><span style="color:red">Plugin is deprecated for Hippo CMS 7.9.</span>
+             You can still use it in older projects but it's no longer certified. It has been followed up by
+              <a href="http://www.onehippo.org/7_8/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">HST
+                Dynamic Resource Bundles</a> in combination with <a href="http://resourcebundle.forge.onehippo.org/">HST Resource Bundle Editor Plugin</a>
+          </li>
+        </ul>
+      </subsection>
+      <subsection name="2.08.01 (25 Nov 2013)">
         <ul>
           <li><a href="https://issues.onehippo.com/browse/HIPPLUG-684">HIPPLUG-684</a><br/>
             Deprecate the non caching PropertiesManagerImpl as it is very bad for performance.</li>
@@ -29,7 +39,7 @@
             Improve caching of CachingPropertiesManagerImpl to also cache null values.</li>
         </ul>
       </subsection>
-      <subsection name="2.08.00">
+      <subsection name="2.08.00 (18 Feb 2013">
         <ul>
           <li><a href="https://issues.onehippo.com/browse/HIPPLUG-544">HIPPLUG-544</a><br/>
             Upgrade to Hippo CMS 7.8.</li>

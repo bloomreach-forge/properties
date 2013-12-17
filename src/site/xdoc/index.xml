@@ -23,11 +23,18 @@
   </properties>
   <body>
     <section name="Introduction">
-        <subsection name="What is the properties component?">
+        <subsection name="What is the properties plugin?">
             <p>
-              The properties component allows you to create simple CMS documents
+              The properties plugin allows you to create simple CMS documents
               having a flat list of name/value pairs. It also provides easy locating
               and using these documents in your HST site frontend.
+            </p>
+      </subsection>
+      <subsection style="color:red" name="Deprecated for Hippo CMS 7.9">
+            <p>This plugin is deprecated for projects on CMS 7.9 and has been followed up by
+              <a href="http://www.onehippo.org/7_8/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">HST
+                Dynamic Resource Bundles</a> in combination with the <a href="http://resourcebundle.forge.onehippo.org/">HST
+                Resource Bundle Editor Plugin</a>
             </p>
         </subsection>
         <subsection name="Screenshots">
