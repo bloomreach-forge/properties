@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>24.1-iteration-11</version>
+    <version>24.1-SNAPSHOT</version>
   </parent>
 
   <name>Hippo Forge Properties Addon</name>
@@ -37,8 +37,8 @@
     <!-- use root project name for all project modules NOTICE files, should be the same as in the root NOTICE file -->
     <notice.project.name>Hippo Forge Properties Addon</notice.project.name>
 
-    <hippo.hst.version>2.27.03-iteration-11</hippo.hst.version>
-    <hippo.repository.version>2.25.05-iteration-11</hippo.repository.version>
+    <hippo.hst.version>2.27.03-SNAPSHOT</hippo.hst.version>
+    <hippo.repository.version>2.25.05-SNAPSHOT</hippo.repository.version>
 
     <jsp.api.version>2.1</jsp.api.version>
 
