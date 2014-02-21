@@ -31,6 +31,13 @@
           </li>
         </ul>
       </subsection>
+      <subsection name="2.08.02 (unreleased)">
+        <ul>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-794">HIPPLUG-794</a><br/>
+            Fixed warning during construction of CachingPropertiesManagerImpl.
+          </li>
+        </ul>
+      </subsection>
       <subsection name="2.08.01 (25 Nov 2013)">
         <ul>
           <li><a href="https://issues.onehippo.com/browse/HIPPLUG-684">HIPPLUG-684</a><br/>
@@ -39,7 +46,7 @@
             Improve caching of CachingPropertiesManagerImpl to also cache null values.</li>
         </ul>
       </subsection>
-      <subsection name="2.08.00 (18 Feb 2013">
+      <subsection name="2.08.00 (18 Feb 2013)">
         <ul>
           <li><a href="https://issues.onehippo.com/browse/HIPPLUG-544">HIPPLUG-544</a><br/>
             Upgrade to Hippo CMS 7.8.</li>
