@@ -41,8 +41,11 @@ public class PropertiesManagerImpl extends AbstractPropertiesManager {
     private String defaultDocumentName;
 
     public PropertiesManagerImpl() {
-        log.warn("{} is deprecated. Do not use because it has bad performance. Use {} instead. Possibly you need to adjust this in your spring beans. ",
-                PropertiesManagerImpl.class.getName(), CachingPropertiesManagerImpl.class.getName());
+        if (getClass().equals(PropertiesManagerImpl.class)) {
+            log.warn("{} is deprecated. Do not use because it has bad performance. "
+                    + "Use {} instead. Possibly you need to adjust this in your spring beans. ",
+                    PropertiesManagerImpl.class.getName(), CachingPropertiesManagerImpl.class.getName());
+        }
     }
 
     /** {@inheritDoc} */
