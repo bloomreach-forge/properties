@@ -59,9 +59,9 @@
   </developers>
 
   <scm>
-    <connection>scm:svn:https://forge.onehippo.org/svn/properties/properties/trunk</connection>
-    <developerConnection>scm:svn:https://forge.onehippo.org/svn/properties/properties/trunk</developerConnection>
-    <url>https://forge.onehippo.org/svn/properties/properties/trunk</url>
+    <connection>scm:svn:https://forge.onehippo.org/svn/properties/properties/branches/properties-2.08.xx/</connection>
+    <developerConnection>scm:svn:https://forge.onehippo.org/svn/properties/properties/branches/properties-2.08.xx/</developerConnection>
+    <url>https://forge.onehippo.org/svn/properties/properties/branches/properties-2.08.xx/</url>
   </scm>
 
   <distributionManagement>
