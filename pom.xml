@@ -58,8 +58,8 @@
   </developers>
 
   <scm>
-    <connection>scm:svn:https://forge.onehippo.org/svn/properties/properties/branches/hippo-cms-7.9</connection>
-    <developerConnection>scm:svn:https://forge.onehippo.org/svn/properties/properties/branches/hippo-cms-7.9</developerConnection>
+    <connection>scm:svn:https://forge.onehippo.org/svn/properties/properties/trunk</connection>
+    <developerConnection>scm:svn:https://forge.onehippo.org/svn/properties/properties/trunk</developerConnection>
     <url>http://properties.forge.onehippo.org/</url>
   </scm>
 
