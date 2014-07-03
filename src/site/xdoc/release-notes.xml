@@ -33,7 +33,7 @@
         </ul>
       </subsection>
       <subsection name="2.08.02">
-        <p class="smallinfo">Unreleased</p>
+        <p class="smallinfo">Release Date: 3 Jul 2014</p>
         <ul>
           <li><a href="https://issues.onehippo.com/browse/HIPPLUG-794">HIPPLUG-794</a><br/>
             Fixed warning during construction of CachingPropertiesManagerImpl.

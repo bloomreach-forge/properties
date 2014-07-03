@@ -108,12 +108,20 @@
           The manager will look for properties with configured name or the default name from
           the configure default location, relative to the given site content base bean.
         </p>
+        <i>For use with 7.8</i>
         <source><![CDATA[
-  // get the manager and base bean
+   // get the manager and base bean
   ComponentManager componentManager = (ComponentManager) this.getDefaultClientComponentManager();
   PropertiesManager propertiesManager = componentManager.getComponent(PropertiesManager.class.getName());
   HippoBean baseBean = this.getSiteContentBaseBean(request);
-
+  ...]]></source>
+        <i>For use with 7.9</i>
+        <source><![CDATA[
+  // get the manager and base bean
+  PropertiesManager propertiesManager = HstServices.getComponentManager().getComponent(PropertiesManager.class.getName());
+  HippoBean baseBean = this.getSiteContentBaseBean(request);
+  ...]]></source>
+        <source><![CDATA[...
   // Example A: retrieve one document bean by the configured default name
   PropertiesBean defaultPropertiesBean = this.propertiesManager.getPropertiesBean(baseBean);
   Map<String, String> defaultLabels = PropertiesUtil.toMap(propertiesBean);

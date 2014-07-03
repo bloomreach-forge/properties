@@ -117,32 +117,31 @@
             <p>Please see the properties-demo project on how to set up the accompanying <b>PropertiesEventListener</b>
               that invalidates that cache. You need to add something like</p>
             <source><![CDATA[
-              <bean id="customJcrObservationEventListenerItems" class="org.springframework.beans.factory.config.ListFactoryBean">
-      <property name="sourceList">
-        <list>
-          <bean class="org.hippoecm.hst.core.jcr.EventListenerItemImpl">
-            <property name="nodeAddedEnabled" value="false" />
-            <property name="nodeRemovedEnabled" value="false" />
-            <property name="propertyAddedEnabled" value="false" />
-            <property name="propertyChangedEnabled" value="true" />
-            <property name="propertyRemovedEnabled" value="false" />
-            <property name="absolutePath" value="/" />
-            <property name="deep" value="true" />
-            <property name="uuids">
-              <null />
-            </property>
-            <property name="nodeTypeNames" value="properties:properties" />
-            <property name="noLocal" value="false" />
-            <property name="eventListener">
-              <bean class="org.onehippo.forge.properties.listener.PropertiesEventListener">
-                <property name="propertiesManager" ref="org.onehippo.forge.properties.api.PropertiesManager.labels" />
-              </bean>
-            </property>
-          </bean>
-          </list>
-      </property>
-    </bean>
-              ]]></source>
+  <bean id="customJcrObservationEventListenerItems" class="org.springframework.beans.factory.config.ListFactoryBean">
+    <property name="sourceList">
+      <list>
+        <bean class="org.hippoecm.hst.core.jcr.EventListenerItemImpl">
+          <property name="nodeAddedEnabled" value="false" />
+          <property name="nodeRemovedEnabled" value="false" />
+          <property name="propertyAddedEnabled" value="false" />
+          <property name="propertyChangedEnabled" value="true" />
+          <property name="propertyRemovedEnabled" value="false" />
+          <property name="absolutePath" value="/" />
+          <property name="deep" value="true" />
+          <property name="uuids">
+            <null />
+          </property>
+          <property name="nodeTypeNames" value="properties:properties" />
+          <property name="noLocal" value="false" />
+          <property name="eventListener">
+            <bean class="org.onehippo.forge.properties.listener.PropertiesEventListener">
+              <property name="propertiesManager" ref="org.onehippo.forge.properties.api.PropertiesManager.labels" />
+            </bean>
+          </property>
+        </bean>
+        </list>
+    </property>
+  </bean>]]></source>
             <p>NB: You can also provide your own custom manager.
               Above configuration will by default search for properties documents in the
               /construction/labels folder by the name of common, but the API provides ways to do
