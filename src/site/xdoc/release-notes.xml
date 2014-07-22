@@ -21,6 +21,13 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="2.10.01">
+        <p class="smallinfo">Release Date: 22 July 2014</p>
+        <ul>
+          <li>Updated documentation for Hippo CMS 7.9.
+          </li>
+        </ul>
+      </subsection>
       <subsection name="2.10.00">
         <p class="smallinfo">Release Date: 10 Apr 2014</p>
         <ul>
