@@ -608,11 +608,6 @@
         <sv:property sv:name="hippotranslation:locale" sv:type="String">
           <sv:value>document-type-locale</sv:value>
         </sv:property>
-        <sv:node sv:name="hippotranslation:translations">
-          <sv:property sv:name="jcr:primaryType" sv:type="Name">
-            <sv:value>hippotranslation:translations</sv:value>
-          </sv:property>
-        </sv:node>
         <sv:node sv:name="properties:property">
           <sv:property sv:name="jcr:primaryType" sv:type="Name">
             <sv:value>properties:property</sv:value>
