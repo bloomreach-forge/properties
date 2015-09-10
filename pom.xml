@@ -43,7 +43,7 @@
     <jsp.api.version>2.1</jsp.api.version>
 
     <!-- Documentation -->
-    <maven.plugin.site.version>3.0-beta-3</maven.plugin.site.version>
+    <maven.plugin.site.version>3.3</maven.plugin.site.version>
     <maven.plugin.jxr.version>2.2</maven.plugin.jxr.version>
     <maven.plugin.taglib.version>2.4</maven.plugin.taglib.version>
 

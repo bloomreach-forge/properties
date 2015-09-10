@@ -24,7 +24,7 @@ import org.onehippo.forge.properties.bean.PropertiesBean;
 import org.onehippo.forge.properties.bean.PropertiesMap;
 
 /**
- * Utility methods to get from properties documents and serializable beans to Map<String, String>.
+ * Utility methods to get from properties documents and serializable beans to Map.
  *
  * NB! Using 'asMap' for documents and 'toMap' for beans, to be able to use generics in the collection.
  */

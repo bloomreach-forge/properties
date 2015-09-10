@@ -28,14 +28,16 @@ import java.util.Set;
  * as argument and subsequently set on the request for access in jsp.  
  * 
  * Example 1:
+ * <pre>{@code
  *    // get a document named "properties" at same level as current bean
  *    Properties propertiesDoc = this.getContentBean(request).getParentBean().getBean("properties", Properties.class);
  *    
  *    if (propertiesDoc != null) {
  *        request.setAttribute("properties", new PropertiesMap(new PropertiesBean(propertiesDoc)));
  *    }   
- * 
+ * }</pre>
  * Example 2:
+ * <pre>{@code
  *    There is also a Spring instantiated PropertiesManager present with which
  *    beans can be gotten from content:
  *
@@ -43,12 +45,13 @@ import java.util.Set;
  *    this.propertiesManager = componentManager.getComponent(PropertiesManager.class.getName());
  *    
  *    Map<String, String> properties = new PropertiesMap(this.propertiesManager.getPropertiesBean(this.getSiteContentBaseBean(request)));
- *
+ * }</pre>
  * Example 3:
+ * <pre>{@code
  *    There is also a static utility class that creates PropertiesMaps.
  *
  *    Map<String, String> properties = PropertiesUtil.toMap(this.propertiesManager.getPropertiesBean(this.getSiteContentBaseBean(request)));
- *
+ * }</pre>
  * Because it is a map, access in jsp can be done using direct expression
  * language notation like "labels['label.header']"
  */

@@ -107,7 +107,7 @@ public interface PropertiesManager  {
      * @param baseBean the base bean from where to get the properties location, normally the siteContentBaseBean.
      *
      * @deprecated Replaced by #getPropertiesBean(final HippoBean baseBean).
-     *             Use PropertiesUtil to get a Map<String, String> directly.
+     *             Use PropertiesUtil to get a Map directly.
      */
     Map<String, String> getProperties(final HippoBean baseBean);
 
@@ -120,8 +120,8 @@ public interface PropertiesManager  {
      * @param paths the relative paths of the properties documents to search for
      * @param baseBean the base bean from where to get the properties location, normally the siteContentBaseBean.
      *
-     * @deprecated Replaced by #getPropertiesBeans(final List<String> names, final HippoBean baseBean).
-     *             Use PropertiesUtil to get a Map<String, String> directly.
+     * @deprecated Replaced by #getPropertiesBeans(final List names, final HippoBean baseBean).
+     *             Use PropertiesUtil to get a Map directly.
      */
     Map<String, String> getProperties(final String[] paths, final HippoBean baseBean);
 
