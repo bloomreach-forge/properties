@@ -4,6 +4,7 @@ addon/repository/pom.xml svneol=native#text/plain
 addon/repository/src/main/resources/namespace.xml -text
 addon/repository/src/main/resources/properties.cnd -text
 addon/repository/src/main/resources/template-translations.json -text
+addon/repository/src/main/resources/types-translations.json -text
 hst/pom.xml svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/annotated/Properties.java svneol=native#text/plain
 hst/src/main/java/org/onehippo/forge/properties/annotated/Property.java svneol=native#text/plain

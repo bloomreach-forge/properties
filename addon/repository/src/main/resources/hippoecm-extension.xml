@@ -52,7 +52,7 @@
       <sv:value>true</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:version" sv:type="String">
-      <sv:value>2.09.01</sv:value>
+      <sv:value>3.0.0</sv:value>
     </sv:property>
   </sv:node>
 
@@ -119,10 +119,21 @@
       <sv:value>hippo:initializeitem</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:sequence" sv:type="Double">
-      <sv:value>20105</sv:value>
+      <sv:value>20200</sv:value>
     </sv:property>
     <sv:property sv:name="hippo:resourcebundles" sv:type="String">
       <sv:value>template-translations.json</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="forge-properties-query-types-translations">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hippo:initializeitem</sv:value>
+    </sv:property>
+    <sv:property sv:name="hippo:sequence" sv:type="Double">
+      <sv:value>20105.1</sv:value>
+    </sv:property>
+    <sv:property sv:name="hippo:resourcebundles" sv:type="String">
+      <sv:value>types-translations.json</sv:value>
     </sv:property>
   </sv:node>
 
