@@ -1,0 +1,18 @@
+{"hippo:templates": {
+  "en":   {
+    "new-properties-folder": "folder",
+    "new-properties-document": "properties document"
+  },
+  "nl":   {
+    "new-properties-folder": "map",
+    "new-properties-document": "eigenschappen-document"
+  },
+  "de":   {
+    "new-properties-folder": "Ordner",
+    "new-properties-document": "Properties Dokument"
+  },
+  "fr":   {
+    "new-properties-folder": "dossier",
+    "new-properties-document": "document de propriétés"
+  }
+}}
