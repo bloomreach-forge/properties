@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2013 Hippo B.V. (http://www.onehippo.com)
+ * Copyright 2011-2016 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,14 +32,10 @@ import org.hippoecm.hst.site.HstServices;
 import org.onehippo.forge.properties.api.PropertiesManager;
 import org.onehippo.forge.properties.api.PropertiesUtil;
 import org.onehippo.forge.properties.bean.PropertiesBean;
-import org.onehippo.forge.properties.impl.CachingPropertiesManagerImpl;
-import org.onehippo.forge.properties.impl.PropertiesManagerImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class PropertyTag extends ParamContainerTag {
-
-    private static final Logger log = LoggerFactory.getLogger(PropertyTag.class);
 
     private static final long serialVersionUID = -7907730483215325490L;
 
@@ -65,20 +61,6 @@ public class PropertyTag extends ParamContainerTag {
         final String propertiesManagerId = PropertiesManager.class.getName()+ "." + propertiesManagerPostfix;
 
         PropertiesManager propertiesManager = componentManager.getComponent(propertiesManagerId);
-        if (propertiesManager == null) {
-            // do a fallback to the deprecated ClientComponentManager
-            final ComponentManager clientComponentManager = this.getDefaultClientComponentManager();
-            propertiesManager = clientComponentManager.getComponent(propertiesManagerId);
-            if (propertiesManager == null) {
-                logger.warn("No propertiesManager found by id " + propertiesManagerId);
-                cleanup();
-                return EVAL_PAGE;
-            } else {
-                log.warn("Using properties manager via deprecated ClientComponentManager. You must replace the " +
-                        "META-INF/client-assembly/*.xml spring configuration with /META-INF/hst-assembly/overrides/*.xml. " +
-                        "Also see http://properties.forge.onehippo.org/install.html");
-            }
-        }
 
         // use PropertiesManager API to retrieve property map
         final HippoBean siteContentBaseBean = this.getSiteContentBaseBean(hstRequest);
