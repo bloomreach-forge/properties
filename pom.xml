@@ -37,8 +37,8 @@
     <!-- use root project name for all project modules NOTICE files, should be the same as in the root NOTICE file -->
     <notice.project.name>Hippo Forge Properties Addon</notice.project.name>
 
-    <hippo.hst.version>4.0.0</hippo.hst.version>
-    <hippo.repository.version>4.0.0</hippo.repository.version>
+    <hippo.hst.version>4.0.1</hippo.hst.version>
+    <hippo.repository.version>4.0.1</hippo.repository.version>
 
     <jsp.api.version>2.2</jsp.api.version>
 
