@@ -21,13 +21,20 @@
   </properties>
   <body>
     <section name="Release Notes">
-      <subsection name="3.0.0">
-        <p class="smallinfo">Release Date: xx Aug 2016</p>
+      <subsection name="3.0.1">
+        <p class="smallinfo">Release Date: 21 Aug 2016</p>
         <ul>
-          <li>Upgrade properties plugin to be compatible with CMS 11
+          <li>Fix some old style translation left over
           </li>
         </ul>
       </subsection>
+      <subsection name="3.0.0">
+      <p class="smallinfo">Release Date: 16 Aug 2016</p>
+      <ul>
+        <li>Upgrade properties plugin to be compatible with CMS 11
+        </li>
+      </ul>
+    </subsection>
       <subsection name="2.10.01">
         <p class="smallinfo">Release Date: 22 July 2014</p>
         <ul>
