@@ -19,8 +19,9 @@
   <skin>
     <groupId>org.onehippo.forge.mavenskin</groupId>
     <artifactId>forge-maven-skin</artifactId>
-    <version>1.02.02</version>
+    <version>1.04.00</version>
   </skin>
+  <publishDate format="d MMM yyyy" />
 
   <body>
     <menu name="Home">
