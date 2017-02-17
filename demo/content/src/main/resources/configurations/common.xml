@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?><sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" sv:name="common">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>hst:configuration</sv:value>
+  </sv:property>
+  <sv:node sv:name="hst:pages">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:pages</sv:value>
+    </sv:property>
+    <sv:node sv:name="standard">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:component</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:template" sv:type="String">
+        <sv:value>webpage</sv:value>
+      </sv:property>
+      <sv:node sv:name="header">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hst:component</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:referencecomponent" sv:type="String">
+          <sv:value>hst:components/header</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+    <sv:node sv:name="detailpage">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:component</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:referencecomponent" sv:type="String">
+        <sv:value>hst:pages/standard</sv:value>
+      </sv:property>
+      <sv:node sv:name="body">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hst:component</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:referencecomponent" sv:type="String">
+          <sv:value>hst:components/bodydetail</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+    <sv:node sv:name="home">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:component</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>b44ace0f-49be-4a79-8657-80a7909d8278</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:referencecomponent" sv:type="String">
+        <sv:value>hst:pages/standard</sv:value>
+      </sv:property>
+      <sv:node sv:name="body">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hst:component</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcr:uuid" sv:type="String">
+          <sv:value>0d90e945-bf0d-49c3-955f-2e94ed546c9a</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:referencecomponent" sv:type="String">
+          <sv:value>hst:components/bodyhome</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="hst:components">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:components</sv:value>
+    </sv:property>
+    <sv:node sv:name="header">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:component</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:template" sv:type="String">
+        <sv:value>header</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="bodygeneral">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:component</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:template" sv:type="String">
+        <sv:value>threecolumnlayout</sv:value>
+      </sv:property>
+      <sv:node sv:name="leftmenu">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hst:component</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:componentclassname" sv:type="String">
+          <sv:value>org.onehippo.forge.propertiesdemo.components.LeftMenu</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:template" sv:type="String">
+          <sv:value>leftmenu</sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="right">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hst:component</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:template" sv:type="String">
+          <sv:value>right</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+    <sv:node sv:name="bodydetail">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:component</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:referencecomponent" sv:type="String">
+        <sv:value>hst:components/bodygeneral</sv:value>
+      </sv:property>
+      <sv:node sv:name="content">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hst:component</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:componentclassname" sv:type="String">
+          <sv:value>org.onehippo.forge.propertiesdemo.components.Detail</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:template" sv:type="String">
+          <sv:value>document</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+    <sv:node sv:name="bodyhome">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:component</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:template" sv:type="String">
+        <sv:value>homelayout</sv:value>
+      </sv:property>
+      <sv:node sv:name="bodynav">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hst:component</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:componentclassname" sv:type="String">
+          <sv:value>org.onehippo.forge.propertiesdemo.components.LeftMenu</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:template" sv:type="String">
+          <sv:value>leftmenu</sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="bodymain">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hst:component</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:componentclassname" sv:type="String">
+          <sv:value>org.onehippo.forge.propertiesdemo.components.Home</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:template" sv:type="String">
+          <sv:value>document</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="hst:templates">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:templates</sv:value>
+    </sv:property>
+    <sv:node sv:name="webpage">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:template</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:containers" sv:type="String" sv:multiple="true">
+        <sv:value>header</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:renderpath" sv:type="String">
+        <sv:value>/jsp/templates/webpage.jsp</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="header">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:template</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:renderpath" sv:type="String">
+        <sv:value>/jsp/components/header/header.jsp</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="threecolumnlayout">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:template</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:containers" sv:type="String" sv:multiple="true">
+        <sv:value>content</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:renderpath" sv:type="String">
+        <sv:value>/jsp/components/layout/threecolumnlayout.jsp</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="leftmenu">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:template</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:renderpath" sv:type="String">
+        <sv:value>/jsp/components/main/leftmenu.jsp</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="right">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:template</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:renderpath" sv:type="String">
+        <sv:value>/jsp/components/main/right.jsp</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="document">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:template</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:renderpath" sv:type="String">
+        <sv:value>/jsp/components/main/document.jsp</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="homelayout">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:template</sv:value>
+      </sv:property>
+      <sv:property sv:name="hst:renderpath" sv:type="String">
+        <sv:value>/jsp/components/layout/homelayout.jsp</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+</sv:node>
