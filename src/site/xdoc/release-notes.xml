@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Copyright 2010-2016 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2010-2017 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -53,10 +53,9 @@
         <p class="smallinfo">Release Date: 10 Apr 2014</p>
         <ul>
           <li>Upgraded for Hippo CMS 7.9, involving Java 7 and Wicket 6. Incompatible with 7.8 or lower.</li>
-          <li><span style="color:red">Plugin is deprecated for Hippo CMS 7.9.</span>
-             You can still use it in older projects but it's no longer certified. It has been followed up by
-              <a href="http://www.onehippo.org/7_8/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">HST
-                Dynamic Resource Bundles</a> in combination with <a href="http://resourcebundle.forge.onehippo.org/">HST Resource Bundle Editor Plugin</a>
+          <li><span style="color:red">Usage of the plugin for site labels is deprecated for Hippo CMS 7.9.</span>
+             That functionality has been followed up by HST Dynamic Resource Bundles in combination with HST Resource
+            Bundle Editor Plugin.
           </li>
         </ul>
       </subsection>

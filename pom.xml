@@ -30,7 +30,7 @@
   <version>3.0.3-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <url>https://forge.onehippo.org/gf/project/properties</url>
+  <url>https://onehippo-forge.github.io/properties</url>
   <inceptionYear>2009</inceptionYear>
 
   <properties>
@@ -58,16 +58,18 @@
   </developers>
 
   <scm>
-    <connection>scm:svn:https://forge.onehippo.org/svn/properties/properties/trunk</connection>
-    <developerConnection>scm:svn:https://forge.onehippo.org/svn/properties/properties/trunk</developerConnection>
-    <url>http://properties.forge.onehippo.org/</url>
+    <connection>scm:git:git@github.com:onehippo-forge/properties.git</connection>
+    <developerConnection>scm:git:git@github.com:onehippo-forge/properties.git</developerConnection>
+    <url>https://github.com/onehippo-forge/properties.git</url>
+    <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
     <repository>
+      <name>Hippo Maven 2 Forge Repository</name>
+      <id>hippo-maven2-forge</id>
+      <url>https://maven.onehippo.com/content/repositories/maven2-forge/</url>
       <uniqueVersion>false</uniqueVersion>
-      <id>properties-maven-repo</id>
-      <url>svn:https://forge.onehippo.org/svn/properties/maven2/</url>
     </repository>
   </distributionManagement>
 
@@ -173,6 +175,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
         <version>${maven.plugin.site.version}</version>
+        <configuration>
+          <outputDirectory>docs</outputDirectory>
+        </configuration>
       </plugin>
     </plugins>
     <extensions>
@@ -233,36 +238,8 @@
     </plugins>
   </reporting>
 
-  <profiles>
-    <profile>
-      <id>pedantic</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.rat</groupId>
-            <artifactId>apache-rat-plugin</artifactId>
-            <inherited>false</inherited>
-            <configuration>
-              <excludes combine.children="append">
-                <!-- repository content XML -->
-                <exclude>addon/repository/src/main/resources/*.xml</exclude>
-              </excludes>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
-
   <!-- overwrite mailinglist, removing the repository mailing list from inherited -->
-  <mailingLists>
-    <mailingList>
-      <name>Hippo CMS 7 User Forums</name>
-      <subscribe>hippo-cms7-user-join@lists.onehippo.org</subscribe>
-      <unsubscribe>hippo-cms7-user-leave@lists.onehippo.org</unsubscribe>
-      <archive>http://lists.onehippo.org/pipermail/hippo-cms7-user/</archive>
-    </mailingList>
-  </mailingLists>
+  <mailingLists/>
 
   <!-- clear unused elements inherited from hippo-cms7-project pom -->
   <contributors>

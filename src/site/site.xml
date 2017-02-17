@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2010-2014 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2010-2017 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -32,7 +32,6 @@
     <menu name="Usage">
       <item name="Installation" href="install.html" />
       <item name="HST Site code" href="sitecode.html" />
-      <item name="Build from source" href="build-from-source.html" />
     </menu>
 
     <menu ref="reports" />
