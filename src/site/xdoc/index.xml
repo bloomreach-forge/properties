@@ -40,7 +40,10 @@
               and using these documents in your HST site frontend.
             </p>
         </subsection>
-        <subsection name="Screenshots">
+      <subsection name="Code base on GitHub">
+        <p>The code of the project is on GitHub at <a href="https://github.com/onehippo-forge/properties/">https://github.com/onehippo-forge/properties/</a>.</p>
+      </subsection>
+      <subsection name="Screenshots">
           <p>
             <a href="screenshots.html"><img src="images/thm_cms.jpg" alt="CMS Document"/></a><br/>
             <a href="screenshots.html">See more screenshots here</a>.
