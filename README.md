@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/onehippo-forge/properties.svg?branch=develop)](https://travis-ci.org/onehippo-forge/properties)
 
 # Properties Component
 
