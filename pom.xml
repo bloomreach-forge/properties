@@ -27,7 +27,7 @@
   <description>Hippo Forge Properties Addon</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties</artifactId>
-  <version>3.0.3-SNAPSHOT</version>
+  <version>4.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <url>https://onehippo-forge.github.io/properties</url>

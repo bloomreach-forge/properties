@@ -27,7 +27,7 @@
   <description>Properties Demo Project</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>propertiesdemo</artifactId>
-  <version>3.0.3-SNAPSHOT</version>
+  <version>4.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <!--
@@ -67,7 +67,7 @@
   <!-- End of emptied/overridden metadata from parent hippo-cms7-release pom. -->
 
   <properties>
-    <forge.properties.version>3.0.3-SNAPSHOT</forge.properties.version>
+    <forge.properties.version>4.0.0-SNAPSHOT</forge.properties.version>
 
     <!-- ***START temporary override of versions*** -->
     <!-- ***END temporary override of versions*** -->
