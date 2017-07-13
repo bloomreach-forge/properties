@@ -25,58 +25,6 @@
     <sv:property sv:name="hippostd:foldertype" sv:type="String" sv:multiple="true">
       <sv:value>new-folder</sv:value>
     </sv:property>
-    <sv:node sv:name="propertiesdemo">
-      <sv:property sv:name="jcr:primaryType" sv:type="Name">
-        <sv:value>hippostd:folder</sv:value>
-      </sv:property>
-      <sv:property sv:name="jcr:mixinTypes" sv:type="Name" sv:multiple="true">
-        <sv:value>hippotranslation:translated</sv:value>
-        <sv:value>hippo:named</sv:value>
-        <sv:value>mix:referenceable</sv:value>
-      </sv:property>
-      <sv:property sv:name="jcr:uuid" sv:type="String">
-        <sv:value>38d4a353-78ef-4a36-af43-c19ac353079f</sv:value>
-      </sv:property>
-      <sv:property sv:name="hippo:name" sv:type="String">
-        <sv:value>Properties Demo</sv:value>
-      </sv:property>
-      <sv:property sv:name="hippostd:foldertype" sv:type="String" sv:multiple="true">
-        <sv:value>new-translated-folder</sv:value>
-        <sv:value>new-document</sv:value>
-      </sv:property>
-      <sv:property sv:name="hippotranslation:id" sv:type="String">
-        <sv:value>4c901c0b-2959-4bd3-98a8-7508b8414c22</sv:value>
-      </sv:property>
-      <sv:property sv:name="hippotranslation:locale" sv:type="String">
-        <sv:value>en</sv:value>
-      </sv:property>
-    </sv:node>
-    <sv:node sv:name="eigenschappendemo">
-      <sv:property sv:name="jcr:primaryType" sv:type="Name">
-        <sv:value>hippostd:folder</sv:value>
-      </sv:property>
-      <sv:property sv:name="jcr:mixinTypes" sv:type="Name" sv:multiple="true">
-        <sv:value>hippotranslation:translated</sv:value>
-        <sv:value>hippo:named</sv:value>
-        <sv:value>mix:referenceable</sv:value>
-      </sv:property>
-      <sv:property sv:name="jcr:uuid" sv:type="String">
-        <sv:value>1edb150b-e4f3-45fd-a179-e53d32bc6acb</sv:value>
-      </sv:property>
-      <sv:property sv:name="hippo:name" sv:type="String">
-        <sv:value>Eigenschappen Demo</sv:value>
-      </sv:property>
-      <sv:property sv:name="hippostd:foldertype" sv:type="String" sv:multiple="true">
-        <sv:value>new-translated-folder</sv:value>
-        <sv:value>new-document</sv:value>
-      </sv:property>
-      <sv:property sv:name="hippotranslation:id" sv:type="String">
-        <sv:value>14f8361c-f8bb-4b10-9162-24c696a2e8ea</sv:value>
-      </sv:property>
-      <sv:property sv:name="hippotranslation:locale" sv:type="String">
-        <sv:value>nl</sv:value>
-      </sv:property>
-    </sv:node>
   </sv:node>
   <sv:node sv:name="gallery">
     <sv:property sv:name="jcr:primaryType" sv:type="Name">
