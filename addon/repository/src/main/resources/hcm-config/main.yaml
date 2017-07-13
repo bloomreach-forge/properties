@@ -1,0 +1,5 @@
+definitions:
+  namespace:
+    properties:
+      uri: http://www.onehippo.org/properties/nt/2.2
+      cnd: properties.cnd

@@ -1,0 +1,11 @@
+definitions:
+  config:
+    /hst:hst/hst:sites:
+      jcr:primaryType: hst:sites
+      jcr:uuid: e8f55b7b-32d8-4853-bb82-1f6d02d61230
+      /propertiesdemo:
+        jcr:primaryType: hst:site
+        hst:content: /content/documents/propertiesdemo
+      /propertiesdemo-nl:
+        jcr:primaryType: hst:site
+        hst:content: /content/documents/eigenschappendemo

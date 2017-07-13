@@ -1,0 +1,34 @@
+/content/documents/propertiesdemo/properties:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippotranslation:translated', 'hippo:named', 'mix:referenceable']
+  jcr:uuid: ce800c0e-3ed9-4ad8-8214-0fae72e681de
+  hippo:name: Properties
+  hippostd:foldertype: [new-translated-folder, new-document]
+  hippotranslation:id: 957813b1-61af-46dd-aeff-e1cbd0fc5fef
+  hippotranslation:locale: en
+  /feeds:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 4ceeb53d-32d1-410f-8de8-dec0558da1c5
+    /feeds:
+      jcr:primaryType: properties:properties
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: ef16b3e6-f050-4559-83c2-e07751c216f3
+      hippo:availability: [live, preview]
+      hippostd:holder: admin
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2011-02-11T15:07:09.801Z
+      hippostdpubwf:lastModificationDate: 2011-02-11T15:08:45.176Z
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2011-07-27T12:17:54.366+02:00
+      hippotranslation:id: 6cb59f9b-3ebc-4bdf-9179-a2c7378e2c46
+      hippotranslation:locale: en
+      /properties:property[1]:
+        jcr:primaryType: properties:property
+        properties:name: config.feed.name
+        properties:value: Hippo
+      /properties:property[2]:
+        jcr:primaryType: properties:property
+        properties:name: config.feed.url
+        properties:value: http://www.onehippo.com/en/rss-news
