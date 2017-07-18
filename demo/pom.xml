@@ -258,11 +258,9 @@
               </configuration>
               <container>
                 <systemProperties>
-                  <derby.stream.error.file>${project.basedir}/target/derby.log</derby.stream.error.file>
-                  <log4j.configuration>file:${project.basedir}/conf/log4j-dev.xml</log4j.configuration>
-                  <rebel.log4j-plugin>true</rebel.log4j-plugin>
                   <!-- enables auto export: -->
                   <project.basedir>${project.basedir}</project.basedir>
+                  <log4j.configurationFile>file://${project.basedir}/conf/log4j2-dev.xml</log4j.configurationFile>
                 </systemProperties>
               </container>
               <deployables>
