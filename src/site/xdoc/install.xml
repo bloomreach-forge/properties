@@ -50,24 +50,14 @@
             <p>Add this dependency to the pom.xml of your <i>cms</i> module:</p>
             <source><![CDATA[
 <dependency>
-  <groupId>org.onehippo.forge.properties</groupId>
-  <artifactId>properties-addon-repository</artifactId>
-  <!-- NB version is managed from parent
-       org.onehippo.cms7:hippo-cms7-release:7.7.0 and up -->
-  <version>${forge.properties.version}</version>
-</dependency>]]></source>
-            <p>When using version <b>2.04.00</b> or below:</p>
-            <source><![CDATA[
-<dependency>
   <groupId>org.onehippo.forge</groupId>
   <artifactId>properties-addon-repository</artifactId>
-  <version>2.04.00</version>
+  <version>4.0.0</version>
 </dependency>]]></source>
           </li>
           <li>
             <p>
-              Rebuild your project. After startup, you should have the availability
-              of a Properties document type.
+              Rebuild your project. After startup, you should have the Properties document type available.
             </p>
           </li>
         </ol>
@@ -78,27 +68,9 @@
             <p>Add this dependency to the pom.xml of your <i>site</i> module:</p>
             <source><![CDATA[
 <dependency>
-  <groupId>org.onehippo.forge.properties</groupId>
-  <artifactId>properties-hst-client</artifactId>
-  <!-- NB version is managed from parent
-       org.onehippo.cms7:hippo-cms7-release:7.7.0 and up -->
-  <version>${forge.properties.version}</version>
-</dependency>]]></source>
-          <p>When using version <b>2.04.00</b>:</p>
-            <source><![CDATA[
-<dependency>
   <groupId>org.onehippo.forge</groupId>
   <artifactId>properties-hst-client</artifactId>
-  <version>2.04.00</version>
-</dependency>]]></source>
-          </li>
-          <li>
-            <p>When using version <b>2.02.00 or lower</b>, also include the artifact properties-hst-api:</p>
-            <source><![CDATA[
-<dependency>
-  <groupId>org.onehippo.forge</groupId>
-  <artifactId>properties-hst-api</artifactId>
-  <version>2.02.00</version>
+  <version>4.0.0</version>
 </dependency>]]></source>
           </li>
           <li>
