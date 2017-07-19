@@ -27,7 +27,7 @@
   <description>Properties Demo Project</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>propertiesdemo</artifactId>
-  <version>4.0.0</version>
+  <version>4.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <!--
