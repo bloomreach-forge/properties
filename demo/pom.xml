@@ -67,7 +67,7 @@
   <!-- End of emptied/overridden metadata from parent hippo-cms7-release pom. -->
 
   <properties>
-    <forge.properties.version>4.0.0-SNAPSHOT</forge.properties.version>
+    <forge.properties.version>4.0.1-SNAPSHOT</forge.properties.version>
 
     <!-- ***START temporary override of versions*** -->
     <!-- ***END temporary override of versions*** -->
