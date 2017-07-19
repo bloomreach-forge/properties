@@ -1,0 +1,68 @@
+/content/documents/propertiesdemo/documents:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippotranslation:translated', 'hippo:named', 'mix:referenceable']
+  jcr:uuid: 99c2c163-6b9b-4585-8d21-ffeb6e18d12e
+  hippo:name: Documents
+  hippostd:foldertype: [new-translated-folder, new-document]
+  hippotranslation:id: 806dea2b-b1ae-490e-aa81-ce70e997fa11
+  hippotranslation:locale: en
+  /home:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:uuid: dcca7dbe-845d-4320-b247-83623468cf65
+    hippo:name: Home
+    /home:
+      jcr:primaryType: propertiesdemo:textdocument
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: 3525b67e-c6a3-4831-8b80-4b315974a53c
+      hippo:availability: [live, preview]
+      hippostd:holder: admin
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2011-02-11T13:35:10.676Z
+      hippostdpubwf:lastModificationDate: 2011-02-11T13:37:32.645Z
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2011-07-27T12:16:43.681+02:00
+      hippotranslation:id: 0b62627d-d0f9-4017-90bb-79354ec62aa1
+      hippotranslation:locale: en
+      propertiesdemo:summary: This is the home page of the generated HST website.
+      propertiesdemo:title: propertiesdemo Home Page
+      /propertiesdemo:body:
+        jcr:primaryType: hippostd:html
+        hippostd:content: |-
+          <html>
+          <body>
+          <p>Now go ahead and build your own website!</p>
+          </body>
+          </html>
+  /about-us:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:uuid: e2c72ced-194a-40d7-8434-1aac035adaf3
+    hippo:name: About us
+    /about-us:
+      jcr:primaryType: propertiesdemo:textdocument
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: 297895f1-1ef8-426b-929e-7cce532081fa
+      hippo:availability: [live, preview]
+      hippostd:holder: admin
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2011-02-11T13:38:50.082Z
+      hippostdpubwf:lastModificationDate: 2011-02-11T13:39:19.426Z
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2011-07-27T12:17:00.646+02:00
+      hippotranslation:id: f37d305c-b6fd-4b1d-88d7-aaada9d9bcf5
+      hippotranslation:locale: en
+      propertiesdemo:summary: ''
+      propertiesdemo:title: About us
+      /propertiesdemo:body:
+        jcr:primaryType: hippostd:html
+        hippostd:content: |-
+          <html>
+          <body>
+          <p>We are Hippo! Come and visit us at
+          <a title="Hippo website" target="_blank" href="http://www.onehippo.com/">www.onehippo.com</a>!
+          </p>
+          </body>
+          </html>

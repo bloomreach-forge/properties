@@ -1,0 +1,90 @@
+/content/documents/propertiesdemo/labels:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippotranslation:translated', 'hippo:named', 'mix:referenceable']
+  jcr:uuid: 8dafe5f9-d693-4389-a7c7-55c82da3c8c1
+  hippo:name: Labels
+  hippostd:foldertype: [new-translated-folder, new-document]
+  hippotranslation:id: 2a394209-0e75-4581-96a7-1bc561f4cb3e
+  hippotranslation:locale: en
+  /common:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: b937ba1f-e269-4c53-ade3-b65c906eae9a
+    /common:
+      jcr:primaryType: properties:properties
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: 25159a07-1b6d-403a-9baa-29f4fec26466
+      hippo:availability: [live, preview]
+      hippostd:holder: admin
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2010-01-01T00:00:00+02:00
+      hippostdpubwf:lastModificationDate: 2010-01-01T00:00:00+02:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2011-01-06T13:17:12.288Z
+      hippotranslation:id: ''
+      hippotranslation:locale: en
+      /properties:property[1]:
+        jcr:primaryType: properties:property
+        properties:name: header.text
+        properties:value: Document fields
+      /properties:property[2]:
+        jcr:primaryType: properties:property
+        properties:name: field.title
+        properties:value: Title
+      /properties:property[3]:
+        jcr:primaryType: properties:property
+        properties:name: field.summary
+        properties:value: Summary
+      /properties:property[4]:
+        jcr:primaryType: properties:property
+        properties:name: field.body
+        properties:value: Body
+  /home:
+    jcr:primaryType: hippostd:folder
+    jcr:mixinTypes: ['hippotranslation:translated', 'hippo:named', 'mix:referenceable']
+    jcr:uuid: 960fd363-4831-4084-8499-fbeb2e25b912
+    hippo:name: Home
+    hippostd:foldertype: [new-translated-folder, new-document]
+    hippotranslation:id: 28c11dad-a60c-4443-8e8a-5f6c03efc1be
+    hippotranslation:locale: en
+    /home:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+      jcr:uuid: 4334c801-7036-4b49-bdd7-aff4ea52d884
+      hippo:name: Home
+      /home:
+        jcr:primaryType: properties:properties
+        jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+        jcr:uuid: ed2ac27b-0564-4464-9fe7-efcd4b6387a7
+        hippo:availability: [live, preview]
+        hippostd:holder: admin
+        hippostd:state: published
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2011-02-11T16:05:32.254+01:00
+        hippostdpubwf:lastModificationDate: 2012-09-21T14:55:49.248+02:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippostdpubwf:publicationDate: 2012-09-21T14:55:51.096+02:00
+        hippotranslation:id: 6fa100a0-0f96-4283-804f-bccee5ee1000
+        hippotranslation:locale: en
+        /properties:property[1]:
+          jcr:primaryType: properties:property
+          properties:name: section.title
+          properties:value: Something new!
+        /properties:property[2]:
+          jcr:primaryType: properties:property
+          properties:name: section.oneliner
+          properties:value: This is a oneliner, shown by means of <properties:property
+            /> JSP tag
+        /properties:property[3]:
+          jcr:primaryType: properties:property
+          properties:name: date.long
+          properties:value: Today's date is {0,date,long}
+        /properties:property[4]:
+          jcr:primaryType: properties:property
+          properties:name: date.short
+          properties:value: Today's date is {0,date,short}
+        /properties:property[5]:
+          jcr:primaryType: properties:property
+          properties:name: test.string
+          properties:value: '{0} and {1} are good friends'

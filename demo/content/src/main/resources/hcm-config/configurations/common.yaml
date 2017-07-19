@@ -1,0 +1,84 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/common:
+      jcr:primaryType: hst:configuration
+      /hst:pages:
+        jcr:primaryType: hst:pages
+        /standard:
+          jcr:primaryType: hst:component
+          hst:template: webpage
+          /header:
+            jcr:primaryType: hst:component
+            hst:referencecomponent: hst:components/header
+        /detailpage:
+          jcr:primaryType: hst:component
+          hst:referencecomponent: hst:pages/standard
+          /body:
+            jcr:primaryType: hst:component
+            hst:referencecomponent: hst:components/bodydetail
+        /home:
+          jcr:primaryType: hst:component
+          jcr:uuid: b44ace0f-49be-4a79-8657-80a7909d8278
+          hst:referencecomponent: hst:pages/standard
+          /body:
+            jcr:primaryType: hst:component
+            jcr:uuid: 0d90e945-bf0d-49c3-955f-2e94ed546c9a
+            hst:referencecomponent: hst:components/bodyhome
+      /hst:components:
+        jcr:primaryType: hst:components
+        /header:
+          jcr:primaryType: hst:component
+          hst:template: header
+        /bodygeneral:
+          jcr:primaryType: hst:component
+          hst:template: threecolumnlayout
+          /leftmenu:
+            jcr:primaryType: hst:component
+            hst:componentclassname: org.onehippo.forge.propertiesdemo.components.LeftMenu
+            hst:template: leftmenu
+          /right:
+            jcr:primaryType: hst:component
+            hst:template: right
+        /bodydetail:
+          jcr:primaryType: hst:component
+          hst:referencecomponent: hst:components/bodygeneral
+          /content:
+            jcr:primaryType: hst:component
+            hst:componentclassname: org.onehippo.forge.propertiesdemo.components.Detail
+            hst:template: document
+        /bodyhome:
+          jcr:primaryType: hst:component
+          hst:template: homelayout
+          /bodynav:
+            jcr:primaryType: hst:component
+            hst:componentclassname: org.onehippo.forge.propertiesdemo.components.LeftMenu
+            hst:template: leftmenu
+          /bodymain:
+            jcr:primaryType: hst:component
+            hst:componentclassname: org.onehippo.forge.propertiesdemo.components.Home
+            hst:template: document
+      /hst:templates:
+        jcr:primaryType: hst:templates
+        /webpage:
+          jcr:primaryType: hst:template
+          hst:containers: [header]
+          hst:renderpath: /jsp/templates/webpage.jsp
+        /header:
+          jcr:primaryType: hst:template
+          hst:renderpath: /jsp/components/header/header.jsp
+        /threecolumnlayout:
+          jcr:primaryType: hst:template
+          hst:containers: [content]
+          hst:renderpath: /jsp/components/layout/threecolumnlayout.jsp
+        /leftmenu:
+          jcr:primaryType: hst:template
+          hst:renderpath: /jsp/components/main/leftmenu.jsp
+        /right:
+          jcr:primaryType: hst:template
+          hst:renderpath: /jsp/components/main/right.jsp
+        /document:
+          jcr:primaryType: hst:template
+          hst:renderpath: /jsp/components/main/document.jsp
+        /homelayout:
+          jcr:primaryType: hst:template
+          hst:renderpath: /jsp/components/layout/homelayout.jsp

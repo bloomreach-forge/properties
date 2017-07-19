@@ -1,0 +1,18 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:queries/hippo:templates/new-properties-folder:
+      jcr:primaryType: hippostd:templatequery
+      jcr:mixinTypes: ['hipposys:implementation', 'hippostd:translated']
+      hippostd:icon: addfolder_ico
+      hippostd:modify: [./_name, $name]
+      hipposys:classname: org.hippoecm.repository.impl.query.DirectPath
+      jcr:language: xpath
+      jcr:statement: "\n      /jcr:root/hippo:configuration/hippo:queries/hippo:templates/new-properties-folder/hippostd:templates/node()\n\
+        \    "
+      /hippostd:templates:
+        jcr:primaryType: hippostd:templates
+        /hippostd:folder:
+          jcr:primaryType: hippostd:folder
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 28d8de44-cd50-49f8-a40c-f7955eb417e8
+          hippostd:foldertype: [new-properties-document, new-properties-folder]

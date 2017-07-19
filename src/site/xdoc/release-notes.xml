@@ -21,6 +21,16 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="4.0.0">
+        <p class="smallinfo">Release Date: ?? July 2017</p>
+        <ul>
+          <li>Made plugin compatible with CMS 12.</li>
+          <li>Updated parent POM and CMS + HST dependency versions</li>
+          <li>Migrated bootstrap resources of both the plugin and the demo to YAML</li>
+          <li>Upgraded the demo to CMS 12, including migration to log4j2</li>
+          <li>Removed unused/broken "dist" profile</li>
+        </ul>
+      </subsection>
       <subsection name="3.0.2">
         <p class="smallinfo">Release Date: 21 Aug 2016</p>
         <ul>

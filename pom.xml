@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2009-2016 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2009-2017 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the  "License");
   you may not use this file except in compliance with the License.
@@ -20,14 +20,14 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>28.1</version>
+    <version>29</version>
   </parent>
 
   <name>Hippo Forge Properties Addon</name>
   <description>Hippo Forge Properties Addon</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties</artifactId>
-  <version>3.0.3-SNAPSHOT</version>
+  <version>4.0.0</version>
   <packaging>pom</packaging>
 
   <url>https://onehippo-forge.github.io/properties</url>
@@ -37,8 +37,8 @@
     <!-- use root project name for all project modules NOTICE files, should be the same as in the root NOTICE file -->
     <notice.project.name>Hippo Forge Properties Addon</notice.project.name>
 
-    <hippo.hst.version>4.0.1</hippo.hst.version>
-    <hippo.repository.version>4.0.1</hippo.repository.version>
+    <hippo.hst.version>5.0.0</hippo.hst.version>
+    <hippo.repository.version>5.0.0</hippo.repository.version>
 
     <jsp.api.version>2.2</jsp.api.version>
 

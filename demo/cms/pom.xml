@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.onehippo.forge.properties</groupId>
     <artifactId>propertiesdemo</artifactId>
-    <version>3.0.3-SNAPSHOT</version>
+    <version>4.0.0</version>
   </parent>
 
   <name>Properties Demo Project CMS</name>
@@ -69,11 +69,6 @@
     <dependency>
       <groupId>org.onehippo.cms7</groupId>
       <artifactId>hippo-addon-channel-manager-repository</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.onehippo.cms7</groupId>
-      <artifactId>hippo-addon-hst-configuration-editor-repository</artifactId>
     </dependency>
 
     <dependency>

@@ -20,14 +20,14 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-release</artifactId>
-    <version>11.0.0</version>
+    <version>12.0.0</version>
   </parent>
 
   <name>Properties Demo Project</name>
   <description>Properties Demo Project</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>propertiesdemo</artifactId>
-  <version>3.0.3-SNAPSHOT</version>
+  <version>4.0.0</version>
   <packaging>pom</packaging>
 
   <!--
@@ -67,7 +67,7 @@
   <!-- End of emptied/overridden metadata from parent hippo-cms7-release pom. -->
 
   <properties>
-    <forge.properties.version>3.0.3-SNAPSHOT</forge.properties.version>
+    <forge.properties.version>4.0.0-SNAPSHOT</forge.properties.version>
 
     <!-- ***START temporary override of versions*** -->
     <!-- ***END temporary override of versions*** -->
@@ -258,11 +258,9 @@
               </configuration>
               <container>
                 <systemProperties>
-                  <derby.stream.error.file>${project.basedir}/target/derby.log</derby.stream.error.file>
-                  <log4j.configuration>file:${project.basedir}/conf/log4j-dev.xml</log4j.configuration>
-                  <rebel.log4j-plugin>true</rebel.log4j-plugin>
                   <!-- enables auto export: -->
                   <project.basedir>${project.basedir}</project.basedir>
+                  <log4j.configurationFile>file://${project.basedir}/conf/log4j2-dev.xml</log4j.configurationFile>
                 </systemProperties>
               </container>
               <deployables>
@@ -282,49 +280,6 @@
                 </deployable>
               </deployables>
             </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <id>dist</id>
-      <dependencies>
-        <dependency>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-log4j12</artifactId>
-          <scope>provided</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.slf4j</groupId>
-          <artifactId>jcl-over-slf4j</artifactId>
-          <scope>provided</scope>
-        </dependency>
-        <dependency>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
-          <scope>provided</scope>
-        </dependency>
-      </dependencies>
-      <build>
-        <defaultGoal>validate</defaultGoal>
-        <plugins>
-          <plugin>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>distro-assembly</id>
-                <phase>validate</phase>
-                <goals>
-                  <goal>single</goal>
-                </goals>
-                <configuration>
-                  <descriptors>
-                    <descriptor>${project.basedir}/src/main/assembly/distribution.xml</descriptor>
-                  </descriptors>
-                </configuration>
-              </execution>
-            </executions>
           </plugin>
         </plugins>
       </build>

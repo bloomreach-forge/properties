@@ -1,0 +1,42 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:translations/hippo:types/properties:properties:
+      jcr:primaryType: hipposys:resourcebundles
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Eigenschaften
+        properties:property: Eigenschaft
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Properties
+        properties:property: Property
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Propriétés
+        properties:property: Propriété
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Eigenschappen
+        properties:property: Eigenschap
+    /hippo:configuration/hippo:translations/hippo:types/properties:property:
+      jcr:primaryType: hipposys:resourcebundles
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Eigenschaft
+        properties:name: Name
+        properties:value: Wert
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Property
+        properties:name: Name
+        properties:value: Value
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Propriété
+        properties:name: Nom
+        properties:value: Valeur
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Eigenschap
+        properties:name: Naam
+        properties:value: Waarde
