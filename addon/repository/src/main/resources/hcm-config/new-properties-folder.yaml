@@ -7,8 +7,7 @@ definitions:
       hippostd:modify: [./_name, $name]
       hipposys:classname: org.hippoecm.repository.impl.query.DirectPath
       jcr:language: xpath
-      jcr:statement: "\n      /jcr:root/hippo:configuration/hippo:queries/hippo:templates/new-properties-folder/hippostd:templates/node()\n\
-        \    "
+      jcr:statement: "/jcr:root/hippo:configuration/hippo:queries/hippo:templates/new-properties-folder/hippostd:templates/node()"
       /hippostd:templates:
         jcr:primaryType: hippostd:templates
         /hippostd:folder:
