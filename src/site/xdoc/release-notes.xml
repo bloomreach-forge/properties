@@ -21,8 +21,14 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="4.0.1">
+        <p class="smallinfo">Release Date: 11 October 2017</p>
+        <ul>
+          <li>Minor bugfixes for yaml configuration</li>
+        </ul>
+      </subsection>
       <subsection name="4.0.0">
-        <p class="smallinfo">Release Date: ?? July 2017</p>
+        <p class="smallinfo">Release Date: 31 July 2017</p>
         <ul>
           <li>Made plugin compatible with CMS 12.</li>
           <li>Updated parent POM and CMS + HST dependency versions</li>
