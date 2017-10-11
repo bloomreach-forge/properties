@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.onehippo.forge.properties</groupId>
     <artifactId>properties</artifactId>
-    <version>4.0.0</version>
+    <version>4.0.1</version>
   </parent>
 
   <name>Hippo Forge Properties HST Client</name>
