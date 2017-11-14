@@ -43,7 +43,7 @@
     <jsp.api.version>2.2</jsp.api.version>
 
     <!-- Documentation -->
-    <maven.plugin.site.version>3.3</maven.plugin.site.version>
+    <maven.plugin.site.version>3.6</maven.plugin.site.version>
     <maven.plugin.jxr.version>2.2</maven.plugin.jxr.version>
     <maven.plugin.taglib.version>2.4</maven.plugin.taglib.version>
 
@@ -84,6 +84,15 @@
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
+
+  <!-- overwrite mailinglist, removing the repository mailing list from inherited -->
+  <mailingLists/>
+
+  <!-- clear unused elements inherited from hippo-cms7-project pom -->
+  <contributors>
+    <contributor />
+  </contributors>
+  <ciManagement />
 
   <dependencyManagement>
     <dependencies>
@@ -175,9 +184,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
         <version>${maven.plugin.site.version}</version>
-        <configuration>
-          <outputDirectory>docs</outputDirectory>
-        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -231,13 +237,23 @@
     </plugins>
   </reporting>
 
-  <!-- overwrite mailinglist, removing the repository mailing list from inherited -->
-  <mailingLists/>
-
-  <!-- clear unused elements inherited from hippo-cms7-project pom -->
-  <contributors>
-    <contributor />
-  </contributors>
-  <ciManagement />
+  <profiles>
+    <profile>
+      <!-- For generating/publishing GitHub Site Pages into /docs/ folder on master branch only -->
+      <id>github.pages</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <version>${maven.plugin.site.version}</version>
+            <configuration>
+              <outputDirectory>doczs</outputDirectory>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
