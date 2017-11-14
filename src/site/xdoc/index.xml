@@ -23,23 +23,23 @@
   </properties>
   <body>
     <section name="Introduction">
-        <subsection name="Properties plugin is deprecated for usage on behalf of site labels">
-          <p>Instead of using this plugin for site label localization, we recommend the usage of resource bundles, see
-            <a href="http://www.onehippo.org/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">
-              HST Dynamic Resource Bundles support</a> and the
-            <a href="https://www.onehippo.org/library/concepts/plugins/resource-bundle-editor/about.html">
-              HST Resource Bundle Editor Plugin
-            </a>
+      <subsection name="What is the properties component?">
+          <p>
+            The properties component allows you to create simple CMS documents
+            having a flat list of name/value pairs. It also provides easy locating
+            and using these documents in your HST site frontend.
           </p>
-          <p>Usage of the plugin on behalf 'system' properties can still be applicable for your project.</p>
-        </subsection>
-        <subsection name="What is the properties component?">
-            <p>
-              The properties component allows you to create simple CMS documents
-              having a flat list of name/value pairs. It also provides easy locating
-              and using these documents in your HST site frontend.
-            </p>
-        </subsection>
+      </subsection>
+      <subsection name="Not recommended to use for site labels">
+        <p>Instead of using this plugin for site label localization, we recommend the usage of resource bundles, see
+          <a href="http://www.onehippo.org/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">
+            HST Dynamic Resource Bundles support</a> and the
+          <a href="https://www.onehippo.org/library/concepts/plugins/resource-bundle-editor/about.html">
+            HST Resource Bundle Editor Plugin
+          </a>
+        </p>
+        <p>Usage of the plugin on behalf 'system' properties can still be applicable for your project.</p>
+      </subsection>
       <subsection name="Code base on GitHub">
         <p>The code of the project is on GitHub at <a href="https://github.com/onehippo-forge/properties/">https://github.com/onehippo-forge/properties/</a>.</p>
       </subsection>
@@ -51,7 +51,7 @@
         </subsection>
         <subsection name="Project status">
           <p>
-            The latest version of property component is 3.0.1 running on CMS 11.<br/>
+            For the latest version of the property component, see the <a href="release-notes.html">release notes</a>.<br/>
             The table below shows against which versions the plugin is developed. Which does not mean
             that version doesn't run against an earlier (or later) version of the CMS and HST.
           </p>
