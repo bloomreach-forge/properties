@@ -23,8 +23,8 @@
     <version>4.0.1</version>
   </parent>
 
-  <name>Hippo Forge Properties HST Client</name>
-  <description>Hippo Forge Properties HST Client</description>
+  <name>Bloomreach Forge Properties HST Client</name>
+  <description>Bloomreach Forge Properties HST Client</description>
   <artifactId>properties-hst-client</artifactId>
   <packaging>jar</packaging>
 

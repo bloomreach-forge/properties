@@ -23,19 +23,19 @@
     <version>29</version>
   </parent>
 
-  <name>Hippo Forge Properties Addon</name>
-  <description>Hippo Forge Properties Addon</description>
+  <name>Bloomreach Forge Properties Addon</name>
+  <description>Bloomreach Forge Properties Addon</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties</artifactId>
   <version>4.0.1</version>
   <packaging>pom</packaging>
 
-  <url>https://onehippo-forge.github.io/properties</url>
+  <url>https://bloomreach-forge.github.io/properties</url>
   <inceptionYear>2009</inceptionYear>
 
   <properties>
     <!-- use root project name for all project modules NOTICE files, should be the same as in the root NOTICE file -->
-    <notice.project.name>Hippo Forge Properties Addon</notice.project.name>
+    <notice.project.name>Bloomreach Forge Properties Addon</notice.project.name>
 
     <hippo.hst.version>5.0.0</hippo.hst.version>
     <hippo.repository.version>5.0.0</hippo.repository.version>
@@ -58,9 +58,9 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git@github.com:onehippo-forge/properties.git</connection>
-    <developerConnection>scm:git:git@github.com:onehippo-forge/properties.git</developerConnection>
-    <url>https://github.com/onehippo-forge/properties.git</url>
+    <connection>scm:git:git@github.com:bloomreach-forge/properties.git</connection>
+    <developerConnection>scm:git:git@github.com:bloomreach-forge/properties.git</developerConnection>
+    <url>https://github.com/bloomreach-forge/properties.git</url>
     <tag>HEAD</tag>
   </scm>
 
