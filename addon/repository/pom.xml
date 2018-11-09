@@ -23,7 +23,7 @@
 
   <modelVersion>4.0.0</modelVersion>
   <artifactId>properties-addon-repository</artifactId>
-  <name>Hippo Forge Properties Addon Repository</name>
+  <name>Bloomreach Forge Properties Addon Repository</name>
 
   <dependencies>
     <dependency>
