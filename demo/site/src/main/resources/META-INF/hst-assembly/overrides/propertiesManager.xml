@@ -20,8 +20,8 @@
 
   <!-- CachingPropertiesManager for <site-root>/labels, works in combination with PropertiesEventListener below -->
   <bean id="org.onehippo.forge.properties.api.PropertiesManager.labels" class="org.onehippo.forge.properties.impl.CachingPropertiesManagerImpl">
-    <property name="defaultDocumentLocation" value="labels"/>
-    <property name="defaultDocumentName" value="common"/>
+    <property name="defaultDocumentLocation" value="properties"/>
+    <property name="defaultDocumentName" value="properties"/>
   </bean>
 
   <!-- CachingPropertiesManager for <site-root>/properties  -->

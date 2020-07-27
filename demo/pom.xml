@@ -20,14 +20,15 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-release</artifactId>
-    <version>12.0.0</version>
+    <version>13.4.3</version>
+    <relativePath></relativePath>
   </parent>
 
   <name>Properties Demo Project</name>
   <description>Properties Demo Project</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>propertiesdemo</artifactId>
-  <version>4.0.2-SNAPSHOT</version>
+  <version>5.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <!--
@@ -67,13 +68,13 @@
   <!-- End of emptied/overridden metadata from parent hippo-cms7-release pom. -->
 
   <properties>
-    <forge.properties.version>4.0.1-SNAPSHOT</forge.properties.version>
+    <forge.properties.version>5.0.0-SNAPSHOT</forge.properties.version>
 
     <!-- ***START temporary override of versions*** -->
     <!-- ***END temporary override of versions*** -->
 
     <jsp-api.version>2.2</jsp-api.version>
-    <taglibs.version>1.2.1</taglibs.version>
+    <taglibs.version>1.2.5</taglibs.version>
     <commons.lang.version>2.6</commons.lang.version>
     <junit.version>4.10</junit.version>
     <easymock.version>3.1</easymock.version>
@@ -238,6 +239,10 @@
 
     <profile>
       <id>cargo.run</id>
+      <properties>
+        <!-- Already defined in the cms project POM. Override here for your project, if necessary -->
+        <!-- <repo.bootstrap>true</repo.bootstrap> -->
+      </properties>
       <build>
         <plugins>
           <plugin>
@@ -245,14 +250,16 @@
             <artifactId>cargo-maven2-plugin</artifactId>
             <configuration>
               <configuration>
-                <properties>
-                  <catalina.servlet.uriencoding>UTF-8</catalina.servlet.uriencoding>
-                </properties>
                 <configfiles>
                   <configfile>
                     <file>${project.basedir}/conf/context.xml</file>
                     <todir>conf/</todir>
                     <tofile>context.xml</tofile>
+                  </configfile>
+                  <configfile>
+                    <file>${project.basedir}/conf/catalina-logging.properties</file>
+                    <todir>conf/</todir>
+                    <tofile>logging.properties</tofile>
                   </configfile>
                 </configfiles>
               </configuration>
