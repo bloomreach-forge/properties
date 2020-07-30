@@ -1,0 +1,114 @@
+/content/documents/myproject/properties:
+  .meta:order-before: home
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippo:named', 'hippotranslation:translated', 'mix:versionable']
+  jcr:uuid: 581305d2-e9c7-46c6-9bed-7efb8ef41a73
+  hippo:name: properties
+  hippostd:foldertype: [new-translated-folder, new-document]
+  hippotranslation:id: 83cabd2f-542e-4455-9a5d-4990e0eb8dee
+  hippotranslation:locale: en
+  /properties:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:versionInfo', 'mix:referenceable']
+    jcr:uuid: 8c704cda-59b7-4975-9529-ed7d5915282b
+    hippo:versionHistory: d9fcd65b-75e3-4e22-a4b1-82e38ff19d84
+    /properties[1]:
+      jcr:primaryType: properties:properties
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable', 'mix:versionable']
+      jcr:uuid: 4c06046c-b582-4c07-b869-b578b7f10b16
+      hippo:availability: [preview]
+      hippostd:state: unpublished
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2020-07-14T15:32:39.063+02:00
+      hippostdpubwf:lastModificationDate: 2020-07-16T15:16:20.066+02:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: 8238d256-b772-48c5-a379-a5461070bc70
+      hippotranslation:locale: en
+      /properties:property[1]:
+        jcr:primaryType: properties:property
+        properties:name: some.label
+        properties:value: This is a label
+      /properties:property[2]:
+        jcr:primaryType: properties:property
+        properties:name: section.oneliner
+        properties:value: This is a oneliner, shown by means of <properties:property
+          /> JSP tag
+      /properties:property[3]:
+        jcr:primaryType: properties:property
+        properties:name: date.long
+        properties:value: Today's date is {0,date,long}
+      /properties:property[4]:
+        jcr:primaryType: properties:property
+        properties:name: date.short
+        properties:value: Today's date is {0,date,short}
+      /properties:property[5]:
+        jcr:primaryType: properties:property
+        properties:name: test.string
+        properties:value: '{0} and {1} are good friends'
+    /properties[2]:
+      jcr:primaryType: properties:properties
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: 6253d1ac-8743-4b58-ba56-5a529c778dee
+      hippo:availability: []
+      hippostd:state: draft
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2020-07-14T15:32:39.063+02:00
+      hippostdpubwf:lastModificationDate: 2020-07-16T15:14:36.840+02:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: 8238d256-b772-48c5-a379-a5461070bc70
+      hippotranslation:locale: en
+      /properties:property[1]:
+        jcr:primaryType: properties:property
+        properties:name: some.label
+        properties:value: This is a label
+      /properties:property[2]:
+        jcr:primaryType: properties:property
+        properties:name: section.oneliner
+        properties:value: This is a oneliner, shown by means of <properties:property
+          /> JSP tag
+      /properties:property[3]:
+        jcr:primaryType: properties:property
+        properties:name: date.long
+        properties:value: Today's date is {0,date,long}
+      /properties:property[4]:
+        jcr:primaryType: properties:property
+        properties:name: date.short
+        properties:value: Today's date is {0,date,short}
+      /properties:property[5]:
+        jcr:primaryType: properties:property
+        properties:name: test.string
+        properties:value: '{0} and {1} are good friends'
+    /properties[3]:
+      jcr:primaryType: properties:properties
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: 7463a274-3811-44a2-988f-daac87ed85a9
+      hippo:availability: [live]
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2020-07-14T15:32:39.063+02:00
+      hippostdpubwf:lastModificationDate: 2020-07-16T15:13:24.638+02:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2020-07-16T15:13:26.612+02:00
+      hippotranslation:id: 8238d256-b772-48c5-a379-a5461070bc70
+      hippotranslation:locale: en
+      /properties:property[1]:
+        jcr:primaryType: properties:property
+        properties:name: some.label
+        properties:value: This is a label!
+      /properties:property[2]:
+        jcr:primaryType: properties:property
+        properties:name: section.oneliner
+        properties:value: This is a oneliner, shown by means of <properties:property
+          /> JSP tag
+      /properties:property[3]:
+        jcr:primaryType: properties:property
+        properties:name: date.long
+        properties:value: Today's date is {0,date,long}
+      /properties:property[4]:
+        jcr:primaryType: properties:property
+        properties:name: date.short
+        properties:value: Today's date is {0,date,short}
+      /properties:property[5]:
+        jcr:primaryType: properties:property
+        properties:name: test.string
+        properties:value: '{0} and {1} are good friends'

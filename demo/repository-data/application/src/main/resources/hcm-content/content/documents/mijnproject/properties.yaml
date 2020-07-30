@@ -1,0 +1,112 @@
+/content/documents/mijnproject/properties:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+  jcr:uuid: 8c291795-cd09-4224-b844-9f5f21b9fe05
+  hippostd:foldertype: [new-translated-folder, new-document]
+  hippotranslation:id: 83cabd2f-542e-4455-9a5d-4990e0eb8dee
+  hippotranslation:locale: nl
+  /properties:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:versionInfo', 'mix:referenceable']
+    jcr:uuid: 26c5a0c3-d9cd-4ecb-afda-debb01736beb
+    hippo:versionHistory: 0248d6b2-fc8d-4884-adb2-d6230c755041
+    /properties[1]:
+      jcr:primaryType: properties:properties
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+      jcr:uuid: 01054b87-ec2f-401a-9f46-a0e3a324facb
+      hippo:availability: [preview]
+      hippostd:state: unpublished
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2020-07-14T15:32:39.063+02:00
+      hippostdpubwf:lastModificationDate: 2020-07-27T15:04:35.372+02:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: 8238d256-b772-48c5-a379-a5461070bc70
+      hippotranslation:locale: nl
+      /properties:property[1]:
+        jcr:primaryType: properties:property
+        properties:name: some.label
+        properties:value: Dit is een label!!
+      /properties:property[2]:
+        jcr:primaryType: properties:property
+        properties:name: section.oneliner
+        properties:value: Dit is een regel gegenereerd met de <properties:property
+          /> JSP tag
+      /properties:property[3]:
+        jcr:primaryType: properties:property
+        properties:name: date.long
+        properties:value: Vandaag is het {0,date,long}
+      /properties:property[4]:
+        jcr:primaryType: properties:property
+        properties:name: date.short
+        properties:value: Vandaag is het {0,date,short}
+      /properties:property[5]:
+        jcr:primaryType: properties:property
+        properties:name: test.string
+        properties:value: '{0} en {1} zijn goede vrienden'
+    /properties[2]:
+      jcr:primaryType: properties:properties
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: cd5efa78-194c-40b4-8dc3-fca52565e9fd
+      hippo:availability: []
+      hippostd:state: draft
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2020-07-14T15:32:39.063+02:00
+      hippostdpubwf:lastModificationDate: 2020-07-27T15:04:00.050+02:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: 8238d256-b772-48c5-a379-a5461070bc70
+      hippotranslation:locale: nl
+      /properties:property[1]:
+        jcr:primaryType: properties:property
+        properties:name: some.label
+        properties:value: Dit is een label!!
+      /properties:property[2]:
+        jcr:primaryType: properties:property
+        properties:name: section.oneliner
+        properties:value: Dit is een regel gegenereerd met de <properties:property
+          /> JSP tag
+      /properties:property[3]:
+        jcr:primaryType: properties:property
+        properties:name: date.long
+        properties:value: Vandaag is het {0,date,long}
+      /properties:property[4]:
+        jcr:primaryType: properties:property
+        properties:name: date.short
+        properties:value: Vandaag is het {0,date,short}
+      /properties:property[5]:
+        jcr:primaryType: properties:property
+        properties:name: test.string
+        properties:value: '{0} en {1} zijn goede vrienden'
+    /properties[3]:
+      jcr:primaryType: properties:properties
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: 465a9b70-06c5-4067-9c04-274276cb856a
+      hippo:availability: [live]
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2020-07-14T15:32:39.063+02:00
+      hippostdpubwf:lastModificationDate: 2020-07-27T15:04:35.372+02:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2020-07-27T15:04:37.368+02:00
+      hippotranslation:id: 8238d256-b772-48c5-a379-a5461070bc70
+      hippotranslation:locale: nl
+      /properties:property[1]:
+        jcr:primaryType: properties:property
+        properties:name: some.label
+        properties:value: Dit is een label!!
+      /properties:property[2]:
+        jcr:primaryType: properties:property
+        properties:name: section.oneliner
+        properties:value: Dit is een regel gegenereerd met de <properties:property
+          /> JSP tag
+      /properties:property[3]:
+        jcr:primaryType: properties:property
+        properties:name: date.long
+        properties:value: Vandaag is het {0,date,long}
+      /properties:property[4]:
+        jcr:primaryType: properties:property
+        properties:name: date.short
+        properties:value: Vandaag is het {0,date,short}
+      /properties:property[5]:
+        jcr:primaryType: properties:property
+        properties:name: test.string
+        properties:value: '{0} en {1} zijn goede vrienden'

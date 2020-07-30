@@ -1,0 +1,129 @@
+/content/documents/administration/properties:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['mix:versionable']
+  jcr:uuid: 62abc712-d087-48d9-8181-1757cc6287eb
+  hippostd:foldertype: [new-resource-bundle, new-untranslated-folder, new-translated-folder]
+  /en:
+    jcr:primaryType: hippostd:folder
+    jcr:mixinTypes: ['hippo:named', 'hippotranslation:translated', 'mix:versionable']
+    jcr:uuid: 7d05b8ef-fd43-414d-999d-d34e6bdc7fc3
+    hippo:name: EN
+    hippostd:foldertype: [new-translated-folder, new-document]
+    hippotranslation:id: ceed5bdf-0837-4fc5-8e51-3195fcba65bd
+    hippotranslation:locale: en
+    /admin:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:versionInfo', 'mix:referenceable']
+      jcr:uuid: 88afb7a0-27d9-4203-a014-f22260146daa
+      hippo:versionHistory: c4d21977-1e48-4a28-8599-80a9ec3d1bda
+      /admin[1]:
+        jcr:primaryType: properties:properties
+        jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable', 'mix:versionable']
+        jcr:uuid: 7cf8d9d6-bd46-40bf-b0b8-0d0c29861878
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2020-07-14T15:23:58.540+02:00
+        hippostdpubwf:lastModificationDate: 2020-07-14T15:24:21.462+02:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: a71b0ce7-9507-4d24-9d50-6db235d0a023
+        hippotranslation:locale: en
+        /properties:property:
+          jcr:primaryType: properties:property
+          properties:name: admin.property
+          properties:value: This is an admin property
+      /admin[2]:
+        jcr:primaryType: properties:properties
+        jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+        jcr:uuid: 6df8e05d-9016-4b43-9ad4-934699068f1c
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2020-07-14T15:23:58.540+02:00
+        hippostdpubwf:lastModificationDate: 2020-07-14T15:23:58.600+02:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: a71b0ce7-9507-4d24-9d50-6db235d0a023
+        hippotranslation:locale: en
+        /properties:property:
+          jcr:primaryType: properties:property
+          properties:name: admin.property
+          properties:value: This is an admin property
+      /admin[3]:
+        jcr:primaryType: properties:properties
+        jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+        jcr:uuid: 47d3e9ce-4d3d-4746-b41f-f290ae6f491b
+        hippo:availability: [live]
+        hippostd:state: published
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2020-07-14T15:23:58.540+02:00
+        hippostdpubwf:lastModificationDate: 2020-07-14T15:24:21.462+02:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippostdpubwf:publicationDate: 2020-07-14T15:24:59.257+02:00
+        hippotranslation:id: a71b0ce7-9507-4d24-9d50-6db235d0a023
+        hippotranslation:locale: en
+        /properties:property:
+          jcr:primaryType: properties:property
+          properties:name: admin.property
+          properties:value: This is an admin property
+  /nl:
+    jcr:primaryType: hippostd:folder
+    jcr:mixinTypes: ['hippo:named', 'hippotranslation:translated', 'mix:versionable']
+    jcr:uuid: 6ab9961a-d982-4c18-a3e3-7dedf3c788df
+    hippo:name: NL
+    hippostd:foldertype: [new-translated-folder, new-document]
+    hippotranslation:id: ceed5bdf-0837-4fc5-8e51-3195fcba65bd
+    hippotranslation:locale: nl
+    /admin:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:versionInfo', 'mix:referenceable']
+      jcr:uuid: c22ad224-5ea5-4a66-a448-1e15bc5a0f04
+      hippo:versionHistory: f2e3c98a-c9d9-4cae-8368-d59493e98470
+      /admin[1]:
+        jcr:primaryType: properties:properties
+        jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+        jcr:uuid: 30aaae2c-56e0-4666-94dc-119be8ac9cf6
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2020-07-14T15:23:58.540+02:00
+        hippostdpubwf:lastModificationDate: 2020-07-14T15:24:51.194+02:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: a71b0ce7-9507-4d24-9d50-6db235d0a023
+        hippotranslation:locale: nl
+        /properties:property:
+          jcr:primaryType: properties:property
+          properties:name: admin.property
+          properties:value: Dit is een admin property
+      /admin[2]:
+        jcr:primaryType: properties:properties
+        jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+        jcr:uuid: f186a575-cc8d-473f-a385-b1a5c085c289
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2020-07-14T15:23:58.540+02:00
+        hippostdpubwf:lastModificationDate: 2020-07-14T15:24:46.721+02:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: a71b0ce7-9507-4d24-9d50-6db235d0a023
+        hippotranslation:locale: nl
+        /properties:property:
+          jcr:primaryType: properties:property
+          properties:name: admin.property
+          properties:value: Dit is een admin property
+      /admin[3]:
+        jcr:primaryType: properties:properties
+        jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+        jcr:uuid: 2209adee-f5d7-49b0-8b60-cf32adcc6999
+        hippo:availability: [live]
+        hippostd:state: published
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2020-07-14T15:23:58.540+02:00
+        hippostdpubwf:lastModificationDate: 2020-07-14T15:24:51.194+02:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippostdpubwf:publicationDate: 2020-07-14T15:24:53.347+02:00
+        hippotranslation:id: a71b0ce7-9507-4d24-9d50-6db235d0a023
+        hippotranslation:locale: nl
+        /properties:property:
+          jcr:primaryType: properties:property
+          properties:name: admin.property
+          properties:value: Dit is een admin property
