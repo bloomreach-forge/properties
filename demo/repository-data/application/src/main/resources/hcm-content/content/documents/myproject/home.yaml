@@ -26,7 +26,7 @@
       hippostd:content: |-
         <p>This is the content for the home page of the properties demo.</p>
 
-        <p>The properties component allows you to create simple CMS documents having a flat list of name/value pairs. It also provides easy locating and using these documents in your HST site frontend.</p>
+        <p>The properties plugin allows you to create simple CMS documents having a flat list of name/value pairs. It also provides easy locating and using these documents in your HST site frontend.</p>
 
         <p><strong>It is not recommended to use this plugin for site labels. Usage of this plugin for that case has been superseded by <a href="https://documentation.bloomreach.com/14/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">HST Dynamic Resource Bundles support</a> and the <a href="https://documentation.bloomreach.com/14/library/concepts/plugins/resource-bundle-editor/about.html">HST Resource Bundle Editor Plugin</a></strong></p>
 
@@ -57,7 +57,7 @@
       hippostd:content: |-
         <p>This is the content for the home page of the properties demo.</p>
 
-        <p>The properties component allows you to create simple CMS documents having a flat list of name/value pairs. It also provides easy locating and using these documents in your HST site frontend.</p>
+        <p>The properties plugin allows you to create simple CMS documents having a flat list of name/value pairs. It also provides easy locating and using these documents in your HST site frontend.</p>
 
         <p><strong>It is not recommended to use this plugin for site labels. Usage of this plugin for that case has been superseded by <a href="https://documentation.bloomreach.com/14/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">HST Dynamic Resource Bundles support</a> and the <a href="https://documentation.bloomreach.com/14/library/concepts/plugins/resource-bundle-editor/about.html">HST Resource Bundle Editor Plugin</a></strong></p>
 
@@ -89,7 +89,7 @@
       hippostd:content: |-
         <p>This is the content for the home page of the properties demo.</p>
 
-        <p>The properties component allows you to create simple CMS documents having a flat list of name/value pairs. It also provides easy locating and using these documents in your HST site frontend.</p>
+        <p>The properties plugin allows you to create simple CMS documents having a flat list of name/value pairs. It also provides easy locating and using these documents in your HST site frontend.</p>
 
         <p><strong>It is not recommended to use this plugin for site labels. Usage of this plugin for that case has been superseded by <a href="https://documentation.bloomreach.com/14/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">HST Dynamic Resource Bundles support</a> and the <a href="https://documentation.bloomreach.com/14/library/concepts/plugins/resource-bundle-editor/about.html">HST Resource Bundle Editor Plugin</a></strong></p>
 

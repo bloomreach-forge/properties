@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Copyright 2010-2013 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2010-2020 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -17,10 +17,10 @@
 <document>
   <properties>
     <title>How to install properties component</title>
-    <subtitle>Document on how to install the properties component</subtitle>
+    <subtitle>Document on how to install the properties plugin</subtitle>
   </properties>
   <body>
-    <section name="How to install the properties component">
+    <section name="How to install the properties plugin">
       <subsection name="Prerequisites">
         <p>
           These instruction assumes that you have an HST project based on the HST archetype, i.e.
@@ -47,12 +47,12 @@
       <subsection name="Installation in CMS/Repository">
         <ol>
           <li>
-            <p>Add this dependency to the pom.xml of your <i>cms</i> module:</p>
+            <p>Add this dependency to the pom.xml of your <i>cms</i> (or <i>cms-dependencies</i>) module:</p>
             <source><![CDATA[
 <dependency>
   <groupId>org.onehippo.forge</groupId>
   <artifactId>properties-addon-repository</artifactId>
-  <version>4.0.0</version>
+  <version>5.0.0</version>
 </dependency>]]></source>
           </li>
           <li>
@@ -65,12 +65,12 @@
       <subsection name="Installation in HST site">
         <ol>
           <li>
-            <p>Add this dependency to the pom.xml of your <i>site</i> module:</p>
+            <p>Add this dependency to the pom.xml of your <i>site/components</i> module:</p>
             <source><![CDATA[
 <dependency>
   <groupId>org.onehippo.forge</groupId>
   <artifactId>properties-hst-client</artifactId>
-  <version>4.0.0</version>
+  <version>5.0.0</version>
 </dependency>]]></source>
           </li>
           <li>

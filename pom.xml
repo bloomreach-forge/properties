@@ -43,8 +43,7 @@
     <jsp.api.version>2.2</jsp.api.version>
 
     <!-- Documentation -->
-    <maven.plugin.site.version>3.6</maven.plugin.site.version>
-    <maven.plugin.jxr.version>2.2</maven.plugin.jxr.version>
+    <maven.plugin.site.version>3.7.1</maven.plugin.site.version>
     <maven.plugin.taglib.version>2.4</maven.plugin.taglib.version>
 
   </properties>
@@ -199,28 +198,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <configuration>
-          <aggregate>true</aggregate>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jxr-plugin</artifactId>
-        <version>${maven.plugin.jxr.version}</version>
-        <reportSets>
-          <reportSet>
-            <id>src-xref</id>
-            <reports>
-              <report>jxr</report>
-            </reports>
-          </reportSet>
-          <reportSet>
-            <id>test-xref</id>
-            <reports>
-              <report>test-jxr</report>
-            </reports>
-          </reportSet>
-        </reportSets>
         <configuration>
           <aggregate>true</aggregate>
         </configuration>
