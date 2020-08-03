@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2009-2017 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2009-2020 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the  "License");
   you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@
 
   <modelVersion>4.0.0</modelVersion>
   <artifactId>properties-addons</artifactId>
-  <name>Bloomreach Forge Properties Addons Repository</name>
+  <name>Bloomreach Forge Properties Plugin Repository</name>
 
   <packaging>pom</packaging>
 
