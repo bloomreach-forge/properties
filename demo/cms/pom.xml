@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.example</groupId>
     <artifactId>myproject</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>5.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>myproject-cms</artifactId>
   <packaging>war</packaging>
@@ -18,13 +18,14 @@
       <version>${project.version}</version>
       <type>pom</type>
     </dependency>
+
     <dependency>
       <groupId>org.onehippo.forge.properties</groupId>
       <artifactId>properties-addon-repository</artifactId>
-      <version>5.0.0-SNAPSHOT</version>
+      <version>${forge.properties.version}</version>
     </dependency>
-
   </dependencies>
+
   <build>
     <finalName>cms</finalName>
     <plugins>
