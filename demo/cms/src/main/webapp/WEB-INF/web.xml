@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-         version="2.5"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0"
          id="cms">
 
   <!-- General configuration -->
-  <display-name>Properties demo CMS</display-name>
-  <description>Properties demo CMS</description>
+  <display-name>My Project CMS</display-name>
+  <description>My Project CMS</description>
+
+  <listener>
+    <listener-class>org.hippoecm.hst.platform.container.HstCmsContextLoaderListener</listener-class>
+  </listener>
 
   <context-param>
     <description>The address of the repository</description>
@@ -22,10 +26,21 @@
   <context-param>
     <description>The location of the repository configuration file. Unless the location
       starts with file://, the location is retrieved from within the application package as
-      resource.</description>
+      resource.
+    </description>
     <param-name>repository-config</param-name>
     <param-value>repository.xml</param-value>
   </context-param>
+
+  <filter>
+    <filter-name>HstFilter</filter-name>
+    <filter-class>org.hippoecm.hst.container.HstFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>HstFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 
   <!--No concurrent logins-->
   <filter>
@@ -106,7 +121,7 @@
 
   <servlet>
     <servlet-name>AngularResourceServlet</servlet-name>
-    <servlet-class>org.onehippo.cms7.utilities.servlet.ResourceServlet</servlet-class>
+    <servlet-class>org.onehippo.cms7.utilities.servlet.SecureCmsResourceServlet</servlet-class>
     <init-param>
       <param-name>jarPathPrefix</param-name>
       <param-value>/angular</param-value>
@@ -121,7 +136,7 @@
 
   <servlet>
     <servlet-name>CKEditorResourceServlet</servlet-name>
-    <servlet-class>org.onehippo.cms7.utilities.servlet.ResourceServlet</servlet-class>
+    <servlet-class>org.onehippo.cms7.utilities.servlet.SecureCmsResourceServlet</servlet-class>
     <init-param>
       <param-name>jarPathPrefix</param-name>
       <param-value>/ckeditor</param-value>
@@ -172,6 +187,12 @@
     <load-on-startup>5</load-on-startup>
   </servlet>
 
+  <servlet>
+    <servlet-name>RepositoryJaxrsServlet</servlet-name>
+    <servlet-class>org.onehippo.repository.jaxrs.RepositoryJaxrsServlet</servlet-class>
+    <load-on-startup>6</load-on-startup>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>LoggingServlet</servlet-name>
     <url-pattern>/logging/*</url-pattern>
@@ -202,9 +223,20 @@
     <url-pattern>/skin/*</url-pattern>
   </servlet-mapping>
 
+  <servlet-mapping>
+    <servlet-name>RepositoryJaxrsServlet</servlet-name>
+    <url-pattern>/ws/*</url-pattern>
+  </servlet-mapping>
+
   <!-- Timeout in minutes -->
   <session-config>
     <session-timeout>10</session-timeout>
+    <!--
+    The tracking-mode setting protects against so-called session fixation attacks.
+    Although this setting is not defined in the servlet 2.5 spec, Tomcat allows it here.
+    If your container does not then you can remove this setting but then should configure your container
+    to get the same protection.
+    -->
     <tracking-mode>COOKIE</tracking-mode>
   </session-config>
 

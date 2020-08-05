@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2009-2017 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2009-2020 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the  "License");
   you may not use this file except in compliance with the License.
@@ -20,14 +20,14 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>29</version>
+    <version>30.4.3</version>
   </parent>
 
-  <name>Bloomreach Forge Properties Addon</name>
-  <description>Bloomreach Forge Properties Addon</description>
+  <name>Bloomreach Forge Properties Plugin</name>
+  <description>Bloomreach Forge Properties Plugin</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties</artifactId>
-  <version>4.0.1</version>
+  <version>5.0.0</version>
   <packaging>pom</packaging>
 
   <url>https://bloomreach-forge.github.io/properties</url>
@@ -35,16 +35,15 @@
 
   <properties>
     <!-- use root project name for all project modules NOTICE files, should be the same as in the root NOTICE file -->
-    <notice.project.name>Bloomreach Forge Properties Addon</notice.project.name>
+    <notice.project.name>Bloomreach Forge Properties Plugin</notice.project.name>
 
-    <hippo.hst.version>5.0.0</hippo.hst.version>
-    <hippo.repository.version>5.0.0</hippo.repository.version>
+    <hippo.hst.version>13.4.3</hippo.hst.version>
+    <hippo.repository.version>13.4.3</hippo.repository.version>
 
     <jsp.api.version>2.2</jsp.api.version>
 
     <!-- Documentation -->
-    <maven.plugin.site.version>3.6</maven.plugin.site.version>
-    <maven.plugin.jxr.version>2.2</maven.plugin.jxr.version>
+    <maven.plugin.site.version>3.7.1</maven.plugin.site.version>
     <maven.plugin.taglib.version>2.4</maven.plugin.taglib.version>
 
   </properties>
@@ -199,28 +198,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <configuration>
-          <aggregate>true</aggregate>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jxr-plugin</artifactId>
-        <version>${maven.plugin.jxr.version}</version>
-        <reportSets>
-          <reportSet>
-            <id>src-xref</id>
-            <reports>
-              <report>jxr</report>
-            </reports>
-          </reportSet>
-          <reportSet>
-            <id>test-xref</id>
-            <reports>
-              <report>test-jxr</report>
-            </reports>
-          </reportSet>
-        </reportSets>
         <configuration>
           <aggregate>true</aggregate>
         </configuration>

@@ -1,8 +1,0 @@
-<'propertiesdemo'='http://www.hippoecm.org/hst/nt/propertiesdemo/1.1'>
-<'hippo'='http://www.onehippo.org/jcr/hippo/nt/2.0'>
-<'hippostd'='http://www.onehippo.org/jcr/hippostd/nt/2.0'>
-<'hippostdpubwf'='http://www.onehippo.org/jcr/hippostdpubwf/nt/1.0'>
-
-[propertiesdemo:basedocument] > hippo:document, hippostd:publishableSummary, hippostdpubwf:document orderable
-
-[propertiesdemo:textdocument] > propertiesdemo:basedocument, hippostd:relaxed

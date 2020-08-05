@@ -1,8 +1,0 @@
-/content/documents/eigenschappendemo:
-  jcr:primaryType: hippostd:folder
-  jcr:mixinTypes: ['hippotranslation:translated', 'hippo:named', 'mix:referenceable']
-  jcr:uuid: 1edb150b-e4f3-45fd-a179-e53d32bc6acb
-  hippo:name: Eigenschappen Demo
-  hippostd:foldertype: [new-translated-folder, new-document]
-  hippotranslation:id: 14f8361c-f8bb-4b10-9162-24c696a2e8ea
-  hippotranslation:locale: nl

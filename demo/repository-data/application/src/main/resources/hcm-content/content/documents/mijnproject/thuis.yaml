@@ -1,0 +1,100 @@
+/content/documents/mijnproject/thuis:
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['hippo:named', 'hippo:versionInfo', 'mix:referenceable']
+  jcr:uuid: c8703f70-4d1d-43fe-a0f1-b22772fdfd5b
+  hippo:name: Thuis
+  hippo:versionHistory: 0afe433a-343b-4419-94b8-787e973a512b
+  /thuis[1]:
+    jcr:primaryType: myproject:contentdocument
+    jcr:mixinTypes: ['mix:versionable']
+    jcr:uuid: 13e75989-68aa-486e-b708-2a33ac3d5bd4
+    hippo:availability: [preview]
+    hippo:related___pathreference: []
+    hippostd:state: unpublished
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2020-07-14T15:15:26.841+02:00
+    hippostdpubwf:lastModificationDate: 2020-07-14T15:38:06.345+02:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 8aef8d1f-dfce-43f0-8ffe-8151e584c681
+    hippotranslation:locale: nl
+    myproject:introduction: Dit is de introductie van de thuis pagina van de properties
+      demo
+    myproject:publicationdate: 2020-07-14T15:20:00+02:00
+    myproject:title: Thuis
+    /myproject:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: |-
+        <p>Dit is de inhoud van de&nbsp; thuis pagina van de properties demo.</p>
+
+        <p>De properties component geeft de mogeijkheid om CMS documenten te creëren met een lijst van naam/waarde paren. Tevens kunnen deze documenten makkelijk opgezocht en gebruikt worden in u HST site.</p>
+
+        <p><strong>Het is niet aangeraden om deze plugin te gebruiken voor site labels. Deze plugin is vervangen door <a href="https://documentation.bloomreach.com/14/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">HST Dynamic Resource Bundles support</a> en de <a href="https://documentation.bloomreach.com/14/library/concepts/plugins/resource-bundle-editor/about.html">HST Resource Bundle Editor Plugin</a> voor die case.</strong></p>
+
+        <p>Gebruik van deze plugin voor systeem eigenschappen is mogelijk nog van toepassing voor u project.</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+  /thuis[2]:
+    jcr:primaryType: myproject:contentdocument
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 6599dada-002b-4106-94e9-fc8fc5dfe65a
+    hippo:availability: []
+    hippo:related___pathreference: []
+    hippostd:state: draft
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2020-07-14T15:15:26.841+02:00
+    hippostdpubwf:lastModificationDate: 2020-07-14T15:37:48.172+02:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 8aef8d1f-dfce-43f0-8ffe-8151e584c681
+    hippotranslation:locale: nl
+    myproject:introduction: Dit is de introductie van de thuis pagina van de properties
+      demo
+    myproject:publicationdate: 2020-07-14T15:20:00+02:00
+    myproject:title: Thuis
+    /myproject:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: |-
+        <p>Dit is de inhoud van de&nbsp; thuis pagina van de properties demo.</p>
+
+        <p>De properties component geeft de mogeijkheid om CMS documenten te creëren met een lijst van naam/waarde paren. Tevens kunnen deze documenten makkelijk opgezocht en gebruikt worden in u HST site.</p>
+
+        <p><strong>Het is niet aangeraden om deze plugin te gebruiken voor site labels. Deze plugin is vervangen door <a href="https://documentation.bloomreach.com/14/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">HST Dynamic Resource Bundles support</a> en de <a href="https://documentation.bloomreach.com/14/library/concepts/plugins/resource-bundle-editor/about.html">HST Resource Bundle Editor Plugin</a> voor die case.</strong></p>
+
+        <p>Gebruik van deze plugin voor systeem eigenschappen is mogelijk nog van toepassing voor u project.</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+  /thuis[3]:
+    jcr:primaryType: myproject:contentdocument
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: dd02248e-8a2d-477c-b745-cc57c6519f23
+    hippo:availability: [live]
+    hippo:related___pathreference: []
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2020-07-14T15:15:26.841+02:00
+    hippostdpubwf:lastModificationDate: 2020-07-14T15:38:06.345+02:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2020-07-14T15:38:08.546+02:00
+    hippotranslation:id: 8aef8d1f-dfce-43f0-8ffe-8151e584c681
+    hippotranslation:locale: nl
+    myproject:introduction: Dit is de introductie van de thuis pagina van de properties
+      demo
+    myproject:publicationdate: 2020-07-14T15:20:00+02:00
+    myproject:title: Thuis
+    /myproject:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: |-
+        <p>Dit is de inhoud van de&nbsp; thuis pagina van de properties demo.</p>
+
+        <p>De properties component geeft de mogeijkheid om CMS documenten te creëren met een lijst van naam/waarde paren. Tevens kunnen deze documenten makkelijk opgezocht en gebruikt worden in u HST site.</p>
+
+        <p><strong>Het is niet aangeraden om deze plugin te gebruiken voor site labels. Deze plugin is vervangen door <a href="https://documentation.bloomreach.com/14/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">HST Dynamic Resource Bundles support</a> en de <a href="https://documentation.bloomreach.com/14/library/concepts/plugins/resource-bundle-editor/about.html">HST Resource Bundle Editor Plugin</a> voor die case.</strong></p>
+
+        <p>Gebruik van deze plugin voor systeem eigenschappen is mogelijk nog van toepassing voor u project.</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>

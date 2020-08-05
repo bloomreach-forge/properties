@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2010-2017 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2010-2020 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -23,18 +23,19 @@
   </properties>
   <body>
     <section name="Introduction">
-      <subsection name="What is the properties component?">
-          <p>
-            The properties component allows you to create simple CMS documents
-            having a flat list of name/value pairs. It also provides easy locating
-            and using these documents in your HST site frontend.
-          </p>
-      </subsection>
-      <subsection name="Not recommended to use for site labels">
+      <subsection name="What is the properties plugin?">
+        <p>
+          The properties plugin allows you to create simple CMS documents
+          having a flat list of name/value pairs. It also provides easy locating
+          and using these documents in your HST site frontend.
+        </p>
+        <div class="alert alert-danger">
+          Not recommended to use for site labels!
+        </div>
         <p>Instead of using this plugin for site label localization, we recommend the usage of resource bundles, see
-          <a href="http://www.onehippo.org/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">
+          <a href="https://documentation.bloomreach.com/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">
             HST Dynamic Resource Bundles support</a> and the
-          <a href="https://www.onehippo.org/library/concepts/plugins/resource-bundle-editor/about.html">
+          <a href="https://documentation.bloomreach.com/library/concepts/plugins/resource-bundle-editor/about.html">
             HST Resource Bundle Editor Plugin
           </a>
         </p>
@@ -56,19 +57,25 @@
             that version doesn't run against an earlier (or later) version of the CMS and HST.
           </p>
           <table border="1" cellpadding="0" cellspacing="5">
-            <tbody><tr>
-              <th>Version</th>
-              <th>CMS</th>
-              <th>HST</th>
-            </tr>
+            <tbody>
+              <tr>
+                <th>Version</th>
+                <th>CMS / Bloomreach XM</th>
+                <th>HST</th>
+               </tr>
+              <tr>
+                <td>5.0.x</td>
+                <td>13.x</td>
+                <td>13.4.3</td>
+              </tr>
               <tr>
                 <td>4.0.x</td>
-                <td>12.x (5.x)</td>
+                <td>12.x</td>
                 <td>5.x</td>
               </tr>
               <tr>
                 <td>3.0.x</td>
-                <td>11.x (4.x)</td>
+                <td>11.x</td>
                 <td>4.x</td>
               </tr>
               <tr>

@@ -1,0 +1,100 @@
+/content/documents/myproject/home:
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['hippo:named', 'hippo:versionInfo', 'mix:referenceable']
+  jcr:uuid: 9c9b1df7-b26c-4521-87a6-93e7d0bf2758
+  hippo:name: Home
+  hippo:versionHistory: 48baddf2-9b4b-4df8-9339-ce7cac66b2cb
+  /home[1]:
+    jcr:primaryType: myproject:contentdocument
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 52def555-9bf8-4a60-b08f-bca4e33f7a23
+    hippo:availability: []
+    hippo:related___pathreference: []
+    hippostd:state: draft
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2020-07-14T15:15:26.841+02:00
+    hippostdpubwf:lastModificationDate: 2020-07-14T15:37:25.611+02:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 8aef8d1f-dfce-43f0-8ffe-8151e584c681
+    hippotranslation:locale: en
+    myproject:introduction: This is the introduction for the home page of the properties
+      demo
+    myproject:publicationdate: 2020-07-14T15:20:00+02:00
+    myproject:title: Home
+    /myproject:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: |-
+        <p>This is the content for the home page of the properties demo.</p>
+
+        <p>The properties plugin allows you to create simple CMS documents having a flat list of name/value pairs. It also provides easy locating and using these documents in your HST site frontend.</p>
+
+        <p><strong>It is not recommended to use this plugin for site labels. Usage of this plugin for that case has been superseded by <a href="https://documentation.bloomreach.com/14/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">HST Dynamic Resource Bundles support</a> and the <a href="https://documentation.bloomreach.com/14/library/concepts/plugins/resource-bundle-editor/about.html">HST Resource Bundle Editor Plugin</a></strong></p>
+
+        <p>Usage of the plugin on behalf 'system' properties can still be applicable for your project.</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+  /home[2]:
+    jcr:primaryType: myproject:contentdocument
+    jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+    jcr:uuid: 1ee2ad37-c947-4e0d-8a66-f32b269b02c0
+    hippo:availability: [preview]
+    hippo:related___pathreference: []
+    hippostd:state: unpublished
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2020-07-14T15:15:26.841+02:00
+    hippostdpubwf:lastModificationDate: 2020-07-14T15:38:11.140+02:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 8aef8d1f-dfce-43f0-8ffe-8151e584c681
+    hippotranslation:locale: en
+    myproject:introduction: This is the introduction for the home page of the properties
+      demo
+    myproject:publicationdate: 2020-07-14T15:20:00+02:00
+    myproject:title: Home
+    /myproject:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: |-
+        <p>This is the content for the home page of the properties demo.</p>
+
+        <p>The properties plugin allows you to create simple CMS documents having a flat list of name/value pairs. It also provides easy locating and using these documents in your HST site frontend.</p>
+
+        <p><strong>It is not recommended to use this plugin for site labels. Usage of this plugin for that case has been superseded by <a href="https://documentation.bloomreach.com/14/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">HST Dynamic Resource Bundles support</a> and the <a href="https://documentation.bloomreach.com/14/library/concepts/plugins/resource-bundle-editor/about.html">HST Resource Bundle Editor Plugin</a></strong></p>
+
+        <p>Usage of the plugin on behalf 'system' properties can still be applicable for your project.</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+  /home[3]:
+    jcr:primaryType: myproject:contentdocument
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 1508aab0-03d4-4093-9f3a-16398bf4479f
+    hippo:availability: [live]
+    hippo:related___pathreference: []
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2020-07-14T15:15:26.841+02:00
+    hippostdpubwf:lastModificationDate: 2020-07-14T15:38:11.140+02:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2020-07-14T15:38:12.758+02:00
+    hippotranslation:id: 8aef8d1f-dfce-43f0-8ffe-8151e584c681
+    hippotranslation:locale: en
+    myproject:introduction: This is the introduction for the home page of the properties
+      demo
+    myproject:publicationdate: 2020-07-14T15:20:00+02:00
+    myproject:title: Home
+    /myproject:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: |-
+        <p>This is the content for the home page of the properties demo.</p>
+
+        <p>The properties plugin allows you to create simple CMS documents having a flat list of name/value pairs. It also provides easy locating and using these documents in your HST site frontend.</p>
+
+        <p><strong>It is not recommended to use this plugin for site labels. Usage of this plugin for that case has been superseded by <a href="https://documentation.bloomreach.com/14/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">HST Dynamic Resource Bundles support</a> and the <a href="https://documentation.bloomreach.com/14/library/concepts/plugins/resource-bundle-editor/about.html">HST Resource Bundle Editor Plugin</a></strong></p>
+
+        <p>Usage of the plugin on behalf 'system' properties can still be applicable for your project.</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
