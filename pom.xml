@@ -27,7 +27,7 @@
   <description>Bloomreach Forge Properties Plugin</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties</artifactId>
-  <version>5.0.0</version>
+  <version>5.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <url>https://bloomreach-forge.github.io/properties</url>
