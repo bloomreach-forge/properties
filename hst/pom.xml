@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.onehippo.forge.properties</groupId>
     <artifactId>properties</artifactId>
-    <version>5.0.0-SNAPSHOT</version>
+    <version>5.0.0</version>
   </parent>
 
   <name>Bloomreach Forge Properties HST Client</name>
