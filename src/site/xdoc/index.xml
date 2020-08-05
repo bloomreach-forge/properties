@@ -24,13 +24,14 @@
   <body>
     <section name="Introduction">
       <subsection name="What is the properties plugin?">
-          <p>
-            The properties plugin allows you to create simple CMS documents
-            having a flat list of name/value pairs. It also provides easy locating
-            and using these documents in your HST site frontend.
-          </p>
-      </subsection>
-      <subsection name="Not recommended to use for site labels">
+        <p>
+          The properties plugin allows you to create simple CMS documents
+          having a flat list of name/value pairs. It also provides easy locating
+          and using these documents in your HST site frontend.
+        </p>
+        <div class="alert alert-danger">
+          Not recommended to use for site labels!
+        </div>
         <p>Instead of using this plugin for site label localization, we recommend the usage of resource bundles, see
           <a href="https://documentation.bloomreach.com/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">
             HST Dynamic Resource Bundles support</a> and the
