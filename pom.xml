@@ -13,21 +13,20 @@
   BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+--><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.onehippo.cms7</groupId>
-    <artifactId>hippo-cms7-project</artifactId>
-    <version>30.4.3</version>
+    <artifactId>hippo-cms7-release</artifactId>
+    <version>14.2.2</version>
   </parent>
 
   <name>Bloomreach Forge Properties Plugin</name>
   <description>Bloomreach Forge Properties Plugin</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties</artifactId>
-  <version>5.0.0</version>
+  <version>6.0.0</version>
   <packaging>pom</packaging>
 
   <url>https://bloomreach-forge.github.io/properties</url>
@@ -36,9 +35,6 @@
   <properties>
     <!-- use root project name for all project modules NOTICE files, should be the same as in the root NOTICE file -->
     <notice.project.name>Bloomreach Forge Properties Plugin</notice.project.name>
-
-    <hippo.hst.version>13.4.3</hippo.hst.version>
-    <hippo.repository.version>13.4.3</hippo.repository.version>
 
     <jsp.api.version>2.2</jsp.api.version>
 
@@ -89,9 +85,9 @@
 
   <!-- clear unused elements inherited from hippo-cms7-project pom -->
   <contributors>
-    <contributor />
+    <contributor/>
   </contributors>
-  <ciManagement />
+  <ciManagement/>
 
   <dependencyManagement>
     <dependencies>
@@ -145,7 +141,7 @@
       <id>hippo-maven2</id>
       <name>Hippo maven 2 repository.</name>
       <url>https://maven.onehippo.com/maven2/</url>
-      <snapshots />
+      <snapshots/>
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>
@@ -155,7 +151,7 @@
       <id>hippo-maven2-forge</id>
       <name>Hippo Maven 2 Forge repository</name>
       <url>https://maven.onehippo.com/maven2-forge/</url>
-      <snapshots />
+      <snapshots/>
     </repository>
   </repositories>
 
@@ -169,7 +165,7 @@
       <id>codehaus</id>
       <url>http://repository.codehaus.org/</url>
       <layout>default</layout>
-      <snapshots />
+      <snapshots/>
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>

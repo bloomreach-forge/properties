@@ -21,6 +21,12 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="6.0.0">
+        <p class="smallinfo">Release Date: 5 September 2020</p>
+        <ul>
+          <li><a href="https://issues.onehippo.com/browse/HIPFORGE-370">[HIPFORGE-370]</a> Compatibility with Bloomreach Experience Manager 14.2.2</li>
+        </ul>
+      </subsection>
       <subsection name="5.0.0">
         <p class="smallinfo">Release Date: 5 August 2020</p>
         <ul>

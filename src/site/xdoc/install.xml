@@ -52,7 +52,7 @@
 <dependency>
   <groupId>org.onehippo.forge</groupId>
   <artifactId>properties-addon-repository</artifactId>
-  <version>5.0.0</version>
+  <version>6.0.0</version>
 </dependency>]]></source>
           </li>
           <li>
@@ -70,7 +70,7 @@
 <dependency>
   <groupId>org.onehippo.forge</groupId>
   <artifactId>properties-hst-client</artifactId>
-  <version>5.0.0</version>
+  <version>6.0.0</version>
 </dependency>]]></source>
           </li>
           <li>

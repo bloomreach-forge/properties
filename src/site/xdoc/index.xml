@@ -46,7 +46,7 @@
       </subsection>
       <subsection name="Screenshots">
           <p>
-            <a href="screenshots.html"><img src="images/thm_cms.jpg" alt="CMS Document"/></a><br/>
+            <a href="screenshots.html"><img src="images/thm_cms.png" alt="CMS Document"/></a><br/>
             <a href="screenshots.html">See more screenshots here</a>.
           </p>
         </subsection>
@@ -63,6 +63,11 @@
                 <th>CMS / Bloomreach XM</th>
                 <th>HST</th>
                </tr>
+              <tr>
+                <td>6.0.x</td>
+                <td>14.x</td>
+                <td>14.x</td>
+              </tr>
               <tr>
                 <td>5.0.x</td>
                 <td>13.x</td>
