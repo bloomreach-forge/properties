@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2010-2020 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2010-2021 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -29,17 +29,15 @@
           having a flat list of name/value pairs. It also provides easy locating
           and using these documents in your HST site frontend.
         </p>
-        <div class="alert alert-danger">
-          Not recommended to use for site labels!
-        </div>
-        <p>Instead of using this plugin for site label localization, we recommend the usage of resource bundles, see
+        <p>Using this plugin for site label localization is possible, however the usage of resource bundles is
+          better supported as part of the XM product, see
           <a href="https://documentation.bloomreach.com/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">
             HST Dynamic Resource Bundles support</a> and the
-          <a href="https://documentation.bloomreach.com/library/concepts/plugins/resource-bundle-editor/about.html">
-            HST Resource Bundle Editor Plugin
-          </a>
+          <a href="https://documentation.bloomreach.com/library/concepts/plugins/resource-bundle-editor/about.html">HST
+            Resource Bundle Editor Plugin</a>. The advantage of using this plugin is that it support diffs between
+          live and preview (edited) versions of the documents.
         </p>
-        <p>Usage of the plugin on behalf 'system' properties can still be applicable for your project.</p>
+        <p>Usage of this plugin on behalf 'system' properties can still be applicable for your project.</p>
       </subsection>
       <subsection name="Code base on GitHub">
         <p>The code of the project is on GitHub at <a href="https://github.com/bloomreach-forge/properties/">https://github.com/bloomreach-forge/properties/</a>.</p>
