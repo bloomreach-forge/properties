@@ -62,7 +62,12 @@
                 <th>HST</th>
                </tr>
               <tr>
-                <td>6.0.x</td>
+                <td>7.x</td>
+                <td>15.x</td>
+                <td>15.x</td>
+              </tr>
+              <tr>
+                <td>6.x</td>
                 <td>14.x</td>
                 <td>14.x</td>
               </tr>
