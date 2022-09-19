@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2009-2020 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2009-2022 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the  "License");
   you may not use this file except in compliance with the License.
@@ -19,14 +19,14 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-release</artifactId>
-    <version>14.2.2</version>
+    <version>15.1.0</version>
   </parent>
 
   <name>Bloomreach Forge Properties Plugin</name>
   <description>Bloomreach Forge Properties Plugin</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties</artifactId>
-  <version>6.0.1</version>
+  <version>7.0.0</version>
   <packaging>pom</packaging>
 
   <url>https://bloomreach-forge.github.io/properties</url>
@@ -39,7 +39,7 @@
     <jsp.api.version>2.2</jsp.api.version>
 
     <!-- Documentation -->
-    <maven.plugin.site.version>3.7.1</maven.plugin.site.version>
+    <maven.plugin.site.version>3.12.1</maven.plugin.site.version>
     <maven.plugin.taglib.version>2.4</maven.plugin.taglib.version>
 
   </properties>

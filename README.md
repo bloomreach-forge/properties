@@ -1,8 +1,6 @@
-[![Build Status](https://travis-ci.org/bloomreach-forge/properties.svg?branch=develop)](https://travis-ci.org/bloomreach-forge/properties)
+# Properties Plugin
 
-# Properties Component
-
-The properties component allows you to create simple CMS documents having a flat list of name/value pairs. 
+The properties plugin allows you to create simple CMS documents having a flat list of name/value pairs. 
 It also provides easy locating and using these documents in your HST site frontend.
 
 # Documentation 
