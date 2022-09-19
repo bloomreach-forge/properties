@@ -80,7 +80,7 @@ definitions:
             jcr:primaryType: frontend:plugin
             extension.left: ${cluster.id}.left
             extension.right: ${cluster.id}.right
-            plugin.class: org.hippoecm.frontend.editor.layout.TwoColumn
+            plugin.class: org.hippoecm.frontend.editor.layout.TwoColumnMirrored
             wicket.extensions: [extension.left, extension.right]
           /left:
             jcr:primaryType: frontend:plugin
