@@ -24,7 +24,7 @@
       <subsection name="7.0.0">
         <p class="smallinfo">Release Date: 19 September 2022</p>
         <ul>
-          <li><a href="https://issues.onehippo.com/browse/HIPFORGE-431">[HIPFORGE-431]</a>
+          <li><a href="https://issues.onehippo.com/browse/HIPFORGE-431">HIPFORGE-431</a>
             Compatibility with Bloomreach Experience Manager 15.1.0, build on Java 11</li>
           <li>
             In the property compound, use TwoColumnMirrored layout so the right column is wider than the left column
@@ -34,7 +34,7 @@
       <subsection name="6.0.1">
         <p class="smallinfo">Release Date: 7 September 2020</p>
         <ul>
-          <li><a href="https://issues.onehippo.com/browse/HIPFORGE-370">[HIPFORGE-370]</a>
+          <li><a href="https://issues.onehippo.com/browse/HIPFORGE-370">HIPFORGE-370</a>
             Compatibility with Bloomreach Experience Manager 14.2.2</li>
         </ul>
       </subsection>
