@@ -22,7 +22,7 @@
     <dependency>
       <groupId>org.onehippo.forge.properties</groupId>
       <artifactId>properties-addon-repository</artifactId>
-      <version>${forge.properties.version}</version>
+      <version>${project.version}</version>
     </dependency>
   </dependencies>
 

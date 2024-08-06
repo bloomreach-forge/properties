@@ -11,16 +11,17 @@
     jcr:primaryType: hippo:handle
     jcr:mixinTypes: ['hippo:versionInfo', 'mix:referenceable']
     jcr:uuid: 8c704cda-59b7-4975-9529-ed7d5915282b
-    hippo:versionHistory: 75ee542e-c355-4a55-86ed-1c07838d81cb
+    hippo:versionHistory: 3bb7375e-d035-4aba-a546-92bcf9250eb3
     /properties[1]:
       jcr:primaryType: properties:properties
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable', 'mix:versionable']
       jcr:uuid: 4c06046c-b582-4c07-b869-b578b7f10b16
       hippo:availability: [preview]
+      hippostd:retainable: false
       hippostd:state: unpublished
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2020-07-14T15:32:39.063+02:00
-      hippostdpubwf:lastModificationDate: 2020-07-16T15:16:20.066+02:00
+      hippostdpubwf:lastModificationDate: 2024-08-06T16:37:54.651+02:00
       hippostdpubwf:lastModifiedBy: admin
       hippotranslation:id: 8238d256-b772-48c5-a379-a5461070bc70
       hippotranslation:locale: en
@@ -50,10 +51,11 @@
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
       jcr:uuid: 6253d1ac-8743-4b58-ba56-5a529c778dee
       hippo:availability: []
+      hippostd:retainable: false
       hippostd:state: draft
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2020-07-14T15:32:39.063+02:00
-      hippostdpubwf:lastModificationDate: 2020-07-16T15:14:36.840+02:00
+      hippostdpubwf:lastModificationDate: 2024-08-06T16:37:51.356+02:00
       hippostdpubwf:lastModifiedBy: admin
       hippotranslation:id: 8238d256-b772-48c5-a379-a5461070bc70
       hippotranslation:locale: en
@@ -83,12 +85,13 @@
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
       jcr:uuid: 7463a274-3811-44a2-988f-daac87ed85a9
       hippo:availability: [live]
+      hippostd:retainable: false
       hippostd:state: published
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2020-07-14T15:32:39.063+02:00
-      hippostdpubwf:lastModificationDate: 2020-07-16T15:16:20.066+02:00
+      hippostdpubwf:lastModificationDate: 2024-08-06T16:37:54.651+02:00
       hippostdpubwf:lastModifiedBy: admin
-      hippostdpubwf:publicationDate: 2020-09-04T17:29:25.637+02:00
+      hippostdpubwf:publicationDate: 2024-08-06T16:37:56.843+02:00
       hippotranslation:id: 8238d256-b772-48c5-a379-a5461070bc70
       hippotranslation:locale: en
       /properties:property[1]:
