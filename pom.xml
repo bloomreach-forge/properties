@@ -37,6 +37,7 @@
     <notice.project.name>Bloomreach Forge Properties Plugin</notice.project.name>
 
     <!-- Documentation -->
+    <maven.plugin.jxr.version>3.4.0</maven.plugin.jxr.version>
     <maven.plugin.site.version>3.12.1</maven.plugin.site.version>
     <maven.plugin.taglib.version>2.4</maven.plugin.taglib.version>
 
@@ -74,7 +75,7 @@
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
 
@@ -138,7 +139,7 @@
     <repository>
       <id>bloomreach</id>
       <name>Bloomreach Maven 2 repository</name>
-      <url>http://maven.bloomreach.com/maven2/</url>
+      <url>https://maven.bloomreach.com/maven2/</url>
       <snapshots />
       <releases>
         <updatePolicy>never</updatePolicy>
@@ -151,11 +152,11 @@
     <pluginRepository>
       <id>bloomreach</id>
       <name>Bloomreach Maven 2 repository</name>
-      <url>http://maven.bloomreach.com/maven2/</url>
+      <url>https://maven.bloomreach.com/maven2/</url>
     </pluginRepository>
     <pluginRepository>
       <id>codehaus</id>
-      <url>http://repository.codehaus.org/</url>
+      <url>https://repository.codehaus.org/</url>
       <layout>default</layout>
       <snapshots/>
       <releases>
@@ -186,21 +187,33 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${maven.plugin.javadoc.version}</version>
+        <configuration>
+          <source>1.8</source>
+          <links>
+            <link>https://download.oracle.com/javase/6/docs/api</link>
+          </links>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>${maven.plugin.jxr.version}</version>
+        <reportSets>
+          <reportSet>
+            <id>src-xref</id>
+            <reports>
+              <report>jxr</report>
+            </reports>
+          </reportSet>
+        </reportSets>
         <configuration>
           <aggregate>true</aggregate>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>net.sourceforge.maven-taglib</groupId>
-        <artifactId>maven-taglib-plugin</artifactId>
-        <version>${maven.plugin.taglib.version}</version>
-        <configuration>
-          <taglib.src.dir>hst/src/main/resources/META-INF</taglib.src.dir>
-          <title>HST ${project.version} JSP tag</title>
-        </configuration>
-      </plugin>
     </plugins>
   </reporting>
+
 
   <profiles>
     <profile>
