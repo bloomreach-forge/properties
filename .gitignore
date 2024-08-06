@@ -2,4 +2,5 @@
 .idea
 target
 storage/
+overlays/
 *pom.xml.versionsBackup
