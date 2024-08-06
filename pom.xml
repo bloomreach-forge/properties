@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2009-2022 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2009-2024 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the  "License");
   you may not use this file except in compliance with the License.
@@ -19,14 +19,14 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-release</artifactId>
-    <version>15.1.0</version>
+    <version>16.0.0</version>
   </parent>
 
   <name>Bloomreach Forge Properties Plugin</name>
   <description>Bloomreach Forge Properties Plugin</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties</artifactId>
-  <version>7.0.0</version>
+  <version>8.0.0</version>
   <packaging>pom</packaging>
 
   <url>https://bloomreach-forge.github.io/properties</url>
@@ -35,8 +35,6 @@
   <properties>
     <!-- use root project name for all project modules NOTICE files, should be the same as in the root NOTICE file -->
     <notice.project.name>Bloomreach Forge Properties Plugin</notice.project.name>
-
-    <jsp.api.version>2.2</jsp.api.version>
 
     <!-- Documentation -->
     <maven.plugin.site.version>3.12.1</maven.plugin.site.version>
@@ -61,16 +59,16 @@
 
   <distributionManagement>
     <repository>
-      <name>Hippo Maven 2 Forge Repository</name>
-      <id>hippo-maven2-forge</id>
-      <url>https://maven.onehippo.com/content/repositories/forge-releases/</url>
+      <name>Bloomreach Maven 2 Forge Repository</name>
+      <id>bloomreach-maven2-forge</id>
+      <url>https://maven.bloomreach.com/content/repositories/forge-releases/</url>
       <uniqueVersion>false</uniqueVersion>
     </repository>
   </distributionManagement>
 
   <issueManagement>
     <system>Hippo JIRA</system>
-    <url>https://issues.onehippo.com/browse/HIPFORGE</url>
+    <url>https://issues.onehippo.com/browse/FORGE</url>
   </issueManagement>
 
   <licenses>
@@ -92,9 +90,9 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>javax.servlet.jsp</groupId>
-        <artifactId>jsp-api</artifactId>
-        <version>${jsp.api.version}</version>
+        <groupId>jakarta.servlet.jsp</groupId>
+        <artifactId>jakarta.servlet.jsp-api</artifactId>
+        <version>${jsp-api.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -138,28 +136,22 @@
 
   <repositories>
     <repository>
-      <id>hippo-maven2</id>
-      <name>Hippo maven 2 repository.</name>
-      <url>https://maven.onehippo.com/maven2/</url>
-      <snapshots/>
+      <id>bloomreach</id>
+      <name>Bloomreach Maven 2 repository</name>
+      <url>http://maven.bloomreach.com/maven2/</url>
+      <snapshots />
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>
       <layout>default</layout>
     </repository>
-    <repository>
-      <id>hippo-maven2-forge</id>
-      <name>Hippo Maven 2 Forge repository</name>
-      <url>https://maven.onehippo.com/maven2-forge/</url>
-      <snapshots/>
-    </repository>
   </repositories>
 
   <pluginRepositories>
     <pluginRepository>
-      <id>onehippo</id>
-      <name>Hippo Maven 2 Repository</name>
-      <url>http://maven.onehippo.com/maven2</url>
+      <id>bloomreach</id>
+      <name>Bloomreach Maven 2 repository</name>
+      <url>http://maven.bloomreach.com/maven2/</url>
     </pluginRepository>
     <pluginRepository>
       <id>codehaus</id>

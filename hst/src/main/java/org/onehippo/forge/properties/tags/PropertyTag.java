@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Hippo B.V. (http://www.onehippo.com)
+ * Copyright 2011-2024 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.Map;
 
-import javax.servlet.jsp.JspWriter;
+import jakarta.servlet.jsp.JspWriter;
 
 import org.apache.commons.lang.LocaleUtils;
 import org.apache.commons.lang.StringEscapeUtils;

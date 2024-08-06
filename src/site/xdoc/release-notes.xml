@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Copyright 2010-2022 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2010-2024 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -21,6 +21,13 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="8.0.0">
+        <p class="smallinfo">Release Date: 6 August 2024</p>
+        <ul>
+          <li><a href="https://issues.onehippo.com/browse/FORGE-530">FORGE-530</a>
+            Compatibility with Bloomreach Experience Manager 16, JDK 17</li>
+        </ul>
+      </subsection>
       <subsection name="7.0.0">
         <p class="smallinfo">Release Date: 19 September 2022</p>
         <ul>
