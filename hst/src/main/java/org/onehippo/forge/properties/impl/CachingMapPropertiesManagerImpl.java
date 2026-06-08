@@ -9,7 +9,7 @@ import java.util.Map;
 
 import javax.jcr.RepositoryException;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.hippoecm.hst.content.beans.standard.HippoBean;
 import org.hippoecm.repository.api.HippoNode;
 import org.onehippo.forge.properties.annotated.Properties;
