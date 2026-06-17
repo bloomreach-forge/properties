@@ -28,6 +28,12 @@
   <artifactId>properties-hst-client</artifactId>
   <packaging>jar</packaging>
 
+  <properties>
+    <!-- Default empty value; the JaCoCo prepare-agent goal (coverage profile)
+         sets this to the -javaagent:... string at runtime via late-binding @{argLine}. -->
+    <argLine></argLine>
+  </properties>
+
   <dependencies>
     
     <dependency>
@@ -58,7 +64,30 @@
       <groupId>org.onehippo.cms7.hst</groupId>
       <artifactId>hst-client</artifactId>
     </dependency>
- </dependencies>
+
+    <!-- Test dependencies -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -69,7 +98,17 @@
           <skip>true</skip>
         </configuration>
       </plugin>
+      <plugin>
+        <!-- Wire JaCoCo's runtime agent (set via @{argLine} late-binding in the
+             coverage profile) into Surefire's forked JVM args. -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration combine.children="append">
+          <argLine>@{argLine}</argLine>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
+
 
 </project>
