@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2024 Hippo B.V. (http://www.onehippo.com)
+ * Copyright 2026 Bloomreach Inc. (http://www.bloomreach.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-
 package org.onehippo.forge.properties.tags;
 
 import java.io.IOException;
@@ -22,8 +21,8 @@ import java.util.Map;
 
 import jakarta.servlet.jsp.JspWriter;
 
-import org.apache.commons.lang.LocaleUtils;
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang3.LocaleUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.hippoecm.hst.content.beans.standard.HippoBean;
 import org.hippoecm.hst.core.component.HstRequest;
 import org.hippoecm.hst.core.component.HstResponse;
@@ -99,7 +98,7 @@ public class PropertyTag extends ParamContainerTag {
 
     protected void handleValue(final String value, final HstRequest hstRequest) {
 
-        final String message = StringEscapeUtils.escapeXml(value);
+        final String message = StringEscapeUtils.escapeXml11(value);
         final String escapedValue =  MessageFormat.format(message, parametersList.toArray(new Object[parametersList.size()]));
         if (var != null) {
             hstRequest.setAttribute(var, escapedValue);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2009-2024 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2026 Bloomreach Inc. (https://www.bloomreach.com)
 
   Licensed under the Apache License, Version 2.0 (the  "License");
   you may not use this file except in compliance with the License.
@@ -19,14 +19,14 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-release</artifactId>
-    <version>16.0.0</version>
+    <version>17.1.1</version>
   </parent>
 
   <name>Bloomreach Forge Properties Plugin</name>
   <description>Bloomreach Forge Properties Plugin</description>
   <groupId>org.onehippo.forge.properties</groupId>
   <artifactId>properties</artifactId>
-  <version>8.0.0</version>
+  <version>9.0.0</version>
   <packaging>pom</packaging>
 
   <url>https://bloomreach-forge.github.io/properties</url>
@@ -37,10 +37,7 @@
     <notice.project.name>Bloomreach Forge Properties Plugin</notice.project.name>
 
     <!-- Documentation -->
-    <maven.plugin.jxr.version>3.4.0</maven.plugin.jxr.version>
-    <maven.plugin.site.version>3.12.1</maven.plugin.site.version>
-    <maven.plugin.taglib.version>2.4</maven.plugin.taglib.version>
-
+    <maven.plugin.jxr.version>3.6.0</maven.plugin.jxr.version>
   </properties>
 
   <developers>
@@ -69,7 +66,7 @@
 
   <issueManagement>
     <system>Hippo JIRA</system>
-    <url>https://issues.onehippo.com/browse/FORGE</url>
+    <url>https://issues.bloomreach.com/browse/FORGE</url>
   </issueManagement>
 
   <licenses>
@@ -189,7 +186,7 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>${maven.plugin.javadoc.version}</version>
         <configuration>
-          <source>1.8</source>
+          <source>21</source>
           <links>
             <link>https://download.oracle.com/javase/6/docs/api</link>
           </links>
