@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Hippo B.V. (http://www.onehippo.com)
+ * Copyright 2026 Bloomreach Inc. (http://www.bloomreach.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,6 +109,7 @@ public interface PropertiesManager  {
      * @deprecated Replaced by #getPropertiesBean(final HippoBean baseBean).
      *             Use PropertiesUtil to get a Map directly.
      */
+    @Deprecated
     Map<String, String> getProperties(final HippoBean baseBean);
 
     /**
@@ -123,6 +124,7 @@ public interface PropertiesManager  {
      * @deprecated Replaced by #getPropertiesBeans(final List names, final HippoBean baseBean).
      *             Use PropertiesUtil to get a Map directly.
      */
+    @Deprecated
     Map<String, String> getProperties(final String[] paths, final HippoBean baseBean);
 
     /**

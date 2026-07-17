@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Copyright 2010-2024 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2026 Bloomreach Inc (https://www.bloomreach.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -21,6 +21,13 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="9.0.0">
+        <p class="smallinfo">Release Date: 17 July 2026</p>
+        <ul>
+          <li><a href="https://bloomreach.atlassian.net/browse/FORGE-595">FORGE-595</a>
+            Compatibility with Bloomreach Experience Manager 17, JDK 21</li>
+        </ul>
+      </subsection>
       <subsection name="8.0.0">
         <p class="smallinfo">Release Date: 6 August 2024</p>
         <ul>

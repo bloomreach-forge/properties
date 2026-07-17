@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2010-2021 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2026 Bloomreach Inc (https://www.bloomreach.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -31,9 +31,9 @@
         </p>
         <p>Using this plugin for site label localization is possible, however the usage of resource bundles is
           better supported as part of the XM product, see
-          <a href="https://documentation.bloomreach.com/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">
+          <a href="https://xmdocumentation.bloomreach.com/library/concepts/translations/hst-2-dynamic-resource-bundles-support.html">
             HST Dynamic Resource Bundles support</a> and the
-          <a href="https://documentation.bloomreach.com/library/concepts/plugins/resource-bundle-editor/about.html">HST
+          <a href="https://xmdocumentation.bloomreach.com/library/concepts/plugins/resource-bundle-editor/about.html">HST
             Resource Bundle Editor Plugin</a>. The advantage of using this plugin is that it support diffs between
           live and preview (edited) versions of the documents.
         </p>
@@ -61,6 +61,16 @@
                 <th>CMS / Bloomreach XM</th>
                 <th>HST</th>
                </tr>
+              <tr>
+                <td>9.x</td>
+                <td>17.x</td>
+                <td>17.x</td>
+              </tr>
+              <tr>
+                <td>8.x</td>
+                <td>16.x</td>
+                <td>16.x</td>
+              </tr>
               <tr>
                 <td>7.x</td>
                 <td>15.x</td>
